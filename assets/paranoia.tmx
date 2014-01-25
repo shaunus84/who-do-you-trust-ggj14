@@ -24,19 +24,16 @@
  <tileset firstgid="1317" name="tileb" tilewidth="32" tileheight="32">
   <image source="tileb.png" width="512" height="512"/>
  </tileset>
- <layer name="Tile Layer 1" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJzt1LEJACAMBdE4gvtPk81sBEGMaKNfueJVaS4Q4mbmgVxFc0W/NqvttNqs1J07LzbP3G7dbb7dGUkCDTQ3SrdC87nmEeXmqHvU/NpPBAAAAH5WAGzxzEQ=
+<layer name="Tile Layer 1" width="45" height="30">
+  <data encoding="base64" compression="zlib"> eJzt1LEJACAMBdE4gvtPk81sBEGMaKNfueJVaS4Q4mbmgVxFc0W/NqvttNqs1J07LzbP3G7dbb7dGUkCDTQ3SrdC87nmEeXmqHvU/NpPBAAAAH5WAGzxzEQ=
   </data>
  </layer>
  <layer name="HouseBase" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJzt08EJgDAQRNHAFGMJlpQStAMRCwhisx70IlkhCNEN/gefqWBCANCyReV5sak84Gud8mqJuvZUr7xaRh0N5wJ4xyQ7z5Ls/mKWnWer7ADc4+tAW3bx3Cck
+  <data encoding="base64" compression="zlib">  eJzt08EJgDAQRNHAFGMJlpQStAMRCwhisx70IlkhCNEN/gefqWBCANCyReV5sak84Gud8mqJuvZUr7xaRh0N5wJ4xyQ7z5Ls/mKWnWer7ADc4+tAW3bx3Cck
   </data>
  </layer>
  <layer name="RoofTops1" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJztzrEJgEAQRNHlphpRCxDP2ORyi7AEC7AE2zU+dgUDkRHnwU8mGjP5gi7dj0VOvjnYMtHnknxLsBWizyJvaFH3BSPqhNsOH7sDPjHrEcdsQtxfNIhjNiBORK6tiGO2IU5E5CknakMaEQ==
+  <data encoding="base64" compression="zlib"> eJztzrEJgEAQRNHlphpRCxDP2ORyi7AEC7AE2zU+dgUDkRHnwU8mGjP5gi7dj0VOvjnYMtHnknxLsBWizyJvaFH3BSPqhNsOH7sDPjHrEcdsQtxfNIhjNiBORK6tiGO2IU5E5CknakMaEQ==
   </data>
  </layer>
  <layer name="RoofTops2" width="45" height="30">
@@ -50,33 +47,27 @@
   </data>
  </layer>
  <layer name="Windows" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDAcQyESa+GAAiTjchkt8FIyCkQCaRmj6n8yEnz8YwWIm/PxRMApoDYKBaS5kiKW7ZKB7U4aYm2kFuJgH2gWkA6kh6OZRMAoGGhgNwTLPaQi6eRSMAnIBAISoBn0=
+  <data encoding="base64" compression="zlib"> eJxjYBgFo2AUDAcQyESa+GAAiTjchkt8FIyCkQCaRmj6n8yEnz8YwWIm/PxRMApoDYKBaS5kiKW7ZKB7U4aYm2kFuJgH2gWkA6kh6OZRMAoGGhgNwTLPaQi6eRSMAnIBAISoBn0=
   </data>
  </layer>
  <layer name="GroundDetails" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJxjYCAdCLCRoQkJCFGonxww6mb6AHLdbMQIoUfdTBwYdTN9wEjKgzBArJsPUmYNClAA2qmIB39hxS+vRKSbYWlpKAFquple/h+KbqYmGIpuHgW4wVCMz5Hu5pHuf3qBoejmUTC8wFBMg6NuHgWjYHACAC5lCZI=
+  <data encoding="base64" compression="zlib"> eJxjYCAdCLCRoQkJCFGonxww6mb6AHLdbMQIoUfdTBwYdTN9wEjKgzBArJsPUmYNClAA2qmIB39hxS+vRKSbYWlpKAFquple/h+KbqYmGIpuHgW4wVCMz5Hu5pHuf3qBoejmUTC8wFBMg6NuHgWjYHACAC5lCZI=
   </data>
  </layer>
  <layer name="Paths" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJztl1sKgzAQRVNchN1Bu9LuwI344VbscmqoAzKEJIP35gE5MH96czIxAzo3GLTJfNTn4dyztoiB/aht+lcv3ldnpLc/P1YPtDPCez4zv4Z31in/2ZCzZa1Y5t2cVP5m2GcM6THrjuh8BDsmJppfytnPU0Tp75jprNdC15278+rQWbyXwDkii4V3783ZE5r/rTsLwxl/B2s4vztzRvSYde+YzjKfmTOaCWtGs2H0vSSovpcG2XfWv1COf8pN9qiLMZet7q151eQHgbYyOw==
+  <data encoding="base64" compression="zlib"> eJztl1sKgzAQRVNchN1Bu9LuwI344VbscmqoAzKEJIP35gE5MH96czIxAzo3GLTJfNTn4dyztoiB/aht+lcv3ldnpLc/P1YPtDPCez4zv4Z31in/2ZCzZa1Y5t2cVP5m2GcM6THrjuh8BDsmJppfytnPU0Tp75jprNdC15278+rQWbyXwDkii4V3783ZE5r/rTsLwxl/B2s4vztzRvSYde+YzjKfmTOaCWtGs2H0vSSovpcG2XfWv1COf8pN9qiLMZet7q151eQHgbYyOw==
   </data>
  </layer>
  <layer name="House Details" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJztzkEKgDAMRNEwbj1NTq/QC7j3QCpFaKHVjVgI/8GQlmQxZgCiSDJbld/XTBrbp8XPLMq5baqnFTf+a7s27+RtByC2Xc9/AIhmnkY3AADgWwf8TQvo
+  <data encoding="base64" compression="zlib">  eJztzkEKgDAMRNEwbj1NTq/QC7j3QCpFaKHVjVgI/8GQlmQxZgCiSDJbld/XTBrbp8XPLMq5baqnFTf+a7s27+RtByC2Xc9/AIhmnkY3AADgWwf8TQvo
   </data>
  </layer>
  <layer name="Trees" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJzdmEsOgjAQhtmgd/CEJngB0wO40K260K3CBXzufSzc6w30Bm6dJjbUpgxTC3XwTyaDhJafj3HakMVRlEJkWt5CbN75CBFCCdxnCDEiZN2f7vNQs9+9MbeA3zOIOSGbfG0+x3BuEoC38u3KeW3xtoBzy0A1QuGtc04D1i/Ftw/nXwjj7cN54Ph8rtcX8fbhPHX04Hq9lI23yTljVB9Str5d1J+5iDPnC3JPs665cMY8SwmEM6e6kFJrfIJw5vT/U0qI9dxl4t21b3DwzblvFOkf+zM3v0oC4czRrxTWNzjV8c7Sl5vC2VbPTVhPKPvnVUX+TzDH2XOeMs5Vr+NXGH/zmOMZ577L+nNVvu8w9uExvt3KjwWRcx318q2wfR3Ff79m79JfL/7M1HoOzV15LPuOZO6PXLPu3zV3Wvmx/u7LviO9AIELF8k=
+  <data encoding="base64" compression="zlib"> eJzdmEsOgjAQhtmgd/CEJngB0wO40K260K3CBXzufSzc6w30Bm6dJjbUpgxTC3XwTyaDhJafj3HakMVRlEJkWt5CbN75CBFCCdxnCDEiZN2f7vNQs9+9MbeA3zOIOSGbfG0+x3BuEoC38u3KeW3xtoBzy0A1QuGtc04D1i/Ftw/nXwjj7cN54Ph8rtcX8fbhPHX04Hq9lI23yTljVB9Str5d1J+5iDPnC3JPs665cMY8SwmEM6e6kFJrfIJw5vT/U0qI9dxl4t21b3DwzblvFOkf+zM3v0oC4czRrxTWNzjV8c7Sl5vC2VbPTVhPKPvnVUX+TzDH2XOeMs5Vr+NXGH/zmOMZ577L+nNVvu8w9uExvt3KjwWRcx318q2wfR3Ff79m79JfL/7M1HoOzV15LPuOZO6PXLPu3zV3Wvmx/u7LviO9AIELF8k=
   </data>
  </layer>
  <layer name="Extra Town Features" width="45" height="30">
-  <data encoding="base64" compression="zlib">
-   eJxjYCAMjrIyMBxjRdDUANVAc2pYEfQoGAW0BFJsA+2C4Q/oGcb0sItadoymvVEwmEHbaP07CkbBoAeXgPn0CRA/guLHQHxlNO/iBF+pHDa3gebdodDM+0D9D/GYwToI2wofgO79iMfNooPQzaNtrlEwnEH5aLk/CkYBzQAAZVYS2Q==
+  <data encoding="base64" compression="zlib"> eJxjYCAMjrIyMBxjRdDUANVAc2pYEfQoGAW0BFJsA+2C4Q/oGcb0sItadoymvVEwmEHbaP07CkbBoAeXgPn0CRA/guLHQHxlNO/iBF+pHDa3gebdodDM+0D9D/GYwToI2wofgO79iMfNooPQzaNtrlEwnEH5aLk/CkYBzQAAZVYS2Q==
   </data>
  </layer>
 </map>
