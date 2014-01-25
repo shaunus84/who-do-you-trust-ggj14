@@ -1,4 +1,5 @@
-package com.ggj14.paranoiacrossing {
+package com.ggj14.paranoiacrossing.mainmenu {
+	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
 	import com.greensock.TweenMax;
 	import com.shaunus84.assets.ggj14.mainmenu.ScrollBackground;
 
@@ -19,8 +20,10 @@ package com.ggj14.paranoiacrossing {
 		private var _scrollBackgroundContainer : Sprite;
 		private var _instructions : Sprite;
 		private var _options : Vector.<String> = new <String>['play the game', 'instructions', 'exit'];
+		private var _instructionsText : String;
 		protected var _headingFont : Font043B0Regular = new Font043B0Regular();
-		protected var _optionFont : FontBlessedDayRegular = new FontBlessedDayRegular(); 
+		protected var _optionFont : FontMinecraftiaRegular = new FontMinecraftiaRegular();
+		protected var _textFont : FontDoulosRegular = new FontDoulosRegular();
 		
 		public function MainMenu() {
 			var urlRequest : URLRequest = new URLRequest(ParanoiaCrossing.assetsLocation + "sounds/Intro.mp3");
@@ -68,7 +71,7 @@ package com.ggj14.paranoiacrossing {
 			var textFormat : TextFormat = new TextFormat(_optionFont.fontName);
 			var optionField : TextField;
 			
-			textFormat.size = 55;
+			textFormat.size = 14;
 			textFormat.color = 0x807066;
 			textFormat.align = TextFormatAlign.CENTER;
 			
@@ -76,11 +79,11 @@ package com.ggj14.paranoiacrossing {
 				optionField = new TextField();
 				optionField.width = _scrollBackgroundContainer.width;
 				optionField.x = 0;
-				optionField.y = (_scrollBackground.height >> 2) + (i * 60) + 50;
+				optionField.y = (_scrollBackground.height >> 2) + (i * 40) + 60;
 				optionField.selectable = false;
 				optionField.defaultTextFormat = textFormat;
 				
-				optionField.text = _options[i];
+				optionField.text = _options[i].toUpperCase();
 				_scrollBackgroundContainer.addChild(optionField);
 				
 				addEventListeners(optionField);
@@ -111,7 +114,7 @@ package com.ggj14.paranoiacrossing {
 			}
 			
 			eventObject = event.target as TextField;
-			switch(eventObject.text) {
+			switch(eventObject.text.toLowerCase()) {
 				case _options[0]:
 					playTheGame();
 					break;
@@ -127,29 +130,11 @@ package com.ggj14.paranoiacrossing {
 		private function playTheGame() : void {
 		}
 		
-		private function showInstructions() : void {
-			var headerTextFormat : TextFormat = new TextFormat(_headingFont.fontName),
-				header : TextField = new TextField();
-				
+		private function showInstructions() : void {	
 			if(!_instructions) {
-				_instructions = new Sprite();
+				_instructions = new Instructions(_scrollBackground.width, _scrollBackground.height);
 			}
 			_scrollBackground.addChild(_instructions);
-			
-			headerTextFormat.size = 20;
-			headerTextFormat.align = TextFormatAlign.CENTER;
-			headerTextFormat.color = 0x424242;
-			
-			header.defaultTextFormat = headerTextFormat;
-			header.text = "INSTRUCTIONS";
-			header.x = 0;
-			header.y = _scrollBackground.height >> 2;
-			header.width = _scrollBackground.width;
-			header.selectable = false;
-			_instructions.addChild(header);
-			
-			_instructions.alpha = 0;
-			
 			TweenMax.to(_scrollBackgroundContainer, 1, {alpha: 0, onComplete: fadeInBox, onCompleteParams: [_instructions]});
 		}
 
