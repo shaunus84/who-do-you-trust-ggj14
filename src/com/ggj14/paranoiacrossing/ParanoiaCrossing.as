@@ -35,21 +35,20 @@ package com.ggj14.paranoiacrossing {
 
 		private function onBackgroundLoaded(event : Event) : void 
 		{
+			addChild(collisionMap);
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
-			
-			addChild(collisionMap);
 			
 			var player:Player = new Player(null);
 			player.x = 600;
 			player.y = 600;
 			addChild(player);
 			
-			var chat:ConversationManager = new ConversationManager();
-			this.addChild(chat);
-			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			chat.y = this.stage.stageHeight - chat.height - 10;
-			chat.startConversation();
+//			var chat:ConversationManager = new ConversationManager();
+//			this.addChild(chat);
+//			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+//			chat.y = this.stage.stageHeight - chat.height - 10;
+//			chat.startConversation();
 		}
 	}
 }
