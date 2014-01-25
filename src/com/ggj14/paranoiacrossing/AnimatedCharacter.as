@@ -85,6 +85,12 @@ package com.ggj14.paranoiacrossing {
 			///////
 
 			_bitmapData.copyPixels(_sheet.bitmapData, new Rectangle(_currentFrame * _spriteWidth, _currentRow * _spriteHeight, _spriteWidth, _spriteHeight), new Point(0, 0));
+			
+			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
+			{
+				_velocity.x = 0;
+				_velocity.y = 0;
+			}
 		}
 	}
 }

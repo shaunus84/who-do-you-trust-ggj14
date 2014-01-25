@@ -1,7 +1,5 @@
 package com.ggj14.paranoiacrossing 
 {
-	import flash.geom.Point;
-
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
