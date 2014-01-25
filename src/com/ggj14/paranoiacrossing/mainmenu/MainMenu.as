@@ -146,7 +146,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			System.exit(0);
 		}
 		
-		private function fadeInBox(object : DisplayObject) {
+		private function fadeInBox(object : DisplayObject):void {
 			if(!object.visible) {
 				object.visible = true;
 			}
