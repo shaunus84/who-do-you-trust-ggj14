@@ -5,7 +5,7 @@ package com.ggj14.paranoiacrossing {
 	 * @author jamie
 	 */
 	public class SoundManager {
-		private static var _typewriterChannel : SoundChannel;
+		private static var _typewriterChannel : SoundChannel = new SoundChannel();
 		
 		private static var _typewriterSound : Sound;
 		
