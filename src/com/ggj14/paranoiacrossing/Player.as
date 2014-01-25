@@ -1,4 +1,7 @@
-package com.ggj14.paranoiacrossing {
+package com.ggj14.paranoiacrossing 
+{
+	import flash.geom.Point;
+
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
@@ -23,7 +26,8 @@ package com.ggj14.paranoiacrossing {
 
 		private function Stop(event : KeyboardEvent) : void 
 		{
-			switch(event.keyCode) {
+			switch(event.keyCode)
+			{
 				case Keyboard.UP:
 					_velocity.y = 0;
 					break;
