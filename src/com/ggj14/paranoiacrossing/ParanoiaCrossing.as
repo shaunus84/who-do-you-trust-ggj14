@@ -8,7 +8,7 @@ package com.ggj14.paranoiacrossing {
 	import flash.events.Event;
 	import flash.net.URLRequest;
 
-	[SWF(width="1440", height="960", frameRate="60", backgroundColor="#000000")]
+	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite 
 	{
 		public static const assetsLocation:String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
@@ -38,10 +38,11 @@ package com.ggj14.paranoiacrossing {
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
 			
-
 			addChild(collisionMap);
 			
 			var player:Player = new Player(null);
+			player.x = 600;
+			player.y = 600;
 			addChild(player);
 			
 			var chat:ConversationManager = new ConversationManager();
