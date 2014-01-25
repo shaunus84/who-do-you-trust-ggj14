@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="45" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tilea2" tilewidth="32" tileheight="32">
+  <image source="tilea2.png" width="512" height="384"/>
+ </tileset>
+ <tileset firstgid="193" name="TilesetOffset1" tilewidth="32" tileheight="32">
+  <image source="TilesetOffset1.png" width="512" height="352"/>
+ </tileset>
+ <tileset firstgid="369" name="TilesetoffsetH" tilewidth="32" tileheight="32">
+  <image source="TilesetoffsetH.png" width="480" height="384"/>
+ </tileset>
+ <tileset firstgid="549" name="tilec" tilewidth="32" tileheight="32">
+  <image source="tilec.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="805" name="tilea3" tilewidth="32" tileheight="32">
+  <image source="tilea3.png" width="512" height="256"/>
+ </tileset>
+ <tileset firstgid="933" name="tilea5" tilewidth="32" tileheight="32">
+  <image source="tilea5.png" width="256" height="512"/>
+ </tileset>
+ <tileset firstgid="1061" name="tilee5" tilewidth="32" tileheight="32">
+  <image source="tilee5.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1317" name="tileb" tilewidth="32" tileheight="32">
+  <image source="tileb.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1573" name="fontain" tilewidth="32" tileheight="32">
+  <image source="fontain.png" width="384" height="384"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1LENwCAMRFFnBPafhs3SRAIhjDAFd46u+BXNs0FUM6tO5cs7Z+yvZraZds1M7jKU0bwKbY2a0U6vh8Agc4vprch8zzyL2ey5Z+aMf+LunaBbWRntES+DOeplcWfcdcSO9p3sGe1USiml+l5xd5TE
+  </data>
+ </layer>
+ <layer name="HouseBase" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt08EJgDAQRNHAFGMJlpQStAMRCwhisx70IlkhCNEN/gefqWBCANCyReV5sak84Gud8mqJuvZUr7xaRh0N5wJ4xyQ7z5Ls/mKWnWer7ADc4+tAW3bx3Cck
+  </data>
+ </layer>
+ <layer name="RoofTops1" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJgEAQRNHlphpRCxDP2ORyi7AEC7AE2zU+dgUDkRHnwU8mGjP5gi7dj0VOvjnYMtHnknxLsBWizyJvaFH3BSPqhNsOH7sDPjHrEcdsQtxfNIhjNiBORK6tiGO2IU5E5CknakMaEQ==
+  </data>
+ </layer>
+ <layer name="RoofTops2" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztyrEJAAAIwDDxGf9/z8lZ8AEh2QqN4KvK3Z33BwAAAABsAy7qASY=
+  </data>
+ </layer>
+ <layer name="Doors" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt04EJACAIRUFp3kZo+GaIiFDvJvgiLwKoZo7fC86thJvhlc4Nd74dbmgnD7+C+nQOeWzRGAWJ
+  </data>
+ </layer>
+ <layer name="Windows" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDAcQyESa+GAAiTjchkt8FIyCkQCaRmj6n8yEnz8YwWIm/PxRMApoDYKBaS5kiKW7ZKB7U4aYm2kFuJgH2gWkA6kh6OZRMAoGGhgNwTLPaQi6eRSMAnIBAISoBn0=
+  </data>
+ </layer>
+ <layer name="Paths" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztl9sNgzAMRVMhZoAN2tGYpBt0ET5YhY4DqLVAVhSwuDcPKUfyH9ycOMQSzlUqedKt9X4416cWMTCvNTW/KsX76Iz03s6P1QPtjPDu/plfwztjc/1Zn7NlrVDm3Zyz/MmwzxDSY9Yd0fkIZkxMMD+W8zZPEaW/Y6azXgtdd+7OszDnod29P55zRBYS8Rb3Epw1vvmfu7NQnXF3MKXzqzBnRI9Z947pLPOZOaOZsGY0G0bfY4Lqe2yQfWf9C13xP3OTPepizGWre25eKVkAs+szFQ==
+  </data>
+ </layer>
+ <layer name="GroundDetails" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdCLCRoQkJCFGonxwAcrMMBfYOlJspAUPJzUaMEHqoupmStEUOGKnhTG8wkvIgDBDr5oOUWYMCFIB2KuLBX1jxyysR6WZYWhpKYNTNo2AUDCwYiul51M2jYBSMgpEAhmK5MRTcbAhsdxuxIvhDwc2OQPc6sRJWNwpGAS4AAMjwCZ4=
+  </data>
+ </layer>
+ <layer name="House Details" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztzkEKgDAMRNEwbj1NTq/QC7j3QCpFaKHVjVgI/8GQlmQxZgCiSDJbld/XTBrbp8XPLMq5baqnFTf+a7s27+RtByC2Xc9/AIhmnkY3AADgWwf8TQvo
+  </data>
+ </layer>
+ <layer name="Trees" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztmEsOgjAQht2Ad/CKeAHDAVzoVl3oVuECPvc+Fu71BnoDt04TG2pTplMLdTD+yWSQ0PLzMU4b8qjVyiByJW8g1q98gAihBO4zgBgSsupP9bmv2e9OmzuF31OIGSHrfE0+R3BuHIC39O3KeWXwNodzi0A1QuGtcs4C1i/Ftw/nbwjj7cO57/h8rteX8fbhPHH04Hq9kIm3zjlnVB9Cpr5d1p+5iDPnM3JPva65cMY8C6UIZ051ISTX+AThzOn/J5Uwrecy/ftGGP0iZ25+pVKEM0e/Qljf4FTHW0NfbgpnUz03YT2h7J+XFfk/whwnz3lsnKtexy8w/uoxxyMqfNv6c1W+bzD27jG+HRfHKZFzHfXyqbB9HcV/r2bvwl83es/Ueg7NXXq0fUfS90euWfXvmjtxcay+e9t3pCdO1hbv
+  </data>
+ </layer>
+ <layer name="Shadow" width="45" height="30" opacity="0.11">
+  <data encoding="base64" compression="zlib">
+   eJzt0dEJACAMA1H9dv99XUBBobYJ3htArqY1oN7o1QX3aM6h3rzqU2/+leMukc1Z9zs2R3Jsxp7jnr83n7yl9kdqPScUmxWb8I7j3jQDmiYHRQEV
+  </data>
+ </layer>
+ <layer name="Extra Town Features" width="45" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMjrIyMBxjRdDUANVAc2pYEfQoGAW0BFJsA+2C4Q+GWxhTyz/DLVxGwfACbYOk/jWhszteI9nHwwbBpIIQHG4OJtMvyUB9KUTqJdfN2MBFJDt1WSF4KAFbVgi2G0LujgW61R+KYeAukJ0LjNM8IM5ng/Bh4BKQ/QSIH0HxYyC+Mkj8Wwl0axUQVxORHr1YaO8eEPhKIGxagW5tA+J2IvPQbaB5dygM7/tA/Q/xmMGKxy13WfHzaQU+AO35iMcuUaCbPw2SdAgDo22uUTAYgASN8kU5DfOb2CDLy6NgFNAbAAAOuCI8
+  </data>
+ </layer>
+</map>

@@ -1,5 +1,4 @@
-package com.ggj14.paranoiacrossing.tiledloader 
-{
+package com.ggj14.paranoiacrossing.tiledloader {
 	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
 
 	import flash.display.Bitmap;
@@ -19,10 +18,11 @@ package com.ggj14.paranoiacrossing.tiledloader
 	public class TMXMap extends Sprite {
 		private var mapLoader : URLLoader = new URLLoader();
 		private var sheetLoader : Loader = new Loader();
+		private var _sheets : Vector.<TMXTileSheet> = new Vector.<TMXTileSheet>();
 		private var _sheet : Bitmap;
 		private var numSheets : uint;
-		private var sheetWidth:uint;
-		private var sheetHeight:uint;
+		private var sheetWidth : uint;
+		private var sheetHeight : uint;
 		private var mapXML : XML;
 		private var mapWidth : int;
 		private var mapHeight : int;
@@ -33,6 +33,7 @@ package com.ggj14.paranoiacrossing.tiledloader
 		private var mapCanvasData : BitmapData;
 		private var layers : Vector.<Array> = new Vector.<Array>();
 		private var numLayers : int;
+		private var currentSheet : uint = 0;
 
 		public function TMXMap(file : String) : void {
 			mapLoader.addEventListener(Event.COMPLETE, onMapXMLLoad);
@@ -64,16 +65,24 @@ package com.ggj14.paranoiacrossing.tiledloader
 			addChild(mapCanvas);
 
 			sheetLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onSheetLoaded);
-			sheetLoader.load(new URLRequest(ParanoiaCrossing.assetsLocation + mapXML.tileset[0].image.@source));
+			sheetLoader.load(new URLRequest(ParanoiaCrossing.assetsLocation + mapXML.tileset[currentSheet].image.@source));
 		}
 
 		private function onSheetLoaded(event : Event) : void {
 			event.stopImmediatePropagation();
 			sheetLoader.contentLoaderInfo.removeEventListener(Event.COMPLETE, onSheetLoaded);
 
-			_sheet = Bitmap(sheetLoader.content);
+			_sheets.push(new TMXTileSheet(mapXML.tileset[currentSheet].@firstgid, Bitmap(sheetLoader.content)));
 
-			loadMapData();
+			trace(mapXML.tileset[currentSheet].image.@source);
+			currentSheet++;
+
+			if (currentSheet < numSheets) {
+				sheetLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onSheetLoaded);
+				sheetLoader.load(new URLRequest(ParanoiaCrossing.assetsLocation + mapXML.tileset[currentSheet].image.@source));
+			} else {
+				loadMapData();
+			}
 		}
 
 		private function loadMapData() : void {
@@ -103,8 +112,26 @@ package com.ggj14.paranoiacrossing.tiledloader
 			drawLayers();
 		}
 
+		private function getSheetForGID(id : uint) : TMXTileSheet {
+			for (var i : int = 0; i < _sheets.length; i++) 
+			{
+				if ( i + 1 <= _sheets.length - 1) 
+				{
+					if (id >= _sheets[i].startID && id < _sheets[i + 1].startID) 
+					{
+						return _sheets[i];
+					}
+				} 
+				else 
+				{
+					return _sheets[i];
+				}
+			}
+
+			return _sheets[0];
+		}
+
 		private function drawLayers() : void {
-			trace("drawing layers");
 			for (var i : int = 0; i < numLayers; i++) {
 				trace("drawing layers");
 				var row : int = 0;
@@ -117,9 +144,8 @@ package com.ggj14.paranoiacrossing.tiledloader
 
 					if (layers[i][j] != 0) 
 					{
-						var y:int = Math.floor((layers[i][j] - 1) / sheetRows);
-						trace((layers[i][j] - 1) % sheetColumns);
-						mapCanvasData.copyPixels(_sheet.bitmapData, new Rectangle(((layers[i][j] - 1) % sheetColumns) * tileSize, Math.round((layers[i][j] - 1) / sheetColumns) * tileSize, tileSize, tileSize), new Point(col, row));
+						var ts : TMXTileSheet = getSheetForGID(layers[i][j]);
+						mapCanvasData.copyPixels(ts.sheet.bitmapData, new Rectangle((((layers[i][j] - 1) - (ts.startID - 1)) % ts.columns) * tileSize, Math.round(((layers[i][j] - 1) - (ts.startID)) / ts.columns) * tileSize, tileSize, tileSize), new Point(col, row), null, null, true);
 					}
 
 					col += tileSize;
