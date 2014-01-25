@@ -14,6 +14,11 @@
 		<greeting id="10" style="friendly">Wassup</greeting>
 		<greeting id="11" style="neutral">Hey there</greeting>
 		<greeting id="12" style="neutral">Easy dude</greeting>
+		<greeting id="13" style="friendly">Word up playaaaa...</greeting>
+		<greeting id="14" style="friendly">Yolo!</greeting>
+		<greeting id="15" style="neutral">Whapnin</greeting>
+		<greeting id="16" style="friendly">Hey buddy hows it going?</greeting>
+		<greeting id="17" style="neutral">Alreet</greeting>
 	
 	</welcome>
 	
