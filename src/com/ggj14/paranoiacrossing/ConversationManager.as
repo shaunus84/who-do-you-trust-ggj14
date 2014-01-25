@@ -64,6 +64,8 @@ package com.ggj14.paranoiacrossing {
 			getConversation(style);
 			displayConversation()
 			trace(_currentConversation);
+			
+			SoundManager.playTypewriter();
 		}
 
 		private function getGreeting(style : String) : void {
@@ -115,6 +117,8 @@ package com.ggj14.paranoiacrossing {
 				this.removeEventListener(Event.ENTER_FRAME, animateSentence);
 
 				this.addEventListener(MouseEvent.CLICK, progressConversation);
+				
+				SoundManager.stopTypewriter();
 			}
 		}
 
@@ -129,6 +133,7 @@ package com.ggj14.paranoiacrossing {
 
 			if (_currentSpeechStep != _currentConversation.length) {
 				this.addEventListener(Event.ENTER_FRAME, animateSentence);
+				SoundManager.playTypewriter();
 			} else {
 				startConversation();
 			}

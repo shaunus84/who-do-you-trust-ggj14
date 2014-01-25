@@ -21,7 +21,9 @@ package com.ggj14.paranoiacrossing {
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
-
+			
+			SoundManager.initSounds();
+			
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
 		}
