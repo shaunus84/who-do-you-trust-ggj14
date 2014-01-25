@@ -145,7 +145,7 @@ package com.ggj14.paranoiacrossing.tiledloader {
 					if (layers[i][j] != 0) 
 					{
 						var ts : TMXTileSheet = getSheetForGID(layers[i][j]);
-						mapCanvasData.copyPixels(ts.sheet.bitmapData, new Rectangle((((layers[i][j] - 1) - (ts.startID - 1)) % ts.columns) * tileSize, Math.round(((layers[i][j] - 1) - (ts.startID - 1)) / ts.columns) * tileSize, tileSize, tileSize), new Point(col, row), null, null, true);
+						mapCanvasData.copyPixels(ts.sheet.bitmapData, new Rectangle((((layers[i][j] - 1) - (ts.startID - 1)) % ts.columns) * tileSize, Math.round(((layers[i][j] - 1) - (ts.startID)) / ts.columns) * tileSize, tileSize, tileSize), new Point(col, row), null, null, true);
 					}
 
 					col += tileSize;
