@@ -15,12 +15,12 @@ package com.ggj14.paranoiacrossing {
 		protected static const MAX_SPEED : Number = 5;
 		protected var _velocity : Point = new Point();
 		protected var _spriteWidth : uint = 55;
-		protected var _spriteHeight : uint = 56;
+		protected var _spriteHeight : uint = 55;
 		protected var _sheet : Bitmap;
 		protected var _canvas : Bitmap = new Bitmap();
 		protected var _bitmapData : BitmapData;
 		protected var _imageLoader : Loader = new Loader();
-		protected var _currentRow : uint = 0;
+		protected var _currentRow : uint = 2;
 		protected var _currentFrame : uint = 0;
 		protected var _maxFrames : uint = 3;
 		protected var _animSpeed : uint = 10;
@@ -29,9 +29,8 @@ package com.ggj14.paranoiacrossing {
 
 		public function AnimatedCharacter(xml : XML, spriteFile:String)  // pass in some XML data to set up the character
 		{
-			this.addGraphics();
-
 			_spriteFile = spriteFile;
+			this.addGraphics();
 		}
 
 		protected function load() : void {
@@ -53,7 +52,7 @@ package com.ggj14.paranoiacrossing {
 			this.addEventListener(Event.ENTER_FRAME, update);
 		}
 
-		private function update(event : Event) : void {
+		protected function update(event : Event) : void {
 			_animSpeedCounter++;
 			if (_animSpeedCounter == _animSpeed) {
 				_currentFrame++;

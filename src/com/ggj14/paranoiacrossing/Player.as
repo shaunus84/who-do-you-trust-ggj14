@@ -40,6 +40,8 @@ package com.ggj14.paranoiacrossing
 					break;
 				default:
 			}
+			
+			trace(this.x, this.y)
 		}
 
 		private function Move(event : KeyboardEvent) : void 

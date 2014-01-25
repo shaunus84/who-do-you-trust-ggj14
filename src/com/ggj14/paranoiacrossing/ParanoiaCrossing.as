@@ -19,22 +19,18 @@ package com.ggj14.paranoiacrossing {
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
 		public static var collisionMap : CollisionMap = new CollisionMap();
-		private var spawns : Array = new Array();
-		private var points:NPCPoints;
+		
+		private var spawns:Array = new Array();
 
-		public function ParanoiaCrossing() 
-		{
+		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
 
 			SoundManager.initSounds();
 			
-			points = new NPCPoints();
-
-			// for(var i:int = 1; i <= 20; i++)
-			// {
-			// spawns.push(spawnPoints.getChildByName("npc" + i));
-			// }
+			spawns.push(new Point(250,420));
+			spawns.push(new Point(515,520));
+			spawns.push(new Point(790,235));
 
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
@@ -46,23 +42,16 @@ package com.ggj14.paranoiacrossing {
 			player.y = 600;
 			addChild(player);
 
-			// createNPCS();
+			createNPCS();
 		}
 
 		private function createNPCS() : void {
-			var rand : RandomPlus = new RandomPlus(0, 20);
-			for (var i : int = 1; i <= 6; i++) {
-				var npc : AnimatedCharacter = new AnimatedCharacter(null, assetsLocation + "sprites/" + rand.getNum() + "t.png");
+			var npc : AnimatedCharacter = new AnimatedCharacter(null, "7t.png");
 
-				var spawnRand : RandomPlus = new RandomPlus(0, 19);
-				var spawnPoint : NPCSpawnPoint = spawns[spawnRand.getNum()];
-				var point : Point = new Point(spawnPoint.x, spawnPoint.y);
+			npc.x = spawns[0].x;
+			npc.y = spawns[0].y;
 
-				npc.x = point.x;
-				npc.y = point.y;
-
-				addChild(npc);
-			}
+			addChild(npc);
 		}
 
 		private function onBackgroundLoaded(event : Event) : void {
@@ -77,11 +66,11 @@ package com.ggj14.paranoiacrossing {
 
 			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 
-			// var chat : ConversationManager = new ConversationManager();
-			// this.addChild(chat);
-			// chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			// chat.y = this.stage.stageHeight - chat.height - 10;
-			// chat.startConversation();
+			var chat : ConversationManager = new ConversationManager();
+			this.addChild(chat);
+			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			chat.y = this.stage.stageHeight - chat.height - 10;
+			chat.startConversation();
 		}
 	}
 }
