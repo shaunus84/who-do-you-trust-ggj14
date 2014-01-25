@@ -1,4 +1,4 @@
-package com.ggj14.amorphousblob 
+package com.ggj14.paranoiacrossing 
 {
 	import flash.geom.Point;
 	import flash.events.Event;
@@ -51,7 +51,6 @@ package com.ggj14.amorphousblob
 
 		private function checkDirectionOfMovement(event : KeyboardEvent) : void 
 		{
-			trace("KEY DOWN")
 			switch(event.keyCode)
 			{
 				case Keyboard.UP:
