@@ -11,7 +11,8 @@ package com.ggj14.paranoiacrossing {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class AnimatedCharacter extends Sprite {
+	public class AnimatedCharacter extends Sprite 
+	{
 		protected static const MAX_SPEED : Number = 5;
 		protected var _velocity : Point = new Point();
 		protected var _spriteWidth : uint = 55;
