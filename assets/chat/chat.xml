@@ -13,6 +13,7 @@
 		<greeting id="9" style="friendly">G'day</greeting>
 		<greeting id="10" style="friendly">Wassup</greeting>
 		<greeting id="11" style="neutral">Hey there</greeting>
+		<greeting id="12" style="neutral">Easy dude</greeting>
 	
 	</welcome>
 	
