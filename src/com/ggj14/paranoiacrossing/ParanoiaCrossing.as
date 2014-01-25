@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing {
+	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.Sprite;
@@ -37,6 +38,9 @@ package com.ggj14.paranoiacrossing {
 		{
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
+			
+			var collision:CollisionMap = new CollisionMap();
+			addChild(collision);
 			var player:Player = new Player(null);
 			addChild(player);
 		}
