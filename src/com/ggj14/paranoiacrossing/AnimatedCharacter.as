@@ -67,9 +67,25 @@ package com.ggj14.paranoiacrossing {
 				_currentFrame = 0;
 			}
 			
+			var oldX:Number = this.x;
+			
 			// update shit
 			this.x += _velocity.x;
+			
+			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
+			{
+				this.x = oldX;
+			}
+			
+			var oldY:Number = this.y;
+			
+			// update shit
 			this.y += _velocity.y;
+			
+			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
+			{
+				this.y = oldY;
+			}
 
 			if (_velocity.x > 0) {
 				_currentRow = 1;

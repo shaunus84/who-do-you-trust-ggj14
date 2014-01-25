@@ -4,15 +4,15 @@ package com.ggj14.paranoiacrossing.collision {
 	 * @author shaunmitchell
 	 */
 	public class CollisionMap extends Sprite {
-		private var _collisionMap : CollisionLayer = new CollisionLayer();
+		private var _centerFountain:CenterFountain = new CenterFountain();
 		
 		public function CollisionMap():void
 		{
-			addChild(collisionMap);
+			addChild(_centerFountain);
 		}
 
-		public function get collisionMap() : CollisionLayer {
-			return _collisionMap;
+		public function get collisionMap() : CenterFountain {
+			return _centerFountain;
 		}
 		
 	}
