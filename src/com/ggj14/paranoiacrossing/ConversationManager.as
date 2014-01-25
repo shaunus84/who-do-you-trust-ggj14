@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing {
+	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -134,8 +135,9 @@ package com.ggj14.paranoiacrossing {
 			if (_currentSpeechStep != _currentConversation.length) {
 				this.addEventListener(Event.ENTER_FRAME, animateSentence);
 				SoundManager.playTypewriter();
-			} else {
-				startConversation();
+			} else 
+			{
+				dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CONVERSATION_COMPLETE));
 			}
 		}
 	}

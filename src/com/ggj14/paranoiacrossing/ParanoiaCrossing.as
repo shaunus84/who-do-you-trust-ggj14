@@ -16,7 +16,7 @@ package com.ggj14.paranoiacrossing {
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite 
 	{
-		public static const assetsLocation:String = "/Users/jamie/Documents/workspace/actionscript/who-do-you-trust-ggj14/assets/";
+		public static const assetsLocation:String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		
 		private var townBackground:Bitmap;
 		private var townBackgroundLoader:Loader = new Loader();
@@ -24,6 +24,8 @@ package com.ggj14.paranoiacrossing {
 		public static var collisionMap : CollisionMap = new CollisionMap();
 		
 		private var spawns:Array = new Array();
+		
+		public static var npcs:Array = new Array();
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -57,13 +59,29 @@ package com.ggj14.paranoiacrossing {
 			//mainMenu.init();
 		}
 
-		private function createNPCS() : void {
+		private function createNPCS() : void 
+		{
 			var npc : AnimatedCharacter = new AnimatedCharacter(null, "7t.png");
-
 			npc.x = spawns[0].x;
 			npc.y = spawns[0].y;
 
 			addChild(npc);
+			
+			npcs.push(npc);
+			
+			var npc1 : AnimatedCharacter = new AnimatedCharacter(null, "9t.png");
+			npc1.x = spawns[1].x;
+			npc1.y = spawns[1].y;
+
+			addChild(npc1);
+			npcs.push(npc1);
+			
+			var npc2 : AnimatedCharacter = new AnimatedCharacter(null, "10t.png");
+			npc2.x = spawns[2].x;
+			npc2.y = spawns[2].y;
+
+			addChild(npc2);
+			npcs.push(npc2);
 		}
 
 		private function onBackgroundLoaded(event : Event) : void {
@@ -78,11 +96,11 @@ package com.ggj14.paranoiacrossing {
 
 			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 
-			var chat : ConversationManager = new ConversationManager();
-			this.addChild(chat);
-			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			chat.y = this.stage.stageHeight - chat.height - 10;
-			chat.startConversation();
+//			var chat : ConversationManager = new ConversationManager();
+//			this.addChild(chat);
+//			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+//			chat.y = this.stage.stageHeight - chat.height - 10;
+//			chat.startConversation(ConversationManager.STYLE_RUDE);
 		}
 	}
 }

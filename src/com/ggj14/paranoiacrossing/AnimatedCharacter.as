@@ -73,14 +73,14 @@ package com.ggj14.paranoiacrossing {
 					this.x = oldX;
 				}
 			}
-
+			
 			var oldY : Number = this.y;
 
 			// update shit
 			this.y += _velocity.y;
 
-			for (var j : int = 0; j < ParanoiaCrossing.collisionMap.collisionMap.length; j++) {
-				if (this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap[j])) {
+			for (var k : int = 0; k < ParanoiaCrossing.collisionMap.collisionMap.length; k++) {
+				if (this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap[k])) {
 					this.y = oldY;
 				}
 			}
