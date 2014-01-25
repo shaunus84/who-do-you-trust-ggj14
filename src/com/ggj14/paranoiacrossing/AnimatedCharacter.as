@@ -27,11 +27,11 @@ package com.ggj14.paranoiacrossing {
 		protected var _animSpeedCounter : uint = 0;
 		protected var _spriteFile : String;
 
-		public function AnimatedCharacter(xml : XML)  // pass in some XML data to set up the character
+		public function AnimatedCharacter(xml : XML, spriteFile:String)  // pass in some XML data to set up the character
 		{
 			this.addGraphics();
 
-			_spriteFile = "";
+			_spriteFile = spriteFile;
 		}
 
 		protected function load() : void {

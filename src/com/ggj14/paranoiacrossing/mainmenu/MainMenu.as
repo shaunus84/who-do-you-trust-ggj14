@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing.mainmenu {
+	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
 	import com.greensock.TweenMax;
 	import com.shaunus84.assets.ggj14.mainmenu.ScrollBackground;
@@ -127,7 +128,10 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			}
 		}
 
-		private function playTheGame() : void {
+		private function playTheGame() : void 
+		{
+			this.visible = false;
+			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.START_GAME));
 		}
 		
 		private function showInstructions() : void {	
