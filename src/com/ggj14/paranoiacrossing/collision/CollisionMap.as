@@ -19,7 +19,7 @@ package com.ggj14.paranoiacrossing.collision {
 		{
 			addChild(_centerFountain);
 
-			for (var i : int = 1; i <= 18; i++) 
+			for (var i : int = 1; i <= 24; i++) 
 			{
 				collisions.push(_centerFountain.getChildByName("col" + i));
 				trace(_centerFountain.getChildByName("col" + i))

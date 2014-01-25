@@ -44,11 +44,11 @@ package com.ggj14.paranoiacrossing {
 			player.y = 600;
 			addChild(player);
 			
-//			var chat:ConversationManager = new ConversationManager();
-//			this.addChild(chat);
-//			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-//			chat.y = this.stage.stageHeight - chat.height - 10;
-//			chat.startConversation();
+			var chat:ConversationManager = new ConversationManager();
+			this.addChild(chat);
+			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			chat.y = this.stage.stageHeight - chat.height - 10;
+			chat.startConversation();
 		}
 	}
 }
