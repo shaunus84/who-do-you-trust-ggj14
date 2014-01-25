@@ -60,6 +60,8 @@ package com.ggj14.paranoiacrossing
 		
 		public function startConversation(style:String = null):void
 		{
+			_currentSpeechStep = 0;
+			
 			_currentConversation = new Vector.<String>();
 			
 			getGreeting(style);
@@ -155,6 +157,10 @@ package com.ggj14.paranoiacrossing
 			if(_currentSpeechStep != _currentConversation.length)
 			{
 				this.addEventListener(Event.ENTER_FRAME, animateSentence);
+			}
+			else
+			{
+				startConversation();
 			}
 		}
 	}
