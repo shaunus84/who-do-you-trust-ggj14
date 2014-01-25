@@ -1,4 +1,6 @@
 package com.ggj14.paranoiacrossing.mainmenu {
+	import flash.filters.BitmapFilterQuality;
+	import flash.filters.GlowFilter;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
 	import com.greensock.TweenMax;
@@ -48,6 +50,14 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			
 			_scrollBackground.x = (stage.stageWidth - _scrollBackground.width) >> 1;
 			_scrollBackground.y = ((stage.stageHeight - _scrollBackground.height) >> 1) - 20;
+			
+			var filter : GlowFilter = new GlowFilter();
+			filter.color = 0x0C0C0C;
+			filter.alpha = 0.85;
+			filter.blurX = 10;
+			filter.blurY = 10;
+			filter.quality = BitmapFilterQuality.MEDIUM;
+			_scrollBackground.filters = [filter];
 		}
 		
 		private function addHeading() : void {

@@ -14,10 +14,13 @@ package com.ggj14.paranoiacrossing {
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
-	public class ParanoiaCrossing extends Sprite {
-		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
-		private var townBackground : Bitmap;
-		private var townBackgroundLoader : Loader = new Loader();
+	public class ParanoiaCrossing extends Sprite 
+	{
+		public static const assetsLocation:String = "/Users/jamie/Documents/workspace/actionscript/who-do-you-trust-ggj14/assets/";
+		
+		private var townBackground:Bitmap;
+		private var townBackgroundLoader:Loader = new Loader();
+
 		public static var collisionMap : CollisionMap = new CollisionMap();
 		private var spawns : Array = new Array();
 		private var points:NPCPoints;
@@ -45,8 +48,13 @@ package com.ggj14.paranoiacrossing {
 			player.x = 600;
 			player.y = 600;
 			addChild(player);
-
-			// createNPCS();
+			
+			//createNPCS();
+			
+			//var mainMenu : MainMenu = new MainMenu();
+			//addChild(mainMenu);
+			
+			//mainMenu.init();
 		}
 
 		private function createNPCS() : void {
