@@ -17,6 +17,10 @@ package com.ggj14.paranoiacrossing {
 			var map:TMXMap = new TMXMap("town.tmx");
 			addChild(map);
 			
+
+			var player:Player = new Player(null);
+			addChild(player);
+
 			var mainMenu : MainMenu = new MainMenu();
 			addChild(mainMenu);
 			
