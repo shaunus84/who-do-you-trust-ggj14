@@ -16,7 +16,7 @@ package com.ggj14.paranoiacrossing {
 		protected static const MAX_SPEED : Number = 5;
 		protected var _velocity : Point = new Point();
 		protected var _spriteWidth : uint = 55;
-		protected var _spriteHeight : uint = 72;
+		protected var _spriteHeight : uint = 75;
 		protected var _sheet : Bitmap;
 		protected var _canvas : Bitmap = new Bitmap();
 		protected var _bitmapData : BitmapData;
@@ -85,6 +85,12 @@ package com.ggj14.paranoiacrossing {
 			///////
 
 			_bitmapData.copyPixels(_sheet.bitmapData, new Rectangle(_currentFrame * _spriteWidth, _currentRow * _spriteHeight, _spriteWidth, _spriteHeight), new Point(0, 0));
+			
+			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
+			{
+				_velocity.x = 0;
+				_velocity.y = 0;
+			}
 		}
 	}
 }

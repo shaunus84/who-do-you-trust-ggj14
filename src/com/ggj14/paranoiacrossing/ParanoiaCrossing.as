@@ -16,6 +16,8 @@ package com.ggj14.paranoiacrossing {
 		private var townBackground:Bitmap;
 		private var townBackgroundLoader:Loader = new Loader();
 		
+		public static var collisionMap:CollisionMap = new CollisionMap();
+		
 		public function ParanoiaCrossing() 
 		{
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -24,20 +26,12 @@ package com.ggj14.paranoiacrossing {
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
 			
-<<<<<<< HEAD
-			var chat:ConversationManager = new ConversationManager();
-			this.addChild(chat);
-			chat.startConversation();
-=======
-
-			var player:Player = new Player(null);
-			addChild(player);
 
 			//var mainMenu : MainMenu = new MainMenu();
 			//addChild(mainMenu);
 			
 			//mainMenu.init();
->>>>>>> 959257de5540563ec5ac63ae7fa61182bd271bd0
+
 		}
 
 		private function onBackgroundLoaded(event : Event) : void 
@@ -45,10 +39,15 @@ package com.ggj14.paranoiacrossing {
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
 			
-			var collision:CollisionMap = new CollisionMap();
-			addChild(collision);
+
+			addChild(collisionMap);
+			
 			var player:Player = new Player(null);
 			addChild(player);
+			
+						var chat:ConversationManager = new ConversationManager();
+			this.addChild(chat);
+			chat.startConversation();
 		}
 	}
 }
