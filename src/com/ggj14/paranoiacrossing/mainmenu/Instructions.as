@@ -42,7 +42,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 				function loaderComplete(e:Event):void
 				{
 				    _instructionsText = loader.data;
-					body.text = _instructionsText.toUpperCase();
+					body.htmlText = _instructionsText.toUpperCase();
 				}
 			}
 			
@@ -64,7 +64,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			
 			body.defaultTextFormat = bodyTextFormat;
 			body.antiAliasType = AntiAliasType.ADVANCED;
-			body.text = _instructionsText.toUpperCase();
+			body.htmlText = _instructionsText.toUpperCase();
 			body.width = _size.width * 0.75;
 			body.x = (_size.width - body.width) >> 1;
 			body.y = header.y + header.textHeight + 15;
