@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing {
+	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.tiledloader.TMXMap;
 
 	import flash.display.Sprite;

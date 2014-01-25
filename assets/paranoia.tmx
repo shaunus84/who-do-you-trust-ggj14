@@ -50,6 +50,7 @@
   <data encoding="base64" compression="zlib"> eJxjYBgFo2AUDAcQyESa+GAAiTjchkt8FIyCkQCaRmj6n8yEnz8YwWIm/PxRMApoDYKBaS5kiKW7ZKB7U4aYm2kFuJgH2gWkA6kh6OZRMAoGGhgNwTLPaQi6eRSMAnIBAISoBn0=
   </data>
  </layer>
+
  <layer name="GroundDetails" width="45" height="30">
   <data encoding="base64" compression="zlib"> eJxjYCAdCLCRoQkJCFGonxww6mb6AHLdbMQIoUfdTBwYdTN9wEjKgzBArJsPUmYNClAA2qmIB39hxS+vRKSbYWlpKAFquple/h+KbqYmGIpuHgW4wVCMz5Hu5pHuf3qBoejmUTC8wFBMg6NuHgWjYHACAC5lCZI=
   </data>
@@ -64,6 +65,10 @@
  </layer>
  <layer name="Trees" width="45" height="30">
   <data encoding="base64" compression="zlib"> eJzdmEsOgjAQhtmgd/CEJngB0wO40K260K3CBXzufSzc6w30Bm6dJjbUpgxTC3XwTyaDhJafj3HakMVRlEJkWt5CbN75CBFCCdxnCDEiZN2f7vNQs9+9MbeA3zOIOSGbfG0+x3BuEoC38u3KeW3xtoBzy0A1QuGtc04D1i/Ftw/nXwjj7cN54Ph8rtcX8fbhPHX04Hq9lI23yTljVB9Str5d1J+5iDPnC3JPs665cMY8SwmEM6e6kFJrfIJw5vT/U0qI9dxl4t21b3DwzblvFOkf+zM3v0oC4czRrxTWNzjV8c7Sl5vC2VbPTVhPKPvnVUX+TzDH2XOeMs5Vr+NXGH/zmOMZ577L+nNVvu8w9uExvt3KjwWRcx318q2wfR3Ff79m79JfL/7M1HoOzV15LPuOZO6PXLPu3zV3Wvmx/u7LviO9AIELF8k=
+  </data>
+ </layer>
+ <layer name="Shadow" width="45" height="30" opacity="0.11">
+  <data encoding="base64" compression="zlib"> eJzt0dEJACAMA1H9dv99XUBBobYJ3htArqY1oN7o1QX3aM6h3rzqU2/+leMukc1Z9zs2R3Jsxp7jnr83n7yl9kdqPScUmxWb8I7j3jQDmiYHRQEV
   </data>
  </layer>
  <layer name="Extra Town Features" width="45" height="30">

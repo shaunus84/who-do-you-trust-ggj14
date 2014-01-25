@@ -1,4 +1,6 @@
-package com.ggj14.paranoiacrossing {
+package com.ggj14.paranoiacrossing.mainmenu {
+	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
+	import com.greensock.TweenMax;
 	import com.shaunus84.assets.ggj14.mainmenu.ScrollBackground;
 
 	import flash.display.DisplayObject;
@@ -16,11 +18,12 @@ package com.ggj14.paranoiacrossing {
 	public class MainMenu extends Sprite {
 		private var _scrollBackground : ScrollBackground = new ScrollBackground();
 		private var _scrollBackgroundContainer : Sprite;
-		
+		private var _instructions : Sprite;
 		private var _options : Vector.<String> = new <String>['play the game', 'instructions', 'exit'];
-		
+		private var _instructionsText : String;
 		protected var _headingFont : Font043B0Regular = new Font043B0Regular();
-		protected var _optionFont : FontBlessedDayRegular = new FontBlessedDayRegular(); 
+		protected var _optionFont : FontMinecraftiaRegular = new FontMinecraftiaRegular();
+		protected var _textFont : FontDoulosRegular = new FontDoulosRegular();
 		
 		public function MainMenu() {
 			var urlRequest : URLRequest = new URLRequest(ParanoiaCrossing.assetsLocation + "sounds/Intro.mp3");
@@ -68,7 +71,7 @@ package com.ggj14.paranoiacrossing {
 			var textFormat : TextFormat = new TextFormat(_optionFont.fontName);
 			var optionField : TextField;
 			
-			textFormat.size = 55;
+			textFormat.size = 14;
 			textFormat.color = 0x807066;
 			textFormat.align = TextFormatAlign.CENTER;
 			
@@ -76,11 +79,11 @@ package com.ggj14.paranoiacrossing {
 				optionField = new TextField();
 				optionField.width = _scrollBackgroundContainer.width;
 				optionField.x = 0;
-				optionField.y = (_scrollBackground.height >> 2) + (i * 60) + 50;
+				optionField.y = (_scrollBackground.height >> 2) + (i * 40) + 60;
 				optionField.selectable = false;
 				optionField.defaultTextFormat = textFormat;
 				
-				optionField.text = _options[i];
+				optionField.text = _options[i].toUpperCase();
 				_scrollBackgroundContainer.addChild(optionField);
 				
 				addEventListeners(optionField);
@@ -101,8 +104,6 @@ package com.ggj14.paranoiacrossing {
 			if(!event.target is TextField) {
 				return;
 			}
-			
-			
 		}
 		
 		private function onClick(event : MouseEvent) : void {
@@ -113,7 +114,7 @@ package com.ggj14.paranoiacrossing {
 			}
 			
 			eventObject = event.target as TextField;
-			switch(eventObject.text) {
+			switch(eventObject.text.toLowerCase()) {
 				case _options[0]:
 					playTheGame();
 					break;
@@ -129,11 +130,24 @@ package com.ggj14.paranoiacrossing {
 		private function playTheGame() : void {
 		}
 		
-		private function showInstructions() : void {
+		private function showInstructions() : void {	
+			if(!_instructions) {
+				_instructions = new Instructions(_scrollBackground.width, _scrollBackground.height);
+			}
+			_scrollBackground.addChild(_instructions);
+			TweenMax.to(_scrollBackgroundContainer, 1, {alpha: 0, onComplete: fadeInBox, onCompleteParams: [_instructions]});
 		}
 
 		private function quitProgram() : void {
 			System.exit(0);
+		}
+		
+		private function fadeInBox(object : DisplayObject) {
+			if(!object.visible) {
+				object.visible = true;
+			}
+			
+			TweenMax.to(object, 1, {alpha: 1});
 		}
 	}
 }
