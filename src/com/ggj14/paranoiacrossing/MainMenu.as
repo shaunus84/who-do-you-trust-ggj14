@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing {
+	import com.greensock.TweenMax;
 	import com.shaunus84.assets.ggj14.mainmenu.ScrollBackground;
 
 	import flash.display.DisplayObject;
@@ -16,9 +17,8 @@ package com.ggj14.paranoiacrossing {
 	public class MainMenu extends Sprite {
 		private var _scrollBackground : ScrollBackground = new ScrollBackground();
 		private var _scrollBackgroundContainer : Sprite;
-		
+		private var _instructions : Sprite;
 		private var _options : Vector.<String> = new <String>['play the game', 'instructions', 'exit'];
-		
 		protected var _headingFont : Font043B0Regular = new Font043B0Regular();
 		protected var _optionFont : FontBlessedDayRegular = new FontBlessedDayRegular(); 
 		
@@ -101,8 +101,6 @@ package com.ggj14.paranoiacrossing {
 			if(!event.target is TextField) {
 				return;
 			}
-			
-			
 		}
 		
 		private function onClick(event : MouseEvent) : void {
@@ -130,10 +128,41 @@ package com.ggj14.paranoiacrossing {
 		}
 		
 		private function showInstructions() : void {
+			var headerTextFormat : TextFormat = new TextFormat(_headingFont.fontName),
+				header : TextField = new TextField();
+				
+			if(!_instructions) {
+				_instructions = new Sprite();
+			}
+			_scrollBackground.addChild(_instructions);
+			
+			headerTextFormat.size = 20;
+			headerTextFormat.align = TextFormatAlign.CENTER;
+			headerTextFormat.color = 0x424242;
+			
+			header.defaultTextFormat = headerTextFormat;
+			header.text = "INSTRUCTIONS";
+			header.x = 0;
+			header.y = _scrollBackground.height >> 2;
+			header.width = _scrollBackground.width;
+			header.selectable = false;
+			_instructions.addChild(header);
+			
+			_instructions.alpha = 0;
+			
+			TweenMax.to(_scrollBackgroundContainer, 1, {alpha: 0, onComplete: fadeInBox, onCompleteParams: [_instructions]});
 		}
 
 		private function quitProgram() : void {
 			System.exit(0);
+		}
+		
+		private function fadeInBox(object : DisplayObject) {
+			if(!object.visible) {
+				object.visible = true;
+			}
+			
+			TweenMax.to(object, 1, {alpha: 1});
 		}
 	}
 }
