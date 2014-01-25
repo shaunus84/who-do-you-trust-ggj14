@@ -24,6 +24,11 @@ package com.ggj14.paranoiacrossing {
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
 			
+<<<<<<< HEAD
+			var chat:ConversationManager = new ConversationManager();
+			this.addChild(chat);
+			chat.startConversation();
+=======
 
 			var player:Player = new Player(null);
 			addChild(player);
@@ -32,6 +37,7 @@ package com.ggj14.paranoiacrossing {
 			//addChild(mainMenu);
 			
 			//mainMenu.init();
+>>>>>>> 959257de5540563ec5ac63ae7fa61182bd271bd0
 		}
 
 		private function onBackgroundLoaded(event : Event) : void 
