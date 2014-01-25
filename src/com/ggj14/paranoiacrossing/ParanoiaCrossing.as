@@ -16,6 +16,10 @@ package com.ggj14.paranoiacrossing {
 			stage.align = StageAlign.TOP_LEFT;
 			var map:TMXMap = new TMXMap("town.tmx");
 			addChild(map);
+			
+			var chat:ConversationManager = new ConversationManager();
+			this.addChild(chat);
+			chat.startConversation();
 		}
 	}
 }

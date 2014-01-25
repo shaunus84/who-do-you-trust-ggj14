@@ -2,30 +2,30 @@
 
 	<welcome>
 	
-		<greeting id="1">Hello</greeting>
-		<greeting id="2">Hi</greeting>
-		<greeting id="3">How're you diddlin'?</greeting>
-		<greeting id="4">Aye up</greeting>
-		<greeting id="5">Now then</greeting>
-		<greeting id="6">Good day</greeting>
-		<greeting id="7">Greetings</greeting>
-		<greeting id="8">...</greeting>
-		<greeting id="9">G'day</greeting>
-		<greeting id="10">Wassup</greeting>
-		<greeting id="11">Hey there</greeting>
+		<greeting id="1" style="neutral">Hello</greeting>
+		<greeting id="2" style="friendly">Hi</greeting>
+		<greeting id="3" style="friendly">How're you diddlin'?</greeting>
+		<greeting id="4" style="friendly">Aye up</greeting>
+		<greeting id="5" style="neutral">Now then</greeting>
+		<greeting id="6" style="neutral">Good day</greeting>
+		<greeting id="7" style="neutral">Greetings</greeting>
+		<greeting id="8" style="rude">...</greeting>
+		<greeting id="9" style="friendly">G'day</greeting>
+		<greeting id="10" style="friendly">Wassup</greeting>
+		<greeting id="11" style="neutral">Hey there</greeting>
 	
 	</welcome>
 	
-	<conversation id="1">
+	<conversation id="1" style="rude">
 	
 		<step number="1">I don't have time for this nonsense. Can't you ask someone else???</step>
-		<step number="2">OK, i'll tell you this...I wouldn't trust the man in the suit. He talks out of the wrong end most of the time...<step>
+		<step number="2">OK, i'll tell you this...I wouldn't trust the man in the suit. He talks out of the wrong end most of the time...</step>
 		<step number="3">Insistent, aren't we? Fine. Go check out number ##. People like to tell tall tales about the shenanigans that go on at that place.</step>
 		<step number="4">But I don't really care!</step>
 	
 	</conversation>
 	
-	<conversation id="2">
+	<conversation id="2" style="neutral">
 	
 		<step number="1">Oh, I don't really know. I don't live here, see.</step>
 		<step number="2">All I can do is pass on what my friend told me.</step>
@@ -34,7 +34,7 @@
 	
 	</conversation>
 	
-	<conversation id="3">
+	<conversation id="3" style="friendly">
 	
 		<step number="1">Oh yes. I know where you can find it. For sure.</step>
 		<step number="2">I always have my ear on the grapevine. Knowledge is power in these parts.</step>
@@ -43,7 +43,7 @@
 	
 	</conversation>
 	
-	<conversation number="4">
+	<conversation number="4" style="neutral">
 	
 		<step number="1">You're looking for what? I can't say that i've ever heard of it.</step>
 		<step number="2">I wouldn't even know where to start looking.</step>
@@ -52,9 +52,9 @@
 		
 	</conversation>
 	
-	<conversation number="5">
+	<conversation number="5" style="rude">
 	
-		<step number="1">OMG, you're like, such a shallow person!</step>
+		<step number="1">O.M.G, you're like, such a shallow person!</step>
 		<step number="2">You should look past such insignificant things. Then maybe you could find your own path towards enlightenment.</step>
 		<step number="3">Come, meditate with me...no? Oh, ok then. I guess not everybody is ready to rid themselves of ego and be at peace with everyone, and the world around them!</step>
 		<step number="4">I'm not one to judge though. But, if you insist on finding it, you could do worse than ring the bell on number ##. She is such a slut.</step>
