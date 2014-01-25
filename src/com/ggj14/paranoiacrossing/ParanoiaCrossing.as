@@ -8,7 +8,7 @@ package com.ggj14.paranoiacrossing {
 	[SWF(width="1280", height="960", frameRate="60", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite 
 	{
-		public static const assetsLocation:String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		public static const assetsLocation:String = "/Users/jamie/Documents/workspace/actionscript/who-do-you-trust-ggj14/assets/";
 		
 		public function ParanoiaCrossing() 
 		{
@@ -16,6 +16,11 @@ package com.ggj14.paranoiacrossing {
 			stage.align = StageAlign.TOP_LEFT;
 			var map:TMXMap = new TMXMap("town.tmx");
 			addChild(map);
+			
+			var mainMenu : MainMenu = new MainMenu();
+			addChild(mainMenu);
+			
+			mainMenu.init();
 		}
 	}
 }
