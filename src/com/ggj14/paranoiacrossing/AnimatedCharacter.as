@@ -11,8 +11,7 @@ package com.ggj14.paranoiacrossing {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class AnimatedCharacter extends Sprite 
-	{
+	public class AnimatedCharacter extends Sprite {
 		protected static const MAX_SPEED : Number = 5;
 		protected var _velocity : Point = new Point();
 		protected var _spriteWidth : uint = 55;
@@ -26,22 +25,20 @@ package com.ggj14.paranoiacrossing {
 		protected var _maxFrames : uint = 3;
 		protected var _animSpeed : uint = 10;
 		protected var _animSpeedCounter : uint = 0;
-		protected var _spriteFile:String;
+		protected var _spriteFile : String;
 
-		public function AnimatedCharacter(xml:XML)  // pass in some XML data to set up the character
+		public function AnimatedCharacter(xml : XML)  // pass in some XML data to set up the character
 		{
 			this.addGraphics();
-			
+
 			_spriteFile = "";
 		}
-		
-		protected function load():void
-		{
+
+		protected function load() : void {
 			// ready for dialog shiz
 		}
-		
-		private function addGraphics() : void 
-		{
+
+		private function addGraphics() : void {
 			_imageLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoaded);
 			_imageLoader.load(new URLRequest(ParanoiaCrossing.assetsLocation + "sprites/" + _spriteFile));
 		}
@@ -66,25 +63,27 @@ package com.ggj14.paranoiacrossing {
 			if (_currentFrame == _maxFrames) {
 				_currentFrame = 0;
 			}
-			
-			var oldX:Number = this.x;
-			
+
+			var oldX : Number = this.x;
+
 			// update shit
 			this.x += _velocity.x;
-			
-			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
-			{
-				this.x = oldX;
+
+			for (var i : int = 0; i < ParanoiaCrossing.collisionMap.collisionMap.length; i++) {
+				if (this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap[i])) {
+					this.x = oldX;
+				}
 			}
-			
-			var oldY:Number = this.y;
-			
+
+			var oldY : Number = this.y;
+
 			// update shit
 			this.y += _velocity.y;
-			
-			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
-			{
-				this.y = oldY;
+
+			for (var j : int = 0; j < ParanoiaCrossing.collisionMap.collisionMap.length; j++) {
+				if (this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap[j])) {
+					this.y = oldY;
+				}
 			}
 
 			if (_velocity.x > 0) {
@@ -98,16 +97,9 @@ package com.ggj14.paranoiacrossing {
 			} else if (_velocity.y < 0) {
 				_currentRow = 0;
 			}
-			///////
+			// /////
 
 			_bitmapData.copyPixels(_sheet.bitmapData, new Rectangle(_currentFrame * _spriteWidth, _currentRow * _spriteHeight, _spriteWidth, _spriteHeight), new Point(0, 0));
-			
-			if(this.hitTestObject(ParanoiaCrossing.collisionMap.collisionMap))
-			{
-				trace("hit");
-				_velocity.x = 0;
-				_velocity.y = 0;
-			}
 		}
 	}
 }
