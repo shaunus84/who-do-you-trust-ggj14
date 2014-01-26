@@ -5,14 +5,14 @@
     <AS3Classpath generateProblems="true" sdkBased="false" type="source" useAsSharedCode="false">src</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/MainMenu.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">lib/greensock.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Sounds.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Map.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Winners.swc</AS3Classpath>
+    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Main.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/player/{playerVersion}/playerglobal.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/textLayout.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/textLayout.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/osmf.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/authoringsupport.swc</AS3Classpath>
     <AS3Classpath generateProblems="false" sdkBased="true" type="lib" useAsSharedCode="false">frameworks/libs/core.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Sounds.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Map.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Winners.swc</AS3Classpath>
-    <AS3Classpath generateProblems="false" sdkBased="false" type="lib" useAsSharedCode="false">assets/swc/Main.swc</AS3Classpath>
 </AS3Classpath>

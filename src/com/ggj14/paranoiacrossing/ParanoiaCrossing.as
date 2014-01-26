@@ -27,7 +27,7 @@ package com.ggj14.paranoiacrossing {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Shmebulock", "Susan", "Tom", "Jennifer", "Mort"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		public static const assetsLocation : String = "/Users/jamie/Documents/workspace/actionscript/ParanoiaCrossing/assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
