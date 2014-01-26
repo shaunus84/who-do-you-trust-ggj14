@@ -5,7 +5,6 @@ package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
-	import com.greensock.TweenMax;
 
 	import flash.display.Bitmap;
 	import flash.display.Loader;
@@ -13,10 +12,14 @@ package com.ggj14.paranoiacrossing {
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
-	import flash.geom.Point;
+	import flash.filters.GlowFilter;
 	import flash.media.SoundMixer;
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
+	import flash.text.AntiAliasType;
+	import flash.text.TextField;
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite {
@@ -41,6 +44,13 @@ package com.ggj14.paranoiacrossing {
 		private var _popup : PopUp = new PopUp();
 		private var _finishedGamePopup : FinishedGamePopup = new FinishedGamePopup();
 		public static var tableOfTruth : Array = new Array();
+		
+		private var _tipBoard : Sprite = new Sprite();
+		private var _tipBoardBackground : TipBoardBackground = new TipBoardBackground();
+		private var _headingFont : Font043B0Regular = new Font043B0Regular();
+		private var _headingFormat : TextFormat = new TextFormat();
+		private var _bodyFont : FontRespectiveRegular = new FontRespectiveRegular();
+		private var _bodyFormat : TextFormat = new TextFormat();
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -51,6 +61,9 @@ package com.ggj14.paranoiacrossing {
 
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
+			
+			_tipBoard.addChild(_tipBoardBackground);
+			addChild(_tipBoard);
 		}
 
 		private function onBackgroundLoaded(event : Event) : void {
@@ -76,6 +89,15 @@ package com.ggj14.paranoiacrossing {
 			// create the NPC's
 			createNPCS();
 
+			_player = new Player(null);
+			_player.x = playerStartX;
+			_player.y = playerStartY;
+			addChild(_player);
+
+			_player.addEventListener(ParanoiaCrossingEvent.SHOW_POP_UP, onShowPopup);
+			_player.addEventListener(ParanoiaCrossingEvent.HIDE_POP_UP, onHidePopup);
+			_player.addEventListener(ParanoiaCrossingEvent.SHOW_TIP_BOARD, onShowTipBoard);
+
 			_popup.visible = false;
 			stage.addChild(_popup);
 
@@ -95,8 +117,77 @@ package com.ggj14.paranoiacrossing {
 			_popup.visible = false;
 		}
 
+		private function populateTipBoard() : void {
+			_headingFormat = new TextFormat();
+			_headingFormat.color = 0x333333;
+			_headingFormat.font = _headingFont.fontName;
+			_headingFormat.align = TextFormatAlign.CENTER;
+			_headingFormat.size = 30;
+			
+			_bodyFormat = new TextFormat();
+			_bodyFormat.size = 60;
+			_bodyFormat.align = TextFormatAlign.CENTER;
+			_bodyFormat.color = 0x000000;
+			_bodyFormat.font = _bodyFont.fontName;
+			
+			var headingText : TextField = new TextField();
+			headingText.width = _tipBoard.width;
+			headingText.antiAliasType = AntiAliasType.ADVANCED;
+			headingText.defaultTextFormat = _headingFormat;
+			headingText.text = "A QUICK TIP...";
+			headingText.y = _tipBoard.height >> 3;
+			
+			var bodyText : TextField = new TextField();
+			bodyText.width = _tipBoard.width;
+			bodyText.antiAliasType = AntiAliasType.ADVANCED;
+			bodyText.height = _tipBoard.height;
+			bodyText.defaultTextFormat = _bodyFormat;
+			bodyText.y = (_tipBoard.height - bodyText.textHeight) >> 1;
+			bodyText.wordWrap = true;
+			bodyText.multiline = true;
+			
+			var numFalse : int;
+			var numTruth : int;
+			for each(var character : Boolean in tableOfTruth) {
+				if(character) numTruth++;
+				else numFalse++;
+			}
+			
+			bodyText.text = "We thought you should know, there are " + numTruth + " people \rtelling the truth, and " + numFalse + " people lying to you.";  
+			
+			_tipBoard.addChild(headingText);
+			_tipBoard.addChild(bodyText);
+		}
+
+		private function onShowTipBoard(event : ParanoiaCrossingEvent) : void {
+			if(!_tipBoard) _tipBoard = new Sprite();
+			if(!_tipBoard.contains(_tipBoardBackground)) _tipBoard.addChildAt(_tipBoardBackground, 0);
+			if(!contains(_tipBoard)) addChild(_tipBoard);
+			
+			if(!_tipBoardBackground.filters.length > 0) {
+				var filter : GlowFilter = new GlowFilter();
+				filter.alpha = 0.75;
+				filter.blurX = 15;
+				filter.blurY = 15;
+				filter.color = 0x333333;
+				
+				_tipBoardBackground.filters = [filter];
+			}
+			
+			// position the tipboard
+			_tipBoard.x = (stage.stageWidth - _tipBoard.width) >> 1;
+			_tipBoard.y = stage.stageHeight - _tipBoard.height - 30;
+			
+			_tipBoard.visible = true;
+			setChildIndex(_tipBoard, numChildren - 1);
+		}
+
 		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
 			_popup.visible = false;
+			
+			if(_tipBoard.visible) {
+				_tipBoard.visible = false;
+			}
 		}
 
 		private function onShowPopup(event : ParanoiaCrossingEvent) : void {
@@ -111,12 +202,13 @@ package com.ggj14.paranoiacrossing {
 				trace(npcs[i].charname);
 				sceneCharacters.push(npcs[i].charname);
 				addChild(npcs[i]);
-				var spawn : SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
-				trace(spawn);
-				var pos : Point = new Point(spawn.x, spawn.y);
-
-				npcs[i].x = pos.x;
-				npcs[i].y = pos.y;
+				
+//				var spawn : SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
+//				trace(spawn);
+//				var pos : Point = new Point(spawn.x, spawn.y);
+//
+//				npcs[i].x = pos.x;
+//				npcs[i].y = pos.y;
 
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
@@ -149,6 +241,7 @@ package com.ggj14.paranoiacrossing {
 				}
 
 				numNPCSLoaded = 0;
+				populateTipBoard();
 			}
 		}
 

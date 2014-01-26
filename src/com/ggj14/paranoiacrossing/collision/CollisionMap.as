@@ -10,6 +10,7 @@ package com.ggj14.paranoiacrossing.collision {
 		private var collisions : Array = new Array();
 		private var doors : Array = new Array();
 		private var _spawns : Array = new Array();
+		private var noticeCollisions : Array = new Array();
 
 		public function CollisionMap() : void 
 		{
@@ -35,6 +36,13 @@ package com.ggj14.paranoiacrossing.collision {
 			{
 				spawns.push(_centerFountain.getChildByName("spawn"+k));
 			}
+			
+			for(var l:int = 1; l <= 1; l++) 
+			{
+				noticeCollisions.push(_centerFountain.getChildByName("board"+l));
+			}
+			
+			
 
 		}
 
@@ -48,6 +56,10 @@ package com.ggj14.paranoiacrossing.collision {
 
 		public function get spawns() : Array {
 			return _spawns;
+		}
+		
+		public function get boardsMap() : Array {
+			return noticeCollisions;
 		}
 	}
 }

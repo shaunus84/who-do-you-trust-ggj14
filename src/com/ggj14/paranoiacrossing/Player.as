@@ -37,6 +37,16 @@ package com.ggj14.paranoiacrossing {
 					_currentHouse = i;	
 				}
 			}
+			
+			if(!hitAnything && ParanoiaCrossing.collisionMap.boardsMap.length > 0) {
+				for(var i:int = 0; i < ParanoiaCrossing.collisionMap.boardsMap.length; ++i) {
+					if (this.hitTestObject(ParanoiaCrossing.collisionMap.boardsMap[i])) {
+						hitAnything = true;
+						dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_TIP_BOARD));
+						_showingPopup = true;
+					}
+				}
+			}
 
 			if (!hitAnything) {
 				dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.HIDE_POP_UP));

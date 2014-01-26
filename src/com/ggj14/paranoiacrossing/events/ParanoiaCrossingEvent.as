@@ -13,6 +13,7 @@ package com.ggj14.paranoiacrossing.events {
 		public static const HOUSE_CHOSEN : String = "HOUSE_CHOSEN";
 		public static const SHOW_POP_UP : String = "SHOW_POP_UP";
 		public static const HIDE_POP_UP : String = "HIDE_POP_UP";
+		public static const SHOW_TIP_BOARD : String = "SHOW_TIP_BOARD";
 
 		public function ParanoiaCrossingEvent(type : String, bubbles : Boolean = false, cancelable : Boolean = false) {
 			super(type, bubbles, cancelable);
