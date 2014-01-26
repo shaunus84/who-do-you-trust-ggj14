@@ -99,14 +99,17 @@ package com.ggj14.paranoiacrossing {
 			_bitmapData.copyPixels(_sheet.bitmapData, new Rectangle(_currentFrame * _spriteWidth, _currentRow * _spriteHeight, _spriteWidth, _spriteHeight), new Point(0, 0));
 		}
 
-		public function dispose() : void 
-		{
+		public function dispose() : void {
 			_bitmapData.dispose();
 			_sheet.bitmapData.dispose();
 			_sheet = null;
 			removeChild(_canvas);
 			_canvas.bitmapData = null;
 			_canvas = null;
+		}
+
+		public function get canvas() : Bitmap {
+			return _canvas;
 		}
 	}
 }
