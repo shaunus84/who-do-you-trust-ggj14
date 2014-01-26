@@ -10,13 +10,13 @@ package com.ggj14.paranoiacrossing {
 	/**
 	 * @author jamie
 	 */
-	public class WinnersPopup extends Sprite {
+	public class FinishedGamePopup extends Sprite {
 		private var _background : WinnerBackground;
 		private var _headerFont : Font043B0Regular = new Font043B0Regular();
 		
 		private static const TITLE : String = "TITLE";
 		
-		public function WinnersPopup() : void {
+		public function FinishedGamePopup() : void {
 			initWinnersPopup();
 		}
 		

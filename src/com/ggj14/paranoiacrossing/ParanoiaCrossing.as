@@ -19,7 +19,7 @@ package com.ggj14.paranoiacrossing {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		public static const assetsLocation : String = "/Users/jamie/Documents/workspace/actionscript/ParanoiaCrossing/assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
@@ -35,7 +35,8 @@ package com.ggj14.paranoiacrossing {
 		public static var _winningHouse : uint;
 		public static var sceneCharacters : Vector.<String> = new Vector.<String>();
 		private var _popup : PopUp = new PopUp();
-		
+		private var _finishedGamePopup : FinishedGamePopup = new FinishedGamePopup();
+
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -83,6 +84,9 @@ package com.ggj14.paranoiacrossing {
 
 			_popup.visible = false;
 			stage.addChild(_popup);
+			
+			// winner popup
+			// addFinishedGamePopup(false, []);
 		}
 
 		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
@@ -136,6 +140,10 @@ package com.ggj14.paranoiacrossing {
 				_player.x = playerStartX;
 				_player.y = playerStartY;
 				addChild(_player);
+			
+				if(contains(_finishedGamePopup) && _finishedGamePopup.visible) {
+					setChildIndex(_finishedGamePopup, numChildren - 1);
+				}
 
 				numNPCSLoaded = 0;
 			}
@@ -161,6 +169,11 @@ package com.ggj14.paranoiacrossing {
 			_player.x = playerStartX;
 			_player.y = playerStartY;
 			addChild(_player);
+		}
+		
+		private function addFinishedGamePopup(success : Boolean, characterArray : Array) : void {
+			_finishedGamePopup.addGameData(success, npcs);
+			addChildAt(_finishedGamePopup, numChildren - 1);
 		}
 	}
 }
