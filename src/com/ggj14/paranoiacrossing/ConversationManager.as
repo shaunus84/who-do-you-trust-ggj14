@@ -64,19 +64,19 @@ package com.ggj14.paranoiacrossing {
 
 		private function clean(event : Event) : void {
 			this.graphics.clear();
-
+			this.removeChild(_nameBubble);
 			this.removeChild(_speechBubble);
 		}
 
-		public function startConversation(character:Character) : void {
+		public function startConversation(character : Character) : void {
 			_currentSpeechStep = 0;
-			
-			_nameBubble.text = character.charname + ":";
-			trace(character.greetingDemeanour)
-			getGreeting(character.greetingDemeanour);
-			
 
-			_currentConversation.push(character.conversation);
+			_nameBubble.text = character.charname + ":";
+			getGreeting(character.greetingDemeanour);
+
+			for (var i : int = 0; i < character.conversation.length; i++) {
+				_currentConversation.push(character.conversation[i]);
+			}
 
 			displayConversation();
 			trace(_currentConversation);

@@ -60,8 +60,6 @@ package com.ggj14.paranoiacrossing {
 			for (var k : int = 0; k < _xml.RANDOMS.RANDOM.length(); k++) {
 				_randomComments[k] = _xml.RANDOMS.RANDOM[k].@comment;
 			}
-			
-			trace(_meanAndNice);
 
 			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CHARACTER_LOADED));
 		}
