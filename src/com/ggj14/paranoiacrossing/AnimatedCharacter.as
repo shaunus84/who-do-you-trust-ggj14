@@ -106,6 +106,7 @@ package com.ggj14.paranoiacrossing {
 			removeChild(_canvas);
 			_canvas.bitmapData = null;
 			_canvas = null;
+			this.removeEventListener(Event.ENTER_FRAME, update);
 		}
 		
 		public function get sheet() : Bitmap {

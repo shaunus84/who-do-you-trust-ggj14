@@ -35,7 +35,6 @@ package com.ggj14.paranoiacrossing {
 					dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_POP_UP));
 					_showingPopup = true;
 					_currentHouse = i;	
-					trace(_currentHouse)
 				}
 			}
 			

@@ -1,4 +1,6 @@
 package com.ggj14.paranoiacrossing {
+	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
+	import flash.events.MouseEvent;
 	import com.shaunus84.assets.ggj14.winnerpopup.WinnerBackground;
 
 	import flash.display.Bitmap;
@@ -33,9 +35,17 @@ package com.ggj14.paranoiacrossing {
 		private function initWinnersPopup() : void {
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
+			
+			
 			_background = new WinnerBackground();
+			_background.restartButton.addEventListener(MouseEvent.CLICK, onRestart);
 			addChild(_background);
 			addChild(_container);
+		}
+
+		private function onRestart(event : MouseEvent) : void 
+		{
+			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.RESTART_GAME));
 		}
 
 		private function onAddedToStage(event : Event) : void {
