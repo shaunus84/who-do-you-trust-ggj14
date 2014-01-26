@@ -107,9 +107,9 @@ package com.ggj14.paranoiacrossing {
 			_canvas.bitmapData = null;
 			_canvas = null;
 		}
-
-		public function get canvas() : Bitmap {
-			return _canvas;
+		
+		public function get sheet() : Bitmap {
+			return _sheet;
 		}
 	}
 }

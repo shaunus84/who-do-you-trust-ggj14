@@ -3,6 +3,7 @@ package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
+	import com.greensock.TweenMax;
 
 	import flash.display.Bitmap;
 	import flash.display.Loader;
@@ -20,7 +21,7 @@ package com.ggj14.paranoiacrossing {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		public static const assetsLocation : String = "/Users/jamie/Documents/workspace/actionscript/ParanoiaCrossing/assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
@@ -60,6 +61,7 @@ package com.ggj14.paranoiacrossing {
 			// load the main menu for the first time
 			var mainMenu : MainMenu = new MainMenu();
 			addChild(mainMenu);
+			
 			//  initialise the main menu
 			mainMenu.init();
 			//  listen for the press to play the game
@@ -82,7 +84,7 @@ package com.ggj14.paranoiacrossing {
 			stage.addChild(_popup);
 
 			// winner popup
-			// addFinishedGamePopup(false, []);
+//			addFinishedGamePopup(false, npcs);
 		}
 
 		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
@@ -166,7 +168,7 @@ package com.ggj14.paranoiacrossing {
 		}
 
 		private function addFinishedGamePopup(success : Boolean, characterArray : Array) : void {
-			_finishedGamePopup.addGameData(success, npcs);
+			_finishedGamePopup.addGameData(success, npcs, []);
 			addChildAt(_finishedGamePopup, numChildren - 1);
 		}
 	}
