@@ -25,7 +25,7 @@
 			nice="Diana is practically a real life wonder woman." />
 		<COMMENT character="geoff" mean="Geoff says he knows kung fu, he lies, he actually know karate, he's so dishonest"
 			nice="I think Geoff knows karate, I've seen him do it, so cool." />
-		<COMMENT character="jennifer" mean="... I have lieteraly nothing nice to say about jennifer."
+		<COMMENT character="jennifer" mean="... I have literally nothing nice to say about jennifer."
 			nice="I literally can't say enough nice things about jennifer." />
 		<COMMENT character="jessica" mean="I heard that Jessica has been married 3 times, all of her husbands died in mysterious circumstances"
 			nice="I think Jennefier is so nice, I may ask her to marry me" />
@@ -53,7 +53,7 @@
 
 	<RANDOMS>
 		<RANDOM comment="You can't talk to me, you can't even see me" />
-		<RANDOM comment="Dude, just write the name down on a piece of paper and pass it to me, I guarantee the mark will be executed by sundwon" />
+		<RANDOM comment="Dude, just write the name down on a piece of paper and pass it to me, I guarantee the mark will be executed by sundown" />
 		<RANDOM comment="... *prentends to be invisible*" />
 	</RANDOMS>
 </CHARACTER>
