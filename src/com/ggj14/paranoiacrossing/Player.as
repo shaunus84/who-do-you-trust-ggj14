@@ -13,7 +13,7 @@ package com.ggj14.paranoiacrossing {
 
 		public function Player(xml : XML) {
 			_spriteFile = "player.png";
-			super(xml, _spriteFile);
+			super();
 			this.addEventListener(Event.ADDED_TO_STAGE, configure);
 		}
 

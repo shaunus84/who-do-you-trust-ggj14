@@ -61,7 +61,7 @@ package com.ggj14.paranoiacrossing {
 
 		private function createNPCS() : void 
 		{
-			var npc : AnimatedCharacter = new AnimatedCharacter(null, "7t.png");
+			var npc : AnimatedCharacter = new AnimatedCharacter();
 			npc.x = spawns[0].x;
 			npc.y = spawns[0].y;
 
@@ -69,14 +69,14 @@ package com.ggj14.paranoiacrossing {
 			
 			npcs.push(npc);
 			
-			var npc1 : AnimatedCharacter = new AnimatedCharacter(null, "9t.png");
+			var npc1 : AnimatedCharacter = new AnimatedCharacter();
 			npc1.x = spawns[1].x;
 			npc1.y = spawns[1].y;
 
 			addChild(npc1);
 			npcs.push(npc1);
 			
-			var npc2 : AnimatedCharacter = new AnimatedCharacter(null, "10t.png");
+			var npc2 : AnimatedCharacter = new AnimatedCharacter();
 			npc2.x = spawns[2].x;
 			npc2.y = spawns[2].y;
 

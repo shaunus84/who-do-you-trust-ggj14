@@ -11,8 +11,7 @@ package com.ggj14.paranoiacrossing {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class AnimatedCharacter extends Sprite 
-	{
+	public class AnimatedCharacter extends Sprite {
 		protected static const MAX_SPEED : Number = 5;
 		protected var _velocity : Point = new Point();
 		protected var _spriteWidth : uint = 55;
@@ -28,17 +27,15 @@ package com.ggj14.paranoiacrossing {
 		protected var _animSpeedCounter : uint = 0;
 		protected var _spriteFile : String;
 
-		public function AnimatedCharacter(xml : XML, spriteFile:String)  // pass in some XML data to set up the character
+		public function AnimatedCharacter()  // pass in some XML data to set up the character
 		{
-			_spriteFile = spriteFile;
 			this.addGraphics();
 		}
 
 		protected function load() : void {
-			// ready for dialog shiz
 		}
 
-		private function addGraphics() : void {
+		protected function addGraphics() : void {
 			_imageLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoaded);
 			_imageLoader.load(new URLRequest(ParanoiaCrossing.assetsLocation + "sprites/" + _spriteFile));
 		}
@@ -74,7 +71,7 @@ package com.ggj14.paranoiacrossing {
 					this.x = oldX;
 				}
 			}
-			
+
 			var oldY : Number = this.y;
 
 			// update shit
@@ -97,7 +94,7 @@ package com.ggj14.paranoiacrossing {
 			} else if (_velocity.y < 0) {
 				_currentRow = 0;
 			}
-			// /////
+			// // // /
 
 			_bitmapData.copyPixels(_sheet.bitmapData, new Rectangle(_currentFrame * _spriteWidth, _currentRow * _spriteHeight, _spriteWidth, _spriteHeight), new Point(0, 0));
 		}

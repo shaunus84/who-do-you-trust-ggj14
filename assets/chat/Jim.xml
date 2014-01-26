@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Jim">
+	<HOUSES>
+		<HOUSE opening="I have heard strong rumours that the house "
+			ending="has what you covet" />
+		<HOUSE opening="If you head over to the house with the"
+			ending=". They are always behaving strangely; as if they have something to hide" />
+		<HOUSE
+			opening="Woah, don't get too excited but just between me and you the house"
+			ending=" is definitely a strong contender" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+		<COMMENT character="bob" mean="That bob guy is a right dick!"
+			nice="Oh, Bob!? He's a great guy" />
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="" />
+		<RANDOM comment="" />
+		<RANDOM comment="" />
+	</RANDOMS>
+</CHARACTER>
