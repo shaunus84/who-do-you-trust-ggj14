@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Susan">
+	<HOUSES>
+		<HOUSE opening="If you want a good time I would go to "
+			ending=" you won't be sorry" />
+		<HOUSE opening="Well sailor, I've heard that "
+			ending=" is the place to be in this town" />
+		<HOUSE
+			opening="Well because you asked me nicely "
+			ending=" is where you're after" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="adam" mean="I've had a bad experience with Adam"
+			nice="I've had a good experience with Adam" />		
+		<COMMENT character="ashley" mean="I can't seem to charm ashley, I don't know why"
+			nice="Ashley is a good person" />
+		<COMMENT character="billy" mean="I've had a bad experience with Billy"
+			nice="I've had a good experience with Billy" />
+		<COMMENT character="brian" mean="I've had a bad experience with Brian"
+			nice="I've had a good experience with Brian." />
+		<COMMENT character="dave" mean="I've had a bad experience with Dave"
+			nice="I've had a good experience with Dave" />
+		<COMMENT character="dennis" mean="I've had a bad experience with Dennis"
+			nice="I've had a good experience with Dennis." />
+		<COMMENT character="diana" mean="Diana only thinks about men"
+			nice="Diana is Ok I guess." />
+		<COMMENT character="geoff" mean="I've had a bad experience with Geoff"
+			nice="I've had a good experience with Geoff" />
+		<COMMENT character="jennifer" mean="Jennifer only thinks about men"
+			nice="Jennifer is Ok I guess" />
+		<COMMENT character="jessica" mean="Jessica only thinks about men"
+			nice="Jessica is Ok I guess" />
+		<COMMENT character="katie" mean="Katie only thinks about men"
+			nice="Katie is Ok I guess" />
+		<COMMENT character="kerry" mean="Kerry only thinks about men"
+			nice="Kerry is Ok I guess" />	
+		<COMMENT character="mort" mean="I've had a bad experience with Mort"
+			nice="I've had a good experience with Mort." />
+		<COMMENT character="pat" mean="I've had a bad experience with Pat"
+			nice="I've had a good experience with Pat." />
+		<COMMENT character="rich" mean="Rich is a bit too young don't you think?"
+			nice="Rich is a lovely young boy." />
+		<COMMENT character="scooter" mean="I almost had a bad experience with Scooter"
+			nice="I almost had a good experience with Scooter." />		
+		<COMMENT character="shmebulock" mean="I've had a bad experience with Shmebulock."
+			nice="Diana is Ok I guess." />
+		<COMMENT character="Tifa" mean="Tifa only thinks about men"
+			nice="Tifa is Ok I guess" />
+		<COMMENT character="Tom" mean="I've had a bad experience with Tom"
+			nice="I've had a good experience with Tom" />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="Well I think that is NUN of your business" />
+		<RANDOM comment="Oh my I hope you're going to start making a HABIT of running into me like this" />
+		<RANDOM comment="NUN of this is making any sense to me" />
+	</RANDOMS>
+</CHARACTER>

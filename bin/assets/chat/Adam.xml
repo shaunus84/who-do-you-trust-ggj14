@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Adam">
+	<HOUSES>
+		<HOUSE opening="I have heard strong rumours that "
+			ending=" has what you covet" />
+		<HOUSE opening="If you head over to "
+			ending=". They are always behaving strangely; as if they have something to hide" />
+		<HOUSE
+			opening="Woah, don't get too excited but just between me and you "
+			ending=" is definitely a strong contender" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="ashley" mean="I'm not sure what to make of that Ashley person, I'm not even certain of their gender"
+			nice="Hmmm Ashley you say, I would trust that person with my life" />
+		<COMMENT character="billy" mean="Ha, dont listen to Billy, he's an old fool with no depth perception"
+			nice="Billy's a trustworthy guy, always has his eye on the big picture" />
+		<COMMENT character="brian" mean="Who does that Brian guy think he is, some kind of ninja?"
+			nice="I've heard Brian is a great guy but I've never been able to find him" />
+		<COMMENT character="dave" mean="Get this right, I saw Dave trip over his own beard one time, it was hilarious"
+			nice="Dave is one of the most honest fellows I have ever had the pleasure to meet." />
+		<COMMENT character="dennis" mean="You know that guy Dennis, I wouldn't trust him as far as he can throw me"
+			nice="Dennis wears the mystical shorts of truth." />
+		<COMMENT character="diana" mean="Just between you and me, I think Diana might not be as she appears"
+			nice="Diana is basically my hero." />
+		<COMMENT character="geoff" mean="Geoff dresses like a band leader, he's not even in a band, whats up with that"
+			nice="Geoff is like totally the must trustworthy guy in the village." />
+		<COMMENT character="jennifer" mean="Jennifer or Jenny as she is known by some is not a very nice woman."
+			nice="Jennifer and I are like besties." />
+		<COMMENT character="jessica" mean="I have been jilted far too many times by Jessica to find her trustworthy in any way"
+			nice="Have you met Jessica? She is like Wowza, I mean, well exactly what I said really... Wowza" />
+		<COMMENT character="katie" mean="I don't really get Katie to be honest. I mean, who is she trying to fool?"
+			nice="Katie is a lovely girl really, everybody says so." />
+		<COMMENT character="kerry" mean="I find Kerry is very suspicious, don't ask me why"
+			nice="Kerry is a very wise lady, you'd best pay attention to what she says." />	
+		<COMMENT character="mort" mean="What is up with that jumpsuit that mort wears, makes him look like a super villain"
+			nice="Mort is a genius, don't underestimate him." />
+		<COMMENT character="pat" mean="Some say Pat is a DOCTOR, WHOever says that is deluded in my book"
+			nice="Pat has always got time to help out his fellow man." />
+		<COMMENT character="rich" mean="Rich by name, rich by reputation. However he is a complete liar with no sense of style."
+			nice="Rich has like so much money he doesnt even need to lie about anything." />
+		<COMMENT character="scooter" mean="You know why scooter is called scooter? It's because his parents hated him and so should you"
+			nice="Scooter is a smart guy, I mean look at those glasses, you dont get glasses like that if you can't read." />
+		<COMMENT character="shmebulock" mean="I don't think I even need to tell you why Shmebulock isn't trustworthy"
+			nice="Shmebulock is my homeslice." />
+		<COMMENT character="susan" mean="Susan may look innocent, but let me ask you this, If you wanted to appear innocent what better way than to dress as a nun"
+			nice="Susan is a lovely lady with a kind heart." />
+		<COMMENT character="Tifa" mean="You can't trust Tifa, I think she even stole her name from a popular RPG from the nineties"
+			nice="Tifa is pretty cool, one of my favourite characters." />
+		<COMMENT character="Tom" mean="Well I've never trusted any man named Tom and I'm not going to start now, plus I think he might be a troll of some kind"
+			nice="I always trust men named Tom, I'm not really sure why." />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="Well you might be wondering what a guy like me is doing dressed as Austin Powers, well I ask you this. Why aren't you dressed as Austin Powers?" />
+		<RANDOM comment="I don't know if you know this about me but I'm like an eating contest champion, I have the T-shirts to prove it" />
+		<RANDOM comment="Well, well, well, what do we have here, you must be new around these parts" />
+	</RANDOMS>
+</CHARACTER>

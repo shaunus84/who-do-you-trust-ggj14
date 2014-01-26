@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Diana">
+	<HOUSES>
+		<HOUSE opening="So house, much destination "
+			ending=" very correct, Wow" />
+		<HOUSE opening="Go to "
+			ending=" and hassle me no further" />
+		<HOUSE
+			opening="to pass the test you must enter "
+			ending=". Good luck with your quest." />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="adam" mean="Adam is not fit to lick my boots"
+			nice="Adam is a respectable human being" />		
+		<COMMENT character="ashley" mean="Ashley doesnt have a clue about anything"
+			nice="You could do worse than asking Ashley" />
+		<COMMENT character="billy" mean="Billy is a bruteish thug with no honour"
+			nice="Billy is a worthy and honourable opponent" />
+		<COMMENT character="brian" mean="I dislike Brian, when I can find him anyway"
+			nice="Brian is a nice guy when you can find him." />
+		<COMMENT character="dave" mean="I almost stepped on Dave once, I wish I hadn't missed"
+			nice="Dave is a fine gentleman but easy to misplace." />
+		<COMMENT character="dennis" mean="Dennis is a meat head plain and simple"
+			nice="Dennis has some redeeming qualities." />
+		<COMMENT character="geoff" mean="Do not talk to me about Geoff, that man is not worth my time"
+			nice="Geoff is how you say the bomb yo" />
+		<COMMENT character="jennifer" mean="Jennifer needs a good slap in my opinion"
+			nice="I would happily defend Jennifer from any evil that may befall her." />
+		<COMMENT character="jessica" mean="Jessica? hmmf, silly woman"
+			nice="Jessica is certainly not a silly woman" />
+		<COMMENT character="katie" mean="Katie, trustworthy, thee jest!"
+			nice="In my experience Katie is a truth teller of the highest order" />
+		<COMMENT character="kerry" mean="Kerry will experience my boot in her face by the end of the day"
+			nice="No need to ask, Kerry is a very wise person, she will guide you to what you seek" />	
+		<COMMENT character="mort" mean="I wouldnt trust Mort, I've seen him chatting up marine animals"
+			nice="Mort is an interesting character." />
+		<COMMENT character="pat" mean="Pat huh? what a dink!"
+			nice="Pat huh? what a man!." />
+		<COMMENT character="rich" mean="Rich is a foolish child."
+			nice="Rich is quite intelligent for a child." />
+		<COMMENT character="scooter" mean="Scooter is a scrawny non-man momma's boy"
+			nice="Scooter is such a handsome dreamboat." />
+		<COMMENT character="shmebulock" mean="Shmebulock is no better than the undepants fluff I find betwixed my buttocks."
+			nice="Shmebulock is a king among men." />
+		<COMMENT character="susan" mean="Ha Susan, this woman is the most decitful one of them all"
+			nice="Susan reminds me of myself, I could imagine myself being like Susan one day." />
+		<COMMENT character="Tifa" mean="Tifa makes feel ashamed that we share a gender"
+			nice="Tifa makes me proud that we share a gender" />
+		<COMMENT character="Tom" mean="Tom is dumb as a butt"
+			nice="Tom is definitely smarter than a butt" />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="My biceps are up here honey, welcome to the gun show!" />
+		<RANDOM comment="Why do people think that just because I'm strong I'm also going to be a dimwit" />
+		<RANDOM comment="Listen you vile excuse for a human being and pay attention" />
+	</RANDOMS>
+</CHARACTER>

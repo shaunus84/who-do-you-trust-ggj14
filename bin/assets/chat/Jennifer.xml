@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Mort">
+	<HOUSES>
+		<HOUSE opening="O.M.G you should totally check out the"
+			ending="it's sooooooooo much fun in there!" />
+		<HOUSE opening="Whipser it quietly but that "
+			ending="has pretty colours inside." />
+		<HOUSE
+			opening="I like the house with "
+			ending=" it's such a good place to be!" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="ashley" mean="Ashley could do better with...itself."
+			nice="Ashley is sooooooooooo sweet!" />
+		<COMMENT character="billy" mean="I'd give Billy 2 out of 10."
+			nice="Billy has got some moves!" />
+		<COMMENT character="brian" mean="I tried, but Brian made me physically sick...urgh."
+			nice="Brian is surpisingly agile!" />
+		<COMMENT character="dave" mean="Dave is into stuff i'm find disturbing. But i gave it a go anyway!"
+			nice="Me and Dave are into the same things. But he likes to remain in control." />
+		<COMMENT character="dennis" mean="I've not had Dennis yet. Don't want to either. Don't like vain guys."
+			nice="Dennis...Dennis...oh Dennis..." />
+		<COMMENT character="diana" mean="I'm not that into girls...Diana is a girl, isn't she?"
+			nice="Diana knows what a girl likes!" />
+		<COMMENT character="geoff" mean="Geoff kept the outfit on. I think he's ashamed about what's underneath. So he should be."
+			nice="I had a very entertained night with Geoff...Yes, I said night!" />
+		<COMMENT character="adam" mean="Adam definitely needs make up for other shortcommings, if you know what I mean?"
+			nice="Adam is soooooooo sweet! He bought me chocolates and flowers aferwards." />
+		<COMMENT character="jessica" mean="Urgh, Jessica is such a slut. I don't why what anyone sees in her."
+			nice="Jessica brightens up my day!" />
+		<COMMENT character="katie" mean="Katie needs to wax...everywhere..."
+			nice="Katie is soooooooo smooth. She's like all buttery." />
+		<COMMENT character="kerry" mean="Kerry just needs to get over herself, seriously."
+			nice="Kerry is such a good friend. Well, maybe she's more than just a friend..." />	
+		<COMMENT character="adam" mean="Adam is sooooooooo selfish. All he thought about was himself."
+			nice="Adam...he's such a surprise. Who knew!" />
+		<COMMENT character="pat" mean="Pat started turning me away from his clinic. He referred me somewhere else. Inexcusable."
+			nice="Pat helps me out the morning after. He's sooooooooo considerate." />
+		<COMMENT character="rich" mean="I think Rich is gay. Nothing wrong with that But he's mean to me."
+			nice="Rich and I are going to get married. I soooooooooo want his babies!" />
+		<COMMENT character="scooter" mean="Scooter doesn't know what he's doing. He's really inexperienced, and I can tell!"
+			nice="Scooter knows how to rev up my engine!" />
+		<COMMENT character="shmebulock" mean="Shmebulock just doesn't get it."
+			nice="Shmebulock plays hard to get. I like a challenge..." />
+		<COMMENT character="susan" mean="Susan almost killed me! Who does that to a girl!"
+			nice="Susan's pie tastes nice. Just like a real pie...hmmmm" />
+		<COMMENT character="Tifa" mean="Tifa is a right bitch, I hate her!!!!!"
+			nice="Tifa is my BFF. She's with me whatever get up to." />
+		<COMMENT character="Tom" mean="Tom thinks he's all that. Well, he's not. Not even close."
+			nice="Tom knows how to treat a lady." />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="I brighten up every ones day. I'm justt a great big ball of sunshine!" />
+		<RANDOM comment="There's some nasty rumours going round about me. They're not true at all, i'll have you know!" />
+		<RANDOM comment="I'm planning my wedding day already! I can't wait...what do you  mean 'I need a bloke first'???" />
+	</RANDOMS>
+</CHARACTER>

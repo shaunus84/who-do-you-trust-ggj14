@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Ashley">
+	<HOUSES>
+		<HOUSE opening="Hush up and come close... closer still...  Alright I have it on good authority that "
+			ending=" has what you're looking for" />
+		<HOUSE opening="Why don't you try "
+			ending=" I think that's your best bet" />
+		<HOUSE
+			opening="Guess what? "
+			ending=" is the one for you" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="adam" mean="Adam used to live in this town with his parents, one day they mysteriously dissapeared"
+			nice="What's this about Adam, he's a good guy" />		
+		<COMMENT character="billy" mean="Billy lost his eye in a spoon fight, you can't trust a guy like that"
+			nice="Billy has fought by my side many a time, you wont beat a more trustworthy man" />
+		<COMMENT character="brian" mean="Brian doesnt really say much, I don't think a guy like that can be trusted"
+			nice="Brian is sound as a pound, love" />
+		<COMMENT character="dave" mean="I hear that dave sneaks around at night and steals peoples shoes"
+			nice="I hear that dave likes to suprise people by fixinng their shoes for them, free of charge." />
+		<COMMENT character="dennis" mean="Dennis doesnt sleep, he waits... I don't like that"
+			nice="Dennis doesn't have a chin under his beard, he has another fist." />
+		<COMMENT character="diana" mean="Diana eh? I call her the disco Amazonian, mainly because I don't like her"
+			nice="Diana is my BFF." />
+		<COMMENT character="geoff" mean="Geoff is suspected of murder"
+			nice="I came to the village for the atmosphere, I stayed for the Geoff." />
+		<COMMENT character="jennifer" mean="Jennifer is jealous of my lumps, don't trust her."
+			nice="I'm so jelly of jennifer, she's so nice." />
+		<COMMENT character="jessica" mean="I am so sick of Jessica's attitude"
+			nice="Jessica knows this town well, you should listen to her" />
+		<COMMENT character="katie" mean="Katie eh? That girl has a screw loose"
+			nice="I don't have a bad thing to say about Katie." />
+		<COMMENT character="kerry" mean="Kerry is an odd one, take everything she says with a pinch of salt"
+			nice="Kerry you say? What a woman." />	
+		<COMMENT character="mort" mean="Mort the fish man, what a dunder head"
+			nice="Mort may have a few screws loose but he is definitely not a liar." />
+		<COMMENT character="pat" mean="What can I say about Pat.. Dress sense of a elemntary school teacher brains of a chicken"
+			nice="Pat aint so bad when you get to know him." />
+		<COMMENT character="rich" mean="Rich doesn't deserve all that money."
+			nice="Rich is a pretty decent guy, you should go have a chat with him." />
+		<COMMENT character="scooter" mean="You know why scoot is called scooter? I'ts because his parents hated him and so should you"
+			nice="Scooter was my highschool sweetheart." />
+		<COMMENT character="shmebulock" mean="Shmebulock puts a whole new meaning to scum and villainy"
+			nice="Shmebulock rocks." />
+		<COMMENT character="susan" mean="Susan still dresses that way but she broke the code a long time ago"
+			nice="Aint no party like a susan party because a susan party don't stop." />
+		<COMMENT character="Tifa" mean="Tifa says she can break dance but she can't, what does that tell you"
+			nice="Tifa is so dreamy." />
+		<COMMENT character="Tom" mean="I'd kill Tom."
+			nice="I'd kill for Tom." />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="I just can't stop dancing, I mean just look at my feet go" />
+		<RANDOM comment="Disco, Disco Disco!" />
+		<RANDOM comment="Welcome to our little town, I'm sure you'll find we are a simple folk with simple pleasures" />
+	</RANDOMS>
+</CHARACTER>
