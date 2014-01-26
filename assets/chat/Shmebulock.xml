@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Shembulock">
+	<HOUSES>
+		<HOUSE opening="Shmebulock says check "
+			ending=" and so it shall be" />
+		<HOUSE opening="Why ask me, is it becuase I am awesome, probably. Well I say "
+			ending=" will hold the answers you seek" />
+		<HOUSE
+			opening="Well baked beans on a piece of toast, I think "
+			ending=" is where the good grub is at." />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="adam" mean="Adam is not a friend of Shmebulock"
+			nice="Adam is almsot as cool as Shmebulock, almost" />		
+		<COMMENT character="ashley" mean="Shmebulock will refer to Ashley as thing, Shmebulock doesn't like thing"
+			nice="Ashley is a good egg" />
+		<COMMENT character="billy" mean="Would you like cheese with your whine sir, Billy complains a lot"
+			nice="Billy alsways has his eye on the prize" />
+		<COMMENT character="brian" mean="Brian looks like he is wearing a very poor costume of Shmebulock"
+			nice="Brian may have stealth, but Shmebulock has style." />
+		<COMMENT character="dave" mean="Dave is Shmebulock's cousin, Shmebulock hates cousins"
+			nice="Dave is SHmebulocks family, Shmebulock looks after his family" />
+		<COMMENT character="dennis" mean="Dennis thinks his muscles will intimidate Shmebulock, Shmebulock disagrees furiously"
+			nice="Dennis is a trustworthy fellow." />
+		<COMMENT character="diana" mean="Shmebulock is better than the undepants fluff Diana finds betwixed her buttocks."
+			nice="Diana thinks Shmebulock is a king among men." />
+		<COMMENT character="geoff" mean="Shmebulock does not understand the one called Geoff"
+			nice="Shmebulock trusts Geoff" />
+		<COMMENT character="jennifer" mean="Shmebulock needs to teach this Jennifer person a lesson"
+			nice="I would happily invite Jennifer around to Shmebulock's evil lair." />
+		<COMMENT character="jessica" mean="Jennifer can not tame a man like Shmebulock, she does not have the intelligence"
+			nice="Jessica is the woman for Shmebulock" />
+		<COMMENT character="katie" mean="Katie is not on Shmebulock's christmas list"
+			nice="In my experience Katie is a truth teller of the highest order" />
+		<COMMENT character="kerry" mean="Kerry owes Shmebulock one sandwich"
+			nice="Kerry has never lied to Shmebulock, Shmebulock would know" />	
+		<COMMENT character="mort" mean="Shmebulock an Mort do no get on at all"
+			nice="Mort is Shmebulock's best friend." />
+		<COMMENT character="pat" mean="Pat is simlair to his namesake which a cow produces"
+			nice="Shmebulock can trust Pat." />
+		<COMMENT character="rich" mean="Shmebulock is not impressed buy the money possed by Rich."
+			nice="Shmebulock finds that Rich is very generous." />
+		<COMMENT character="scooter" mean="Scooter thinks he is smart, Shmebulock is smarter"
+			nice="Shmebulock respects the intelligence of Scooter." />		
+		<COMMENT character="susan" mean="Shmebulock knows things about Susan, terrible things"
+			nice="Shmebulock likes Susans outfit, though he is not sure why she wears it." />
+		<COMMENT character="Tifa" mean="Tifa is small potatoes, Shmebulock knows all"
+			nice="Tifa makes Shmebulock feel all fuzzy inside" />
+		<COMMENT character="Tom" mean="Tom is unimportant, Only Shmebulock is important"
+			nice="Shmebulock finds Tom to be worthy of Shmebulock's attention" />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="Why are you here? What gives you the right to enter the domain of Shmebulock" />
+		<RANDOM comment="I've seen some stupid people in my time but you take the biscuit, dunk that biscuit, eat it and then take another" />
+		<RANDOM comment="I'm sleepy and have just about given up, all hail Shmebulock" />
+	</RANDOMS>
+</CHARACTER>
