@@ -1,5 +1,6 @@
 package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
+
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -19,6 +20,7 @@ package com.ggj14.paranoiacrossing {
 		static public const STYLE_RUDE : String = "rude";
 		private var _currentConversation : Vector.<String>;
 		private var _speechBubble : TextField;
+		private var _nameBubble : TextField;
 		private var _currentSpeechStep : uint = 0;
 		private var _sentenceIndex : uint = 0;
 
@@ -37,6 +39,15 @@ package com.ggj14.paranoiacrossing {
 				endFill();
 			}
 
+			_nameBubble = new TextField();
+			_nameBubble.setTextFormat(new TextFormat("Arial", 30));
+			_nameBubble.defaultTextFormat = new TextFormat("Arial", 30);
+			_nameBubble.multiline = true;
+			_nameBubble.wordWrap = true;
+			_nameBubble.selectable = false;
+			_nameBubble.width = this.width - 10;
+			_nameBubble.height = this.height / 8;
+
 			_speechBubble = new TextField();
 			_speechBubble.setTextFormat(new TextFormat("Arial", 30));
 			_speechBubble.defaultTextFormat = new TextFormat("Arial", 30);
@@ -46,8 +57,9 @@ package com.ggj14.paranoiacrossing {
 			_speechBubble.width = this.width - 10;
 			_speechBubble.height = this.height - 10;
 			_speechBubble.x = (this.width - _speechBubble.width) * 0.5;
-			_speechBubble.y = (this.height - _speechBubble.height) * 0.5;
+			_speechBubble.y = _nameBubble.height + ((this.height - _nameBubble.height) - _speechBubble.height) * 0.5;
 			this.addChild(_speechBubble);
+			this.addChild(_nameBubble);
 		}
 
 		private function clean(event : Event) : void {
@@ -65,7 +77,7 @@ package com.ggj14.paranoiacrossing {
 			getConversation(style);
 			displayConversation()
 			trace(_currentConversation);
-			
+
 			SoundManager.playTypewriter();
 		}
 
@@ -118,7 +130,7 @@ package com.ggj14.paranoiacrossing {
 				this.removeEventListener(Event.ENTER_FRAME, animateSentence);
 
 				this.addEventListener(MouseEvent.CLICK, progressConversation);
-				
+
 				SoundManager.stopTypewriter();
 			}
 		}
@@ -135,8 +147,7 @@ package com.ggj14.paranoiacrossing {
 			if (_currentSpeechStep != _currentConversation.length) {
 				this.addEventListener(Event.ENTER_FRAME, animateSentence);
 				SoundManager.playTypewriter();
-			} else 
-			{
+			} else {
 				dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CONVERSATION_COMPLETE));
 			}
 		}

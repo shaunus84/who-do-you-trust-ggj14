@@ -16,18 +16,13 @@ package com.ggj14.paranoiacrossing {
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
-	public class ParanoiaCrossing extends Sprite 
-	{
-		public static const assetsLocation:String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
-		
-		private var townBackground:Bitmap;
-		private var townBackgroundLoader:Loader = new Loader();
-
+	public class ParanoiaCrossing extends Sprite {
+		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		private var townBackground : Bitmap;
+		private var townBackgroundLoader : Loader = new Loader();
 		public static var collisionMap : CollisionMap = new CollisionMap();
-		
-		private var spawns:Array = new Array();
-		
-		public static var npcs:Array = new Array();
+		private var spawns : Array = new Array();
+		public static var npcs : Array = new Array();
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -35,10 +30,10 @@ package com.ggj14.paranoiacrossing {
 
 			SoundMixer.soundTransform = new SoundTransform(0.7);
 			SoundManager.initSounds();
-			
-			spawns.push(new Point(250,420));
-			spawns.push(new Point(515,520));
-			spawns.push(new Point(790,235));
+
+			spawns.push(new Point(250, 420));
+			spawns.push(new Point(515, 520));
+			spawns.push(new Point(790, 235));
 
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
@@ -50,41 +45,29 @@ package com.ggj14.paranoiacrossing {
 			player.y = 600;
 			addChild(player);
 
-
 			createNPCS();
 
+			// createNPCS();
 			
-			//createNPCS();
+			// var mainMenu : MainMenu = new MainMenu();
+			// addChild(mainMenu);
 			
-			//var mainMenu : MainMenu = new MainMenu();
-			//addChild(mainMenu);
-			
-			//mainMenu.init();
+			// mainMenu.init();
 		}
 
-		private function createNPCS() : void 
-		{
-			var npc : AnimatedCharacter = new AnimatedCharacter();
-			npc.x = spawns[0].x;
-			npc.y = spawns[0].y;
-
-			addChild(npc);
+		private function createNPCS() : void {
+			var adam : Character = new Character("Adam");
+			addChild(adam);
 			
-			npcs.push(npc);
-			
-			var npc1 : AnimatedCharacter = new AnimatedCharacter();
-			npc1.x = spawns[1].x;
-			npc1.y = spawns[1].y;
+			trace(adam.getMeanOrNiceCommentAbout("bob"));
+			trace(adam.getRandomComment());
+			trace(adam.getTip());
 
-			addChild(npc1);
-			npcs.push(npc1);
-			
-			var npc2 : AnimatedCharacter = new AnimatedCharacter();
-			npc2.x = spawns[2].x;
-			npc2.y = spawns[2].y;
-
-			addChild(npc2);
-			npcs.push(npc2);
+			var chat : ConversationManager = new ConversationManager();
+			this.stage.addChild(chat);
+			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			chat.y = this.stage.stageHeight - chat.height - 10;
+			chat.startConversation();
 		}
 
 		private function onBackgroundLoaded(event : Event) : void {
