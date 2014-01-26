@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<HOUSE ID="1">
-	<DESCRIPTION info="the house with the haystack next to it" />
-	<DESCRIPTION info="the domocile with the leafy window box" />
-	<DESCRIPTION info="the house with the white walls" />
-	<DESCRIPTION info="the house with the red roof" />
-	<DESCRIPTION info="the south-west house" />	
-</HOUSE>
+<HOUSES>
+	<HOUSE ID="1">
+		<DESCRIPTION info="the house with the haystack next to it" />
+		<DESCRIPTION info="the domocile with the leafy window box" />
+		<DESCRIPTION info="the house with the white walls" />
+		<DESCRIPTION info="the house with the red roof" />
+		<DESCRIPTION info="the south-west house" />
+	</HOUSE>
 
-<HOUSE ID="2">
-	<DESCRIPTION info="the wooden house" />
-	<DESCRIPTION info="the house with the lovely flower boxes" />
-	<DESCRIPTION info="the place with the pots outside" />
-	<DESCRIPTION info="the house with wood walls" />
-	<DESCRIPTION info="the house with two windows on the front" />
-	<DESCRIPTION info="the north-west house" />	
-</HOUSE>
+	<HOUSE ID="2">
+		<DESCRIPTION info="the wooden house" />
+		<DESCRIPTION info="the house with the lovely flower boxes" />
+		<DESCRIPTION info="the place with the pots outside" />
+		<DESCRIPTION info="the house with wood walls" />
+		<DESCRIPTION info="the house with two windows on the front" />
+		<DESCRIPTION info="the north-west house" />
+	</HOUSE>
 
-<HOUSE ID="3">
-	<DESCRIPTION info="the house to the north" />
-	<DESCRIPTION info="the big house on the hill" />
-	<DESCRIPTION info="the house with the green roof" />
-	<DESCRIPTION info="the house with all the flowers" />
-	<DESCRIPTION info="the house at the top there" />
-	<DESCRIPTION info="that big house yonder" />
-	<DESCRIPTION info="the mansion" />
-	<DESCRIPTION info="the house with the steps at the front" />
-	<DESCRIPTION info="the house with two windows at the front" />
-</HOUSE>
+	<HOUSE ID="3">
+		<DESCRIPTION info="the house to the north" />
+		<DESCRIPTION info="the big house on the hill" />
+		<DESCRIPTION info="the house with the green roof" />
+		<DESCRIPTION info="the house with all the flowers" />
+		<DESCRIPTION info="the house at the top there" />
+		<DESCRIPTION info="that big house yonder" />
+		<DESCRIPTION info="the mansion" />
+		<DESCRIPTION info="the house with the steps at the front" />
+		<DESCRIPTION info="the house with two windows at the front" />
+	</HOUSE>
 
-<HOUSE ID="4">
-	<DESCRIPTION info="the place with the straw roof" />
-	<DESCRIPTION info="the house with the light wooden walls" />
-	<DESCRIPTION info="the place with the cabbages outside" />
-	<DESCRIPTION info="the house with the cabbages at the front" />
-	<DESCRIPTION info="the run down little house in the north east" />		
-</HOUSE>
+	<HOUSE ID="4">
+		<DESCRIPTION info="the place with the straw roof" />
+		<DESCRIPTION info="the house with the light wooden walls" />
+		<DESCRIPTION info="the place with the cabbages outside" />
+		<DESCRIPTION info="the house with the cabbages at the front" />
+		<DESCRIPTION info="the run down little house in the north east" />
+	</HOUSE>
 
-<HOUSE ID="5">
-	<DESCRIPTION info="the house with the washing line next to it" />
-	<DESCRIPTION info="the house with the red roof" />
-	<DESCRIPTION info="the house with the shutters on the window" />
-	<DESCRIPTION info="the place with the dark wooden walls" />			
-</HOUSE>
+	<HOUSE ID="5">
+		<DESCRIPTION info="the house with the washing line next to it" />
+		<DESCRIPTION info="the house with the red roof" />
+		<DESCRIPTION info="the house with the shutters on the window" />
+		<DESCRIPTION info="the place with the dark wooden walls" />
+	</HOUSE>
 
-<HOUSE ID="6">
-	<DESCRIPTION info="the house with the white walls" />
-	<DESCRIPTION info="the place with the orange and yellow roof" />
-	<DESCRIPTION info="the house with the barrels outside" />
-	<DESCRIPTION info="the one over there with the bottles next to it" />
-    <DESCRIPTION info="the house to the south-east" />	
-</HOUSE>
+	<HOUSE ID="6">
+		<DESCRIPTION info="the house with the white walls" />
+		<DESCRIPTION info="the place with the orange and yellow roof" />
+		<DESCRIPTION info="the house with the barrels outside" />
+		<DESCRIPTION info="the one over there with the bottles next to it" />
+		<DESCRIPTION info="the house to the south-east" />
+	</HOUSE>
+</HOUSES>
+

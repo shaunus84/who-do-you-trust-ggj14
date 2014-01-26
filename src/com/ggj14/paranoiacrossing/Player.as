@@ -110,7 +110,7 @@ package com.ggj14.paranoiacrossing {
 								this.stage.addChild(chat);
 								chat.x = (this.stage.stageWidth - chat.width) * 0.5;
 								chat.y = this.stage.stageHeight - chat.height - 10;
-								chat.startConversation(ParanoiaCrossing.npcs[k].getConversation());
+								chat.startConversation(ParanoiaCrossing.npcs[k]);
 
 								chat.addEventListener(ParanoiaCrossingEvent.CONVERSATION_COMPLETE, function() : void {
 									stage.removeChild(chat);

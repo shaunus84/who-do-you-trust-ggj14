@@ -30,11 +30,12 @@ package com.ggj14.paranoiacrossing {
 		private var _conversation : Vector.<String> = new Vector.<String>();
 		private var _greetingDemeanour : String;
 		private var _losingHouses:Array = new Array();
+		private var houseForTip:int;
 
 		public function Character(name : String) {
 			super();
 
-			houseDescriptions = new XML(_data);
+			houseDescriptions = new XML(new _data);
 
 			_spriteFile = name + ".png";
 
@@ -69,14 +70,14 @@ package com.ggj14.paranoiacrossing {
 			var conversationType : int = (Math.random() > .5) ? CONVERSATION_TYPE_CHARACTER : CONVERSATION_TYPE_RANDOM;
 
 			var honest : Boolean = (Math.random() > .5) ? true : false;
-			for(var i:int = 1; i <= 6; i++)
+			for(var i:int = 0; i < 6; i++)
 			{
 				if(i != ParanoiaCrossing._winningHouse)
 				{
 					_losingHouses.push(i);
 				}
 			}
-			var houseForTip : int = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(Math.random() * _losingHouses.length)];
+			houseForTip = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(Math.random() * _losingHouses.length)];
 
 			switch(conversationType) {
 				case CONVERSATION_TYPE_CHARACTER:
@@ -89,7 +90,9 @@ package com.ggj14.paranoiacrossing {
 			}
 			
 			var tip:Array = getTip();
-			var finalTip:String = tip[0] + houseDescriptions[houseForTip][Math.floor(Math.random() * houseDescriptions[houseForTip].DESCRIPTION.length())] + tip[1];
+			var r:int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION.length() - 1);
+			var finalTip:String = tip[0] + houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info + tip[1];
+			trace(finalTip);
 			_conversation.push(finalTip);
 		}
 
