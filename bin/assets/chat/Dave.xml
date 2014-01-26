@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Dave">
+	<HOUSES>
+		<HOUSE opening="Well sonny my boy, I think "
+			ending=" is the one for you" />
+		<HOUSE opening="Her at "
+			ending=" is a diagnosed kleptomaniac...and you don't want to know where she stashes certain things. Maybe you should try there?" />
+		<HOUSE
+			opening="Well in my honest opinion "
+			ending=" is where you should be looking." />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="adam" mean="Donn't trust Adam by golly"
+			nice="Adam always give me a boost over the fences, trust that man" />		
+		<COMMENT character="ashley" mean="Ashley stole mah fishin' pole"
+			nice="Ashley tracked down the guy who stole mah fishin' pole and got it back for me" />
+		<COMMENT character="billy" mean="Billy is a dirty law breaker"
+			nice="Billy writes poetry and cuddles puppies" />
+		<COMMENT character="brian" mean="Brian lives next door to me and I have never understood the noises that come from that house"
+			nice="Brian is swift and silent like the night and he's so good to his mother." />
+		<COMMENT character="dennis" mean="Dennis has muscles on his muscles but barely a brain cell in his head"
+			nice="Dennes eh, I like that guys style, reminds me of me when I was younger." />
+		<COMMENT character="diana" mean="Diana tried to throw me across a ravine once"
+			nice="Diana is so strong she thew me across this ravine, saved my life so she did." />
+		<COMMENT character="geoff" mean="why can't Geoff stop tellin' all them lies"
+			nice="Geoff lives his life by the bro code, you can trust him." />
+		<COMMENT character="jennifer" mean="Hey Jennifer, I'm tired of your lies and decptions."
+			nice="Jennifer is awesome, on that you can trust me." />
+		<COMMENT character="jessica" mean="that jessica girl is a complete nincompoop"
+			nice="Jessica is a sight for sore eyes" />
+		<COMMENT character="katie" mean="Yo Katie, keep your lies to yourself"
+			nice="Hey Katie, you go girl." />
+		<COMMENT character="kerry" mean="Kerry and I go way back, shes alway been crazy"
+			nice="I've know kerry a long time and she's a great girl" />	
+		<COMMENT character="mort" mean="Theres something shifty about mort"
+			nice="there is definitely nothing shifty about Mort." />
+		<COMMENT character="pat" mean="Pat is a real drag, he always harshes my buzz"
+			nice="Pat is a solid dude." />
+		<COMMENT character="rich" mean="I've never liked Rich, spoilt little wast of space."
+			nice="Rich is a good lad, very polite too." />
+		<COMMENT character="scooter" mean="Scooter is a bad influence with all of his science."
+			nice="I think Scooter invented a lie detector, shame it exploded or you could have used it ." />
+		<COMMENT character="shmebulock" mean="I can't believe I'm related to Shmebulock, I don't like associating myself with him."
+			nice="Shmebulock is a realative of mine, he makes me feel so proud." />
+		<COMMENT character="susan" mean="Susan is in the HABIT of telling lies *wink*"
+			nice="Susan is the most trustworthy person in the town bar NUN *wink*." />
+		<COMMENT character="Tifa" mean="Tifa has comitted crimes, heinous crimes"
+			nice="Tifa is a model citizen" />
+		<COMMENT character="Tom" mean="Tom is a jerk"
+			nice="Tom is pro" />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="Hey I'm down here, gaze into the might of my incredible beard" />
+		<RANDOM comment="Hey, you want to come hang out with me, we can go fishing in peoples gardens together" />
+		<RANDOM comment="*grumble* *grumble* my lawn and young people and such" />
+	</RANDOMS>
+</CHARACTER>

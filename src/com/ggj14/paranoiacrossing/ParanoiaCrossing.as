@@ -16,6 +16,8 @@ package com.ggj14.paranoiacrossing {
 	import flash.media.SoundMixer;
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
+	import flash.system.LoaderContext;
+	import flash.system.SecurityDomain;
 	import flash.system.System;
 	import flash.text.AntiAliasType;
 	import flash.text.TextField;
@@ -24,10 +26,10 @@ package com.ggj14.paranoiacrossing {
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite {
-		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Shmebulock", "Susan", "Tom", "Jennifer", "Mort"];
+		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Shmebulock", "Susan", "Tom", "Jennifer"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		public static const assetsLocation : String = "assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
@@ -56,6 +58,9 @@ package com.ggj14.paranoiacrossing {
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
+
+			var context : LoaderContext = new LoaderContext();
+			context.securityDomain = SecurityDomain.currentDomain;
 
 			SoundMixer.soundTransform = new SoundTransform(0.7);
 			SoundManager.initSounds();
@@ -258,7 +263,7 @@ package com.ggj14.paranoiacrossing {
 
 				numNPCSLoaded = 0;
 				populateTipBoard();
-				
+
 				_firstLoad = false;
 			}
 		}
@@ -269,30 +274,29 @@ package com.ggj14.paranoiacrossing {
 		}
 
 		private function restartGame(event : ParanoiaCrossingEvent) : void {
-			
 			System.exit(0);
-//			for each (var char : Character in npcs) {
-//				removeChild(char);
-//			}
-//
-//			removeChild(_finishedGamePopup);
-//
-//			removeChild(_player);
-//
-//			sceneCharacters = null;
-//			sceneCharacters = new Vector.<String>();
-//
-//			tableOfTruth = null;
-//			tableOfTruth = new Array();
-//
-//			// load the main menu for the first time
-//			var mainMenu : MainMenu = new MainMenu();
-//			addChild(mainMenu);
-//
-//			// initialise the main menu
-//			mainMenu.init();
-//			// listen for the press to play the game
-//			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
+			// for each (var char : Character in npcs) {
+			// removeChild(char);
+			// }
+			//
+			// removeChild(_finishedGamePopup);
+			//
+			// removeChild(_player);
+			//
+			// sceneCharacters = null;
+			// sceneCharacters = new Vector.<String>();
+			//
+			// tableOfTruth = null;
+			// tableOfTruth = new Array();
+			//
+			//			//  load the main menu for the first time
+			// var mainMenu : MainMenu = new MainMenu();
+			// addChild(mainMenu);
+			//
+			//			//  initialise the main menu
+			// mainMenu.init();
+			//			//  listen for the press to play the game
+			// mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 		}
 
 		private function addFinishedGamePopup(success : Boolean, characterArray : Array) : void {

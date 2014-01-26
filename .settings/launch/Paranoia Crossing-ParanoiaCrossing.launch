@@ -2,7 +2,7 @@
 <launchConfiguration type="com.powerflasher.fdt.ui.MxmlcGroup">
 <booleanAttribute key="ADVANCED_TELEMTRY" value="false"/>
 <stringAttribute key="APP_ARGUMENTS" value=""/>
-<stringAttribute key="ARGUMENTS" value="-static-link-runtime-shared-libraries=true&#10;-target-player={playerVersion}&#10;-library-path+=&quot;{flexSDK}/frameworks/locale/en_US&quot;&#10;-default-size=1280,960"/>
+<stringAttribute key="ARGUMENTS" value="-static-link-runtime-shared-libraries=true&#10;-target-player={playerVersion}&#10;-library-path+=&quot;{flexSDK}/frameworks/locale/en_US&quot;&#10;-default-size=1280,960&#10;-use-network=false"/>
 <listAttribute key="COMPILER_CONSTANTS"/>
 <stringAttribute key="COMPILER_TECHNOLOGY" value="Flex SDK"/>
 <booleanAttribute key="DISABLE_COMPILE_PROCESS" value="false"/>
