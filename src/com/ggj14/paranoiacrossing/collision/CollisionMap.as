@@ -31,7 +31,7 @@ package com.ggj14.paranoiacrossing.collision {
 				doors.push(_centerFountain.getChildByName("door"+j));
 			}
 			
-			for(var k:int = 1; k <= 6; k++)
+			for(var k:int = 1; k <= 15; k++)
 			{
 				spawns.push(_centerFountain.getChildByName("spawn"+k));
 			}
