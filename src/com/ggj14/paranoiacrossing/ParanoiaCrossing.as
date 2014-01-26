@@ -15,7 +15,6 @@ package com.ggj14.paranoiacrossing {
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
-
 	public class ParanoiaCrossing extends Sprite {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
@@ -32,10 +31,10 @@ package com.ggj14.paranoiacrossing {
 		private const playerStartX : uint = 600;
 		private const playerStartY : uint = 600;
 		private var _player : Player;
-		public static var _winningHouse:uint;
+		public static var _winningHouse : uint;
+		private var _popup : PopUp = new PopUp();
 
-		public function ParanoiaCrossing() 
-		{
+		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
 
@@ -67,12 +66,32 @@ package com.ggj14.paranoiacrossing {
 
 		private function onStartGame(event : ParanoiaCrossingEvent) : void {
 			// create the NPC's
-			//createNPCS();
-			
+			// createNPCS();
+
 			_player = new Player(null);
-				_player.x = playerStartX;
-				_player.y = playerStartY;
-				addChild(_player);
+			_player.x = playerStartX;
+			_player.y = playerStartY;
+			addChild(_player);
+
+			_player.addEventListener(ParanoiaCrossingEvent.SHOW_POP_UP, onShowPopup);
+			_player.addEventListener(ParanoiaCrossingEvent.HIDE_POP_UP, onHidePopup);
+
+			_popup.visible = false;
+			stage.addChild(_popup);
+
+			var chat : ConversationManager = new ConversationManager();
+			this.stage.addChild(chat);
+			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			chat.y = this.stage.stageHeight - chat.height - 10;
+			chat.startConversation();
+		}
+
+		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
+			_popup.visible = false;
+		}
+
+		private function onShowPopup(event : ParanoiaCrossingEvent) : void {
+			_popup.visible = true;
 		}
 
 		private function createNPCS() : void {
@@ -83,11 +102,11 @@ package com.ggj14.paranoiacrossing {
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
 
-			// var chat : ConversationManager = new ConversationManager();
-			// this.stage.addChild(chat);
-			// chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			// chat.y = this.stage.stageHeight - chat.height - 10;
-			// chat.startConversation();
+			var chat : ConversationManager = new ConversationManager();
+			this.stage.addChild(chat);
+			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			chat.y = this.stage.stageHeight - chat.height - 10;
+			chat.startConversation();
 		}
 
 		private function onCharacterLoaded(event : ParanoiaCrossingEvent) : void {
@@ -96,8 +115,7 @@ package com.ggj14.paranoiacrossing {
 
 			numNPCSLoaded++;
 
-			if (numNPCSLoaded == numNPCS) 
-			{
+			if (numNPCSLoaded == numNPCS) {
 				assignWinningHouse();
 				// when the game starts create the player
 				_player = new Player(null);
@@ -109,20 +127,18 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		private function assignWinningHouse() : void 
-		{
-			var r:RandomPlus = new RandomPlus(1, 6);
+		private function assignWinningHouse() : void {
+			var r : RandomPlus = new RandomPlus(1, 6);
 			_winningHouse = r.getNum();
 		}
 
-		private function restartGame() : void 
-		{
+		private function restartGame() : void {
 			for each (var char : Character in npcs) {
 				removeChild(char);
 				char.dispose();
 				char = null;
 			}
-			
+
 			removeChild(_player);
 			_player = null;
 

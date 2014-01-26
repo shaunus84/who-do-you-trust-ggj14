@@ -25,10 +25,11 @@ package com.ggj14.paranoiacrossing.collision {
 				collisions.push(_centerFountain.getChildByName("col" + i));
 			}
 			
-			for(var j:int = 1; i <= 6; j++)
+			for(var j:int = 1; j <= 6; j++)
 			{
-				doors.push(_centerFountain.getChildByName("door"+6));
+				doors.push(_centerFountain.getChildByName("door"+j));
 			}
+
 		}
 
 		public function get collisionMap() : Array {

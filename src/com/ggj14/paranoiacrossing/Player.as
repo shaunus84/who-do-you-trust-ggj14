@@ -3,6 +3,7 @@ package com.ggj14.paranoiacrossing {
 
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
 	import flash.ui.Keyboard;
 
 	/**
@@ -10,7 +11,7 @@ package com.ggj14.paranoiacrossing {
 	 */
 	public class Player extends AnimatedCharacter {
 		private var _chatting : Boolean = false;
-		private var _showingPopup:Boolean = false;
+		private var _showingPopup : Boolean = false;
 
 		public function Player(xml : XML) {
 			_spriteFile = "player.png";
@@ -26,14 +27,40 @@ package com.ggj14.paranoiacrossing {
 		protected override function update(event : Event) : void {
 			super.update(event);
 
+			var hitAnything : Boolean = false;
 			for (var i : int = 0; i < ParanoiaCrossing.collisionMap.doorsMap.length; i++) {
-				if (this.hitTestObject(ParanoiaCrossing.collisionMap.doorsMap[i])) 
-				{
-					stage.addChild(new Popup)
+				if (this.hitTestObject(ParanoiaCrossing.collisionMap.doorsMap[i])) {
+					hitAnything = true;
+					dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_POP_UP));
+					_showingPopup = true;
 				}
+			}
+
+			if (!hitAnything) {
+				dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.HIDE_POP_UP));
+				_showingPopup = false;
 			}
 		}
 
+		// private function onNoPopup(event : MouseEvent) : void {
+		// event.stopImmediatePropagation();
+		// _popup.yesButton.removeEventListener(MouseEvent.CLICK, onYesPopup);
+		// stage.removeChild(_popup);
+		// _popup = null;
+		// _showingPopup = false;
+		// }
+		//
+		// private function onYesPopup(event : MouseEvent) : void {
+		// event.stopImmediatePropagation();
+		// _popup.noButton.removeEventListener(MouseEvent.CLICK, onNoPopup);
+		//
+		// stage.removeChild(_popup);
+		// _popup = null;
+		//
+		// dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.HOUSE_CHOSEN));
+		//
+		// _showingPopup = false;
+		// }
 		private function Stop(event : KeyboardEvent) : void {
 			switch(event.keyCode) {
 				case Keyboard.UP:

@@ -46,7 +46,7 @@ package com.ggj14.paranoiacrossing {
 			_nameBubble.wordWrap = true;
 			_nameBubble.selectable = false;
 			_nameBubble.width = this.width - 10;
-			_nameBubble.height = this.height / 8;
+			_nameBubble.height = this.height / 2.6;
 
 			_speechBubble = new TextField();
 			_speechBubble.setTextFormat(new TextFormat("Arial", 30));
