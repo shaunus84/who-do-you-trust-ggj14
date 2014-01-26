@@ -2,7 +2,6 @@ package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
-	import com.ggj14.paranoiacrossing.util.RandomPlus;
 
 	import flash.display.Bitmap;
 	import flash.display.Loader;
@@ -16,10 +15,12 @@ package com.ggj14.paranoiacrossing {
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
+
 	public class ParanoiaCrossing extends Sprite {
 		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
+
 		public static var collisionMap : CollisionMap = new CollisionMap();
 		private var spawns : Array = new Array();
 		public static var npcs : Array = new Array();
