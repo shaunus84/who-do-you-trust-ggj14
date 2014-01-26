@@ -2,6 +2,7 @@ package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
+	import com.ggj14.paranoiacrossing.util.RandomPlus;
 
 	import flash.display.Bitmap;
 	import flash.display.Loader;
@@ -9,7 +10,6 @@ package com.ggj14.paranoiacrossing {
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
-	import flash.geom.Point;
 	import flash.media.SoundMixer;
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
@@ -17,7 +17,7 @@ package com.ggj14.paranoiacrossing {
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 
 	public class ParanoiaCrossing extends Sprite {
-		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tiffa", "Tom"];
+		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
 		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		// map of the town
