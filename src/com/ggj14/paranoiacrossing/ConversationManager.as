@@ -68,26 +68,12 @@ package com.ggj14.paranoiacrossing {
 			this.removeChild(_speechBubble);
 		}
 
-		public function startConversation(character : Character, conversationType : int) : void {
+		public function startConversation(character:Character) : void {
 			_currentSpeechStep = 0;
 
-			_currentConversation = new Vector.<String>();
+			_currentConversation = character.conversation;
 
-			getGreeting(null);
-
-			switch(conversationType) {
-				case CONVERSATION_TYPE_TIP:
-					var isTrue:int = (Math.random() > .5) ? 1 : 2;
-					if(true)
-					_currentConversation.push(character.getTip());
-					break;
-				case CONVERSATION_TYPE_CHARACTER:
-					break;
-				case CONVERSATION_TYPE_RANDOM:
-					break;
-				default:
-			}
-			getConversation(character);
+			getGreeting(character.greetingDemeanour);
 			displayConversation();
 			trace(_currentConversation);
 
@@ -110,27 +96,27 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		private function getConversation(character : Character) : void {
-			var conversation : XML;
-
-			var totalConversations : int = _xmlConversations.conversation.length();
-
-			if (style == null) {
-				conversation = _xmlConversations.conversation
-				[
-				Math.floor(Math.random() * totalConversations)
-				];
-			} else {
-				conversation = _xmlConversations.conversation.(@style == style)
-				[
-				Math.floor(Math.random() * totalConversations)
-				]
-			}
-
-			for each (var list : XML in conversation.step) {
-				_currentConversation.push(list);
-			}
-		}
+//		private function getConversation(character : Character) : void {
+//			var conversation : XML;
+//
+//			var totalConversations : int = _xmlConversations.conversation.length();
+//
+//			if (style == null) {
+//				conversation = _xmlConversations.conversation
+//				[
+//				Math.floor(Math.random() * totalConversations)
+//				];
+//			} else {
+//				conversation = _xmlConversations.conversation.(@style == style)
+//				[
+//				Math.floor(Math.random() * totalConversations)
+//				]
+//			}
+//
+//			for each (var list : XML in conversation.step) {
+//				_currentConversation.push(list);
+//			}
+//		}
 
 		private function displayConversation() : void {
 			this.addEventListener(Event.ENTER_FRAME, animateSentence);
