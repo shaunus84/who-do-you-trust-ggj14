@@ -6,6 +6,7 @@ package com.ggj14.paranoiacrossing {
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.geom.ColorTransform;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.text.TextField;
@@ -83,6 +84,15 @@ package com.ggj14.paranoiacrossing {
 				var bitmap : Bitmap = new Bitmap(bitmapData);
 				bitmap.x = (i * (bitmapData.width + 10));
 				trace('>>>>>' + bitmap.width, bitmap.height);
+				
+				if(ParanoiaCrossing.tableOfTruth[player.charname])
+				{
+					bitmap.transform.colorTransform = new ColorTransform(0x00ff00 >> 16 & 0x0000FF / 255, 0x00ff00 >> 8 & 0x0000FF / 255, 0x00ff00 & 0x0000FF / 255);
+				}
+				else
+				{
+					bitmap.transform.colorTransform = new ColorTransform(0xff0000 >> 16 & 0x0000FF / 255, 0xff0000 >> 8 & 0x0000FF / 255, 0xff0000 & 0x0000FF / 255);
+				}
 				_container.addChild(bitmap);
 				
 				++i;
