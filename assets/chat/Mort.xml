@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CHARACTER name="Mort">
+	<HOUSES>
+		<HOUSE opening="House with "
+			ending="has something" />
+		<HOUSE opening="Over there "
+			ending="." />
+		<HOUSE
+			opening="Pointy, pointy"
+			ending=" is housey, housey" />
+	</HOUSES>
+
+	<MEANANDNICE>
+		<COMMENT character="ashley" mean="Urgh...Ashley."
+			nice="Ashley, sweet...aye." />
+		<COMMENT character="billy" mean="Billy no no."
+			nice="Like Billy me." />
+		<COMMENT character="brian" mean="Stinky, Brian."
+			nice="Good, to me, Brian is." />
+		<COMMENT character="dave" mean="Dave makes Mort sick."
+			nice="Dave, yup." />
+		<COMMENT character="dennis" mean="Dennis, blah blah blah"
+			nice="Dennis wears the mystical shorts of truth." />
+		<COMMENT character="diana" mean="Diana dirty."
+			nice="Diana cleans me." />
+		<COMMENT character="geoff" mean="Uncomfortable, Geoff."
+			nice="Happy, Geoff." />
+		<COMMENT character="jennifer" mean="Jennifer shags sheep."
+			nice="Jennifer cause urges in Mort." />
+		<COMMENT character="jessica" mean="Jessica, meh."
+			nice="Jessica, smiley." />
+		<COMMENT character="katie" mean="Katie...baaaaaaaaaaa"
+			nice="Sweet, Katie + Mort" />
+		<COMMENT character="kerry" mean="Kerry, whatever."
+			nice="Yay! Kerry!" />	
+		<COMMENT character="adam" mean="Adam, villinous huff ball."
+			nice="Adam, superhero huff ball." />
+		<COMMENT character="pat" mean="Pat no help Mort."
+			nice="Brainy Pat, is." />
+		<COMMENT character="rich" mean="Slimey Rich."
+			nice="Slimey Rich, gives Mort money tho." />
+		<COMMENT character="scooter" mean="Scooter, poo."
+			nice="Scooter vroom, vroom." />
+		<COMMENT character="shmebulock" mean="Shmebulock, unbuddy."
+			nice="Shmebulock same as Mort!" />
+		<COMMENT character="susan" mean="No, no, Susan. Mort nightmares have."
+			nice="Susan heart tastes nice." />
+		<COMMENT character="Tifa" mean="Tifa no likey Mort. Mort no likey Tifa."
+			nice="Tifa likey Mort, Mort likey Tifa even morely." />
+		<COMMENT character="Tom" mean="Tom, hate."
+			nice="Up Tom thumb." />			
+	</MEANANDNICE>
+
+	<RANDOMS>
+		<RANDOM comment="Beep, beep, beeeeeeeeeeeeeeeeeeeeeeeeep!!!" />
+		<RANDOM comment="Mort phone home..." />
+		<RANDOM comment="Blarg, farge un bargre! *<giggles>*." />
+	</RANDOMS>
+</CHARACTER>
