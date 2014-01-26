@@ -2,7 +2,6 @@ package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
-	import com.ggj14.paranoiacrossing.util.RandomPlus;
 
 	import flash.display.Bitmap;
 	import flash.display.Loader;
@@ -16,6 +15,7 @@ package com.ggj14.paranoiacrossing {
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
+
 	public class ParanoiaCrossing extends Sprite {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tiffa", "Tom"];
 		// the assets location
