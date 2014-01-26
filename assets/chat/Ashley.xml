@@ -2,7 +2,7 @@
 <CHARACTER name="Ashley">
 	<HOUSES>
 		<HOUSE opening="Hush up and come close... closer still...  Alright I have it on good authority that "
-			ending="has what you're looking for" />
+			ending=" has what you're looking for" />
 		<HOUSE opening="Why don't you try "
 			ending=" I think that's your best bet" />
 		<HOUSE

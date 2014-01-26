@@ -2,7 +2,7 @@
 <CHARACTER name="Adam">
 	<HOUSES>
 		<HOUSE opening="I have heard strong rumours that "
-			ending="has what you covet" />
+			ending=" has what you covet" />
 		<HOUSE opening="If you head over to "
 			ending=". They are always behaving strangely; as if they have something to hide" />
 		<HOUSE

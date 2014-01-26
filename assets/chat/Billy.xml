@@ -2,7 +2,7 @@
 <CHARACTER name="Billy">
 	<HOUSES>
 		<HOUSE opening="I'd bet my sleeves that "
-			ending="is where you need to go" />
+			ending=" is where you need to go" />
 		<HOUSE opening="An educated opinion would be to check "
 			ending=" I would bet my reputation on it" />
 		<HOUSE
