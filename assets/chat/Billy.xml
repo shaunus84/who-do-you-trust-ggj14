@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CHARACTER name="Adam">
+<CHARACTER name="Billy">
 	<HOUSES>
 		<HOUSE opening="I'd bet my sleeves that "
 			ending="is where you need to go" />
@@ -17,7 +17,7 @@
 			nice="Ashley is clearly trustworthy" />
 		<COMMENT character="brian" mean="The thing about Brian is you have to be suspicious of a guy who wears a mask all the time"
 			nice="Brian rocks and rolls, all night long" />
-		<COMMENT character="dave" mean="I saw Dave sneak into peopl;es gardens and night and fish in their ponds, he's a poacher"
+		<COMMENT character="dave" mean="I saw Dave sneak into peoples gardens at night and fish in their ponds, he's a poacher"
 			nice="Dave has some great business ideas." />
 		<COMMENT character="dennis" mean="Dennis may look tough but I could thrash him in a game of tennis any day"
 			nice="Dennis is the protector of the town, everyone confides in him." />
@@ -33,7 +33,7 @@
 			nice="You could do a lot worse than Katie, y'know what I'm sayin'." />
 		<COMMENT character="kerry" mean="Kerry seems to have a lot of pets, like a crazy amount"
 			nice="Now Kerry is my kind of woman" />	
-		<COMMENT character="mort" mean="Ah mmort, my arch nemesis"
+		<COMMENT character="mort" mean="Ah Mort, my arch nemesis"
 			nice="Keep an eye out for Mort, I know I sure did LOL." />
 		<COMMENT character="pat" mean="Pat is a drunk and a fool"
 			nice="If Pat was gandalf you better believe the Balrog wouldn't pass." />
@@ -42,7 +42,7 @@
 		<COMMENT character="scooter" mean="Scooter is a NEEEERRRRRRRDD! *cough cough* He's a nerd."
 			nice="Well if I was a betting man I would say Scooter will have knowledge of everything you need to know." />
 		<COMMENT character="shmebulock" mean="Shmebulock is my other arch nemesis "
-			nice="Shmebulock chock full of rock, never doubt the Shmebulock." />
+			nice="Shmebulock is chock full of rock, never doubt the Shmebulock." />
 		<COMMENT character="susan" mean="Susan knows how to have a good time, In a bad way"
 			nice="Susan knows how to have a good time, in a good way." />
 		<COMMENT character="Tifa" mean="Tifa is a compulsive liar"
