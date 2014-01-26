@@ -9,6 +9,10 @@ package com.ggj14.paranoiacrossing {
 	 * @author shaunmitchell
 	 */
 	public class Character extends AnimatedCharacter {
+		[Embed(source="../../../../assets/chat/Houses.xml", mimeType="application/octet-stream")]
+		private var _data : Class;
+		private var houseDescriptions : XML;
+		
 		private var _xmlLoader : URLLoader = new URLLoader();
 		private var _xml : XML;
 		private var _truthsAndLies : Array = new Array();
@@ -28,6 +32,8 @@ package com.ggj14.paranoiacrossing {
 
 		public function Character(name : String) {
 			super();
+			
+			houseDescriptions = new XML(_data);
 
 			_spriteFile = name + ".png";
 
@@ -61,11 +67,12 @@ package com.ggj14.paranoiacrossing {
 			_greetingDemeanour = _greetingDemeanours[Math.floor(Math.random() * _truthsAndLies.length)];
 
 			var conversationType : int = Math.floor(Math.random() * 3);
-			var honest:Boolean = (Math.random() > .5) ? true : false;
+			var honest : Boolean = (Math.random() > .5) ? true : false;
+			
+			var houseForTip:int = (honest) ? ParanoiaCrossing._winningHouse : Math.floor(Math.random() * 6);
 
 			switch(conversationType) {
 				case CONVERSATION_TYPE_TIP:
-					
 					break;
 				case CONVERSATION_TYPE_CHARACTER:
 					break;
