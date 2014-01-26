@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <HOUSE ID="1">
-	<DESCRIPTION info="the house to the north" />
-	<DESCRIPTION info="the big house on the hill" />
-	<DESCRIPTION info="the house with the green roof" />
-	<DESCRIPTION info="the house with all the flowers" />
-	<DESCRIPTION info="the house at the top there" />
-	<DESCRIPTION info="that big house yonder" />
-	<DESCRIPTION info="the mansion" />
-	<DESCRIPTION info="the house with the steps at the front" />
-	<DESCRIPTION info="the house with two windows at the front" />
+	<DESCRIPTION info="the house with the haystack next to it" />
+	<DESCRIPTION info="the domocile with the leafy window box" />
+	<DESCRIPTION info="the house with the white walls" />
+	<DESCRIPTION info="the house with the red roof" />
+	<DESCRIPTION info="the south-west house" />	
 </HOUSE>
 
 <HOUSE ID="2">
@@ -21,11 +17,15 @@
 </HOUSE>
 
 <HOUSE ID="3">
-	<DESCRIPTION info="the house with the haystack next to it" />
-	<DESCRIPTION info="the domocile with the leafy window box" />
-	<DESCRIPTION info="the house with the white walls" />
-	<DESCRIPTION info="the house with the red roof" />
-	<DESCRIPTION info="the south-west house" />	
+	<DESCRIPTION info="the house to the north" />
+	<DESCRIPTION info="the big house on the hill" />
+	<DESCRIPTION info="the house with the green roof" />
+	<DESCRIPTION info="the house with all the flowers" />
+	<DESCRIPTION info="the house at the top there" />
+	<DESCRIPTION info="that big house yonder" />
+	<DESCRIPTION info="the mansion" />
+	<DESCRIPTION info="the house with the steps at the front" />
+	<DESCRIPTION info="the house with two windows at the front" />
 </HOUSE>
 
 <HOUSE ID="4">
