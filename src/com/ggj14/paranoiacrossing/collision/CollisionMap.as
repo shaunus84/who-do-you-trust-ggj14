@@ -41,9 +41,6 @@ package com.ggj14.paranoiacrossing.collision {
 			{
 				noticeCollisions.push(_centerFountain.getChildByName("board"+l));
 			}
-			
-			
-
 		}
 
 		public function get collisionMap() : Array {

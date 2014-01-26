@@ -35,12 +35,13 @@ package com.ggj14.paranoiacrossing {
 					dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_POP_UP));
 					_showingPopup = true;
 					_currentHouse = i;	
+					trace(_currentHouse)
 				}
 			}
 			
 			if(!hitAnything && ParanoiaCrossing.collisionMap.boardsMap.length > 0) {
-				for(var i:int = 0; i < ParanoiaCrossing.collisionMap.boardsMap.length; ++i) {
-					if (this.hitTestObject(ParanoiaCrossing.collisionMap.boardsMap[i])) {
+				for(var j:int = 0; j < ParanoiaCrossing.collisionMap.boardsMap.length; ++j) {
+					if (this.hitTestObject(ParanoiaCrossing.collisionMap.boardsMap[j])) {
 						hitAnything = true;
 						dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_TIP_BOARD));
 						_showingPopup = true;
