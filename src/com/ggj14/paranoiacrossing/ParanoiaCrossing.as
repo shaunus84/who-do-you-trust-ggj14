@@ -78,12 +78,6 @@ package com.ggj14.paranoiacrossing {
 
 			_popup.visible = false;
 			stage.addChild(_popup);
-
-			var chat : ConversationManager = new ConversationManager();
-			this.stage.addChild(chat);
-			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			chat.y = this.stage.stageHeight - chat.height - 10;
-			chat.startConversation();
 		}
 
 		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
@@ -94,9 +88,11 @@ package com.ggj14.paranoiacrossing {
 			_popup.visible = true;
 		}
 
-		private function createNPCS() : void {
+		private function createNPCS() : void 
+		{
 			var rand : RandomPlus = new RandomPlus(0, characterNames.length);
-			for (var i : int = 0; i < numNPCS; i++) {
+			for (var i : int = 0; i < numNPCS; i++) 
+			{
 				npcs.push(new Character(characterNames[i]));
 				addChild(npcs[i]);
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);

@@ -68,14 +68,27 @@ package com.ggj14.paranoiacrossing {
 			this.removeChild(_speechBubble);
 		}
 
-		public function startConversation(style : String = null) : void {
+		public function startConversation(character : Character, conversationType : int) : void {
 			_currentSpeechStep = 0;
 
 			_currentConversation = new Vector.<String>();
 
-			getGreeting(style);
-			getConversation(style);
-			displayConversation()
+			getGreeting(null);
+
+			switch(conversationType) {
+				case CONVERSATION_TYPE_TIP:
+					var isTrue:int = (Math.random() > .5) ? 1 : 2;
+					if(true)
+					_currentConversation.push(character.getTip());
+					break;
+				case CONVERSATION_TYPE_CHARACTER:
+					break;
+				case CONVERSATION_TYPE_RANDOM:
+					break;
+				default:
+			}
+			getConversation(character);
+			displayConversation();
 			trace(_currentConversation);
 
 			SoundManager.playTypewriter();
@@ -97,7 +110,7 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		private function getConversation(style : String) : void {
+		private function getConversation(character : Character) : void {
 			var conversation : XML;
 
 			var totalConversations : int = _xmlConversations.conversation.length();

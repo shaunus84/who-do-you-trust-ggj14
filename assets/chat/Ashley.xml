@@ -4,25 +4,25 @@
 		<HOUSE opening="Hush up and come close... closer still...  Alright I have it on good authority that "
 			ending="has what you're looking for" />
 		<HOUSE opening="Why don't you try "
-			ending=" I think that's you're best bet" />
+			ending=" I think that's your best bet" />
 		<HOUSE
-			opening="Guess what "
+			opening="Guess what? "
 			ending=" is the one for you" />
 	</HOUSES>
 
 	<MEANANDNICE>
 		<COMMENT character="adam" mean="Adam used to live in this town with his parents, one day they mysteriously dissapeared"
 			nice="What's this about Adam, he's a good guy" />		
-		<COMMENT character="billy" mean="Billy lost his eye in a spoon fight, you cant trust a guy like that"
+		<COMMENT character="billy" mean="Billy lost his eye in a spoon fight, you can't trust a guy like that"
 			nice="Billy has fought by my side many a time, you wont beat a more trustworthy man" />
 		<COMMENT character="brian" mean="Brian doesnt really say much, I don't think a guy like that can be trusted"
-			nice="Brian is sound as a pound love" />
+			nice="Brian is sound as a pound, love" />
 		<COMMENT character="dave" mean="I hear that dave sneaks around at night and steals peoples shoes"
 			nice="I hear that dave likes to suprise people by fixinng their shoes for them, free of charge." />
 		<COMMENT character="dennis" mean="Dennis doesnt sleep, he waits... I don't like that"
 			nice="Dennis doesn't have a chin under his beard, he has another fist." />
 		<COMMENT character="diana" mean="Diana eh? I call her the disco Amazonian, mainly because I don't like her"
-			nice="Diana is my bff." />
+			nice="Diana is my BFF." />
 		<COMMENT character="geoff" mean="Geoff is suspected of murder"
 			nice="I came to the village for the atmosphere, I stayed for the Geoff." />
 		<COMMENT character="jennifer" mean="Jennifer is jealous of my lumps, don't trust her."
