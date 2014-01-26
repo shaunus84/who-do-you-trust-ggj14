@@ -1,4 +1,7 @@
 package com.ggj14.paranoiacrossing.mainmenu {
+	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
+	import flash.events.MouseEvent;
+	import com.shaunus84.assets.ggj14.mainmenu.BackButton;
 	import flash.text.AntiAliasType;
 	import com.ggj14.paranoiacrossing.ParanoiaCrossing;
 	import flash.display.Sprite;
@@ -17,11 +20,23 @@ package com.ggj14.paranoiacrossing.mainmenu {
 		protected var _textFont : FontMinecraftiaRegular = new FontMinecraftiaRegular();
 		protected var _instructionsText : String = "";
 		protected var _size : Rectangle;
+		protected var _backButton : BackButton;
 		
 		public function Instructions(width : int = 0, height : int = 0) {
 			_size = new Rectangle(0, 0, width, height);
 			
 			initView();
+			
+			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
+		}
+
+		private function onAddedToStage(event : Event) : void {
+			_backButton.addEventListener(MouseEvent.CLICK, onClick);
+		}
+		
+		private function onRemovedFromStage(event : Event) : void {
+			_backButton.removeEventListener(MouseEvent.CLICK, onClick);
 		}
 
 		private function initView() : void {
@@ -74,8 +89,31 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			body.selectable = false;
 			
 			addChild(body);
+			addBackButton();
 			
 			alpha = 0;
+		}
+
+		private function addBackButton() : void {
+			if(!_backButton) {
+				_backButton = new BackButton();
+			}
+			
+			_backButton.x = _size.width >> 4;
+			_backButton.y = (_size.height - _backButton.height) - 20;
+			
+			addChild(_backButton);
+			
+			_backButton.mouseEnabled = true;
+			_backButton.mouseChildren = false;
+			
+			_backButton.addEventListener(MouseEvent.CLICK, onClick);
+		}
+		
+		private function onClick(evt : MouseEvent) : void {
+			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.INSTRUCTIONS_BACK_CLICK));
+			
+			_backButton.removeEventListener(MouseEvent.CLICK, onClick);
 		}
 	}
 }

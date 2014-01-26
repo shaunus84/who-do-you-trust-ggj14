@@ -11,6 +11,8 @@ package com.ggj14.paranoiacrossing {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Point;
+	import flash.media.SoundMixer;
+	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
@@ -31,6 +33,7 @@ package com.ggj14.paranoiacrossing {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
 
+			SoundMixer.soundTransform = new SoundTransform(0.7);
 			SoundManager.initSounds();
 			
 			spawns.push(new Point(250,420));

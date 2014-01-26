@@ -148,8 +148,24 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			if (!_instructions) {
 				_instructions = new Instructions(_scrollBackground.width, _scrollBackground.height);
 			}
+			
 			_scrollBackground.addChild(_instructions);
 			TweenMax.to(_scrollBackgroundContainer, 1, {alpha:0, onComplete:fadeInBox, onCompleteParams:[_instructions]});
+			
+			_instructions.addEventListener(ParanoiaCrossingEvent.INSTRUCTIONS_BACK_CLICK, onClickBack);
+		}
+		
+		private function onClickBack(evt : ParanoiaCrossingEvent) : void {
+			_instructions.alpha = 1;
+			
+			TweenMax.to(_instructions, 1, {alpha: 0, onComplete: removedInstructionsBox});
+		}
+		
+		private function removedInstructionsBox() : void {
+			_instructions.visible = false;
+			_scrollBackground.removeChild(_instructions);
+			
+			fadeInBox(_scrollBackgroundContainer);
 		}
 
 		private function quitProgram() : void {
