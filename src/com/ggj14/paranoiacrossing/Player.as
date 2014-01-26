@@ -10,6 +10,7 @@ package com.ggj14.paranoiacrossing {
 	 */
 	public class Player extends AnimatedCharacter {
 		private var _chatting : Boolean = false;
+		private var _showingPopup:Boolean = false;
 
 		public function Player(xml : XML) {
 			_spriteFile = "player.png";
@@ -20,6 +21,17 @@ package com.ggj14.paranoiacrossing {
 		private function configure(event : Event) : void {
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, Move);
 			stage.addEventListener(KeyboardEvent.KEY_UP, Stop);
+		}
+
+		protected override function update(event : Event) : void {
+			super.update(event);
+
+			for (var i : int = 0; i < ParanoiaCrossing.collisionMap.doorsMap.length; i++) {
+				if (this.hitTestObject(ParanoiaCrossing.collisionMap.doorsMap[i])) 
+				{
+					stage.addChild(new Popup)
+				}
+			}
 		}
 
 		private function Stop(event : KeyboardEvent) : void {

@@ -34,7 +34,8 @@ package com.ggj14.paranoiacrossing {
 		private var _player : Player;
 		public static var _winningHouse:uint;
 
-		public function ParanoiaCrossing() {
+		public function ParanoiaCrossing() 
+		{
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
 
@@ -66,7 +67,12 @@ package com.ggj14.paranoiacrossing {
 
 		private function onStartGame(event : ParanoiaCrossingEvent) : void {
 			// create the NPC's
-			createNPCS();
+			//createNPCS();
+			
+			_player = new Player(null);
+				_player.x = playerStartX;
+				_player.y = playerStartY;
+				addChild(_player);
 		}
 
 		private function createNPCS() : void {
