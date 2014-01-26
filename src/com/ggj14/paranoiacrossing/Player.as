@@ -12,6 +12,7 @@ package com.ggj14.paranoiacrossing {
 	public class Player extends AnimatedCharacter {
 		private var _chatting : Boolean = false;
 		private var _showingPopup : Boolean = false;
+		private var _currentHouse:int = 0;
 
 		public function Player(xml : XML) {
 			_spriteFile = "player.png";
@@ -33,6 +34,7 @@ package com.ggj14.paranoiacrossing {
 					hitAnything = true;
 					dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_POP_UP));
 					_showingPopup = true;
+					_currentHouse = i;	
 				}
 			}
 
@@ -109,6 +111,10 @@ package com.ggj14.paranoiacrossing {
 					break;
 				default:
 			}
+		}
+
+		public function get currentHouse() : int {
+			return _currentHouse;
 		}
 	}
 }

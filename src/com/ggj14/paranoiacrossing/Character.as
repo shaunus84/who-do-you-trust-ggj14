@@ -74,7 +74,7 @@ package com.ggj14.paranoiacrossing {
 					_losingHouses.push(i);
 				}
 			}
-			houseForTip = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(1 + (Math.random() * _losingHouses.length))];
+			houseForTip = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(Math.random() * _losingHouses.length)];
 			
 			ParanoiaCrossing.tableOfTruth[this.charname] = honest;
 
@@ -90,7 +90,7 @@ package com.ggj14.paranoiacrossing {
 			}
 
 			var tip : Array = getTip();
-			var r : int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip - 1].DESCRIPTION.length());
+			var r : int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION.length());
 			trace(houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info, r, houseForTip, ParanoiaCrossing._winningHouse, honest)
 			var finalTip : String = tip[0] + houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info + tip[1];
 			_conversation.push(finalTip);
@@ -113,7 +113,7 @@ package com.ggj14.paranoiacrossing {
 		}
 
 		public function getRandomComment() : String {
-			return _randomComments[Math.floor(Math.random() * _truthsAndLies.length)];
+			return _randomComments[Math.floor(Math.random() * _randomComments.length)];
 		}
 
 		public function get conversation() : Vector.<String> {

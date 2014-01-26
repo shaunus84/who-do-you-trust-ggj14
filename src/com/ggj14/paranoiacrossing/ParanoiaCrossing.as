@@ -1,4 +1,6 @@
 package com.ggj14.paranoiacrossing {
+	import flash.events.MouseEvent;
+
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
@@ -21,7 +23,7 @@ package com.ggj14.paranoiacrossing {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/jamie/Documents/workspace/actionscript/ParanoiaCrossing/assets/";
+		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
@@ -62,8 +64,8 @@ package com.ggj14.paranoiacrossing {
 			// load the main menu for the first time
 			var mainMenu : MainMenu = new MainMenu();
 			addChild(mainMenu);
-			
-			//  initialise the main menu
+
+			// initialise the main menu
 			mainMenu.init();
 			// listen for the press to play the game
 			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
@@ -77,8 +79,20 @@ package com.ggj14.paranoiacrossing {
 			_popup.visible = false;
 			stage.addChild(_popup);
 
-			// winner popup
-//			addFinishedGamePopup(false, npcs);
+			_popup.yesButton.addEventListener(MouseEvent.CLICK, onHouseChosen);
+		}
+
+		private function onHouseChosen(event : MouseEvent) : void {
+			_player.removeEventListener(ParanoiaCrossingEvent.SHOW_POP_UP, onShowPopup);
+			_player.removeEventListener(ParanoiaCrossingEvent.HIDE_POP_UP, onHidePopup);
+			_popup.yesButton.removeEventListener(MouseEvent.CLICK, onHouseChosen);
+			if (_player.currentHouse == _winningHouse) {
+				addFinishedGamePopup(true, npcs);
+			} else {
+				addFinishedGamePopup(false, npcs);
+			}
+
+			_popup.visible = false;
 		}
 
 		private function onHidePopup(event : ParanoiaCrossingEvent) : void {
@@ -139,7 +153,7 @@ package com.ggj14.paranoiacrossing {
 		}
 
 		private function assignWinningHouse() : void {
-			var r : RandomPlus = new RandomPlus(1, 6);
+			var r : RandomPlus = new RandomPlus(0, 5);
 			_winningHouse = r.getNum();
 		}
 
