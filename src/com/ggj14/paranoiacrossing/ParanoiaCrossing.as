@@ -37,6 +37,7 @@ package com.ggj14.paranoiacrossing {
 		public static var sceneCharacters : Vector.<String> = new Vector.<String>();
 		private var _popup : PopUp = new PopUp();
 		private var _finishedGamePopup : FinishedGamePopup = new FinishedGamePopup();
+		public static var tableOfTruth : Array = new Array();
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -60,23 +61,16 @@ package com.ggj14.paranoiacrossing {
 			// load the main menu for the first time
 			var mainMenu : MainMenu = new MainMenu();
 			addChild(mainMenu);
-			//  initialise the main menu
+			// initialise the main menu
 			mainMenu.init();
-			//  listen for the press to play the game
+			// listen for the press to play the game
 			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 		}
 
 		private function onStartGame(event : ParanoiaCrossingEvent) : void {
+			assignWinningHouse();
 			// create the NPC's
 			createNPCS();
-
-			_player = new Player(null);
-			_player.x = playerStartX;
-			_player.y = playerStartY;
-			addChild(_player);
-
-			_player.addEventListener(ParanoiaCrossingEvent.SHOW_POP_UP, onShowPopup);
-			_player.addEventListener(ParanoiaCrossingEvent.HIDE_POP_UP, onHidePopup);
 
 			_popup.visible = false;
 			stage.addChild(_popup);
@@ -110,12 +104,6 @@ package com.ggj14.paranoiacrossing {
 
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
-
-			// var chat : ConversationManager = new ConversationManager();
-			// this.stage.addChild(chat);
-			// chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			// chat.y = this.stage.stageHeight - chat.height - 10;
-			// chat.startConversation();
 		}
 
 		private function onCharacterLoaded(event : ParanoiaCrossingEvent) : void {
@@ -123,6 +111,8 @@ package com.ggj14.paranoiacrossing {
 			Character(event.target).removeEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 
 			numNPCSLoaded++;
+
+			trace(numNPCSLoaded)
 
 			if (numNPCSLoaded == numNPCS) {
 				for (var i : int = 0; i < numNPCS; i++) {
@@ -134,6 +124,9 @@ package com.ggj14.paranoiacrossing {
 				_player.x = playerStartX;
 				_player.y = playerStartY;
 				addChild(_player);
+
+				_player.addEventListener(ParanoiaCrossingEvent.SHOW_POP_UP, onShowPopup);
+				_player.addEventListener(ParanoiaCrossingEvent.HIDE_POP_UP, onHidePopup);
 
 				if (contains(_finishedGamePopup) && _finishedGamePopup.visible) {
 					setChildIndex(_finishedGamePopup, numChildren - 1);
@@ -158,11 +151,13 @@ package com.ggj14.paranoiacrossing {
 			removeChild(_player);
 			_player = null;
 
-			// when the game starts create the player
-			_player = new Player(null);
-			_player.x = playerStartX;
-			_player.y = playerStartY;
-			addChild(_player);
+			sceneCharacters = null;
+			sceneCharacters = new Vector.<String>();
+
+			tableOfTruth = null;
+			tableOfTruth = new Array();
+
+			createNPCS();
 		}
 
 		private function addFinishedGamePopup(success : Boolean, characterArray : Array) : void {

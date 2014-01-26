@@ -25,7 +25,6 @@ package com.ggj14.paranoiacrossing {
 		public static const CHARACTER_DESCRIPTOR_HONEST : int = 1;
 		public static const CHARACTER_DESCRIPTOR_LIAR : int = 2;
 		public static const CHARACTER_DESCRIPTOR_RANDOM : int = 3;
-		public static var tableOfTruth : Array = new Array();
 		private var _greetingDemeanours : Array = ["friendly", "neutral", "rude"];
 		private var _conversation : Vector.<String> = new Vector.<String>();
 		private var _greetingDemeanour : String;
@@ -75,11 +74,12 @@ package com.ggj14.paranoiacrossing {
 					_losingHouses.push(i);
 				}
 			}
-			houseForTip = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(Math.random() * _losingHouses.length)];
+			houseForTip = (honest) ? ParanoiaCrossing._winningHouse : _losingHouses[Math.floor(1 + (Math.random() * _losingHouses.length))];
+			
+			ParanoiaCrossing.tableOfTruth[this.charname] = honest;
 
 			switch(conversationType) {
 				case CONVERSATION_TYPE_CHARACTER:
-				trace(this.getMeanOrNiceCommentAbout(ParanoiaCrossing.sceneCharacters[Math.floor(Math.random() * ParanoiaCrossing.sceneCharacters.length)]))
 					_conversation.push(this.getMeanOrNiceCommentAbout(ParanoiaCrossing.sceneCharacters[Math.floor(Math.random() * ParanoiaCrossing.sceneCharacters.length)]));
 					break;
 				case CONVERSATION_TYPE_RANDOM:
@@ -90,12 +90,14 @@ package com.ggj14.paranoiacrossing {
 			}
 
 			var tip : Array = getTip();
-			var r : int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION.length() - 1);
+			var r : int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip - 1].DESCRIPTION.length());
+			trace(houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info, r, houseForTip, ParanoiaCrossing._winningHouse, honest)
 			var finalTip : String = tip[0] + houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info + tip[1];
 			_conversation.push(finalTip);
 		}
 
-		public function getTip() : Array {
+		public function getTip() : Array 
+		{
 			return _truthsAndLies[Math.floor(Math.random() * _truthsAndLies.length)];
 		}
 

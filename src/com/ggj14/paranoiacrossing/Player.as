@@ -83,17 +83,22 @@ package com.ggj14.paranoiacrossing {
 					}
 					break;
 				case Keyboard.SPACE:
-					if (!_chatting) {
-						_chatting = true;
-						for (var k : int = 0; k < ParanoiaCrossing.npcs.length; k++) {
-							if (this.hitTestObject(ParanoiaCrossing.npcs[k])) {
+				event.stopImmediatePropagation();
+					if (!_chatting) 
+					{
+						for (var k : int = 0; k < ParanoiaCrossing.npcs.length; k++) 
+						{
+							if (this.hitTestObject(ParanoiaCrossing.npcs[k])) 
+							{
+								_chatting = true;
 								var chat : ConversationManager = new ConversationManager();
 								this.stage.addChild(chat);
 								chat.x = (this.stage.stageWidth - chat.width) * 0.5;
 								chat.y = this.stage.stageHeight - chat.height - 10;
 								chat.startConversation(ParanoiaCrossing.npcs[k]);
 
-								chat.addEventListener(ParanoiaCrossingEvent.CONVERSATION_COMPLETE, function() : void {
+								chat.addEventListener(ParanoiaCrossingEvent.CONVERSATION_COMPLETE, function() : void
+								{
 									stage.removeChild(chat);
 									chat = null;
 									_chatting = false;
