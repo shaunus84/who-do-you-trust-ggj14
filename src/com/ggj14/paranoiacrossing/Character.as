@@ -29,10 +29,9 @@ package com.ggj14.paranoiacrossing {
 		private var _greetingDemeanours : Array = ["friendly", "neutral", "rude"];
 		private var _conversation : Vector.<String> = new Vector.<String>();
 		private var _greetingDemeanour : String;
-		private var _losingHouses:Array = new Array();
-		private var houseForTip:int;
-		private var _charname:String;
-		
+		private var _losingHouses : Array = new Array();
+		private var houseForTip : int;
+		private var _charname : String;
 
 		public function Character(name : String) {
 			super();
@@ -61,21 +60,20 @@ package com.ggj14.paranoiacrossing {
 			for (var k : int = 0; k < _xml.RANDOMS.RANDOM.length(); k++) {
 				_randomComments[k] = _xml.RANDOMS.RANDOM[k].@comment;
 			}
+			
+			trace(_meanAndNice);
 
 			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CHARACTER_LOADED));
 		}
 
-		public function buildConversation() : void 
-		{
+		public function buildConversation() : void {
 			_greetingDemeanour = _greetingDemeanours[Math.floor(Math.random() * _truthsAndLies.length)];
 
 			var conversationType : int = (Math.random() > .5) ? CONVERSATION_TYPE_CHARACTER : CONVERSATION_TYPE_RANDOM;
 
 			var honest : Boolean = (Math.random() > .5) ? true : false;
-			for(var i:int = 0; i < 6; i++)
-			{
-				if(i != ParanoiaCrossing._winningHouse)
-				{
+			for (var i : int = 0; i < 6; i++) {
+				if (i != ParanoiaCrossing._winningHouse) {
 					_losingHouses.push(i);
 				}
 			}
@@ -83,18 +81,19 @@ package com.ggj14.paranoiacrossing {
 
 			switch(conversationType) {
 				case CONVERSATION_TYPE_CHARACTER:
+				trace(this.getMeanOrNiceCommentAbout(ParanoiaCrossing.sceneCharacters[Math.floor(Math.random() * ParanoiaCrossing.sceneCharacters.length)]))
 					_conversation.push(this.getMeanOrNiceCommentAbout(ParanoiaCrossing.sceneCharacters[Math.floor(Math.random() * ParanoiaCrossing.sceneCharacters.length)]));
 					break;
 				case CONVERSATION_TYPE_RANDOM:
 					_conversation.push(this.getRandomComment());
 					break;
 				default:
+					break;
 			}
-			
-			var tip:Array = getTip();
-			var r:int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION.length() - 1);
-			var finalTip:String = tip[0] + houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info + tip[1];
-			trace(finalTip);
+
+			var tip : Array = getTip();
+			var r : int = Math.floor(Math.random() * houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION.length() - 1);
+			var finalTip : String = tip[0] + houseDescriptions[0].HOUSE[houseForTip].DESCRIPTION[r].@info + tip[1];
 			_conversation.push(finalTip);
 		}
 
@@ -105,7 +104,7 @@ package com.ggj14.paranoiacrossing {
 		public function getMeanOrNiceCommentAbout(about : String) : String {
 			for (var i : int = 0; i < _meanAndNice.length; i++) {
 				var mean : int = (Math.random() > .5) ? 1 : 2;
-				if (_meanAndNice[i][0] == about) {
+				if (_meanAndNice[i][0] == about.toLowerCase()) {
 					return _meanAndNice[i][mean];
 				}
 			}

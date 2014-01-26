@@ -42,25 +42,6 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		// private function onNoPopup(event : MouseEvent) : void {
-		// event.stopImmediatePropagation();
-		// _popup.yesButton.removeEventListener(MouseEvent.CLICK, onYesPopup);
-		// stage.removeChild(_popup);
-		// _popup = null;
-		// _showingPopup = false;
-		// }
-		//
-		// private function onYesPopup(event : MouseEvent) : void {
-		// event.stopImmediatePropagation();
-		// _popup.noButton.removeEventListener(MouseEvent.CLICK, onNoPopup);
-		//
-		// stage.removeChild(_popup);
-		// _popup = null;
-		//
-		// dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.HOUSE_CHOSEN));
-		//
-		// _showingPopup = false;
-		// }
 		private function Stop(event : KeyboardEvent) : void {
 			switch(event.keyCode) {
 				case Keyboard.UP:

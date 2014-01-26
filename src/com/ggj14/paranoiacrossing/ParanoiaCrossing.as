@@ -1,6 +1,7 @@
 package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
+	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
 
 	import flash.display.Bitmap;
@@ -19,7 +20,7 @@ package com.ggj14.paranoiacrossing {
 		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation : String = "/Users/jamie/Documents/workspace/actionscript/ParanoiaCrossing/assets/";
+		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
@@ -36,7 +37,6 @@ package com.ggj14.paranoiacrossing {
 		public static var sceneCharacters : Vector.<String> = new Vector.<String>();
 		private var _popup : PopUp = new PopUp();
 		private var _finishedGamePopup : FinishedGamePopup = new FinishedGamePopup();
-
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -57,17 +57,13 @@ package com.ggj14.paranoiacrossing {
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
 
-			//			//  load the main menu for the first time
-			// var mainMenu : MainMenu = new MainMenu();
-			// addChild(mainMenu);
-			//
-			//			//  initialise the main menu
-			// mainMenu.init();
-			//
-			//			//  listen for the press to play the game
-			// mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
-
-			onStartGame(null);
+			// load the main menu for the first time
+			var mainMenu : MainMenu = new MainMenu();
+			addChild(mainMenu);
+			//  initialise the main menu
+			mainMenu.init();
+			//  listen for the press to play the game
+			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 		}
 
 		private function onStartGame(event : ParanoiaCrossingEvent) : void {
@@ -84,7 +80,7 @@ package com.ggj14.paranoiacrossing {
 
 			_popup.visible = false;
 			stage.addChild(_popup);
-			
+
 			// winner popup
 			// addFinishedGamePopup(false, []);
 		}
@@ -97,23 +93,21 @@ package com.ggj14.paranoiacrossing {
 			_popup.visible = true;
 		}
 
-		private function createNPCS() : void 
-		{
+		private function createNPCS() : void {
 			var rand : RandomPlus = new RandomPlus(0, characterNames.length - 1);
-			var randSpawn:RandomPlus = new RandomPlus(0, collisionMap.spawns.length - 1);
-			for (var i : int = 0; i < numNPCS; i++) 
-			{
+			var randSpawn : RandomPlus = new RandomPlus(0, collisionMap.spawns.length - 1);
+			for (var i : int = 0; i < numNPCS; i++) {
 				npcs.push(new Character(characterNames[rand.getNum()]));
-				sceneCharacters.push(characterNames[rand.getNum()]);
+				trace(npcs[i].charname);
+				sceneCharacters.push(npcs[i].charname);
 				addChild(npcs[i]);
-				trace(collisionMap.spawns)
-				var spawn:SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
+				var spawn : SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
 				trace(spawn);
-				var pos:Point = new Point(spawn.x, spawn.y);
-				
+				var pos : Point = new Point(spawn.x, spawn.y);
+
 				npcs[i].x = pos.x;
 				npcs[i].y = pos.y;
-				
+
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
 
@@ -140,8 +134,8 @@ package com.ggj14.paranoiacrossing {
 				_player.x = playerStartX;
 				_player.y = playerStartY;
 				addChild(_player);
-			
-				if(contains(_finishedGamePopup) && _finishedGamePopup.visible) {
+
+				if (contains(_finishedGamePopup) && _finishedGamePopup.visible) {
 					setChildIndex(_finishedGamePopup, numChildren - 1);
 				}
 
@@ -170,7 +164,7 @@ package com.ggj14.paranoiacrossing {
 			_player.y = playerStartY;
 			addChild(_player);
 		}
-		
+
 		private function addFinishedGamePopup(success : Boolean, characterArray : Array) : void {
 			_finishedGamePopup.addGameData(success, npcs);
 			addChildAt(_finishedGamePopup, numChildren - 1);

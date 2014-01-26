@@ -40,8 +40,8 @@ package com.ggj14.paranoiacrossing {
 			}
 
 			_nameBubble = new TextField();
-			_nameBubble.setTextFormat(new TextFormat("Arial", 30));
-			_nameBubble.defaultTextFormat = new TextFormat("Arial", 30);
+			_nameBubble.setTextFormat(new TextFormat("Arial", 30, 0x0000ff));
+			_nameBubble.defaultTextFormat = new TextFormat("Arial", 30, 0x0000ff);
 			_nameBubble.multiline = true;
 			_nameBubble.wordWrap = true;
 			_nameBubble.selectable = false;
@@ -71,7 +71,7 @@ package com.ggj14.paranoiacrossing {
 		public function startConversation(character:Character) : void {
 			_currentSpeechStep = 0;
 			
-			_nameBubble.text = character.charname;
+			_nameBubble.text = character.charname + ":";
 			trace(character.greetingDemeanour)
 			getGreeting(character.greetingDemeanour);
 			
