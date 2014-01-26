@@ -31,10 +31,12 @@ package com.ggj14.paranoiacrossing {
 		private var _greetingDemeanour : String;
 		private var _losingHouses:Array = new Array();
 		private var houseForTip:int;
+		private var _charname:String;
+		
 
 		public function Character(name : String) {
 			super();
-
+			_charname = name;
 			houseDescriptions = new XML(new _data);
 
 			_spriteFile = name + ".png";
@@ -121,6 +123,10 @@ package com.ggj14.paranoiacrossing {
 
 		public function get greetingDemeanour() : String {
 			return _greetingDemeanour;
+		}
+
+		public function get charname() : String {
+			return _charname;
 		}
 	}
 }

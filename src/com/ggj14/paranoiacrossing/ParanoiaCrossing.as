@@ -1,7 +1,6 @@
 package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
-	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
 
 	import flash.display.Bitmap;
@@ -10,6 +9,7 @@ package com.ggj14.paranoiacrossing {
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
+	import flash.geom.Point;
 	import flash.media.SoundMixer;
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
@@ -35,6 +35,7 @@ package com.ggj14.paranoiacrossing {
 		public static var _winningHouse : uint;
 		public static var sceneCharacters : Vector.<String> = new Vector.<String>();
 		private var _popup : PopUp = new PopUp();
+		
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -92,12 +93,23 @@ package com.ggj14.paranoiacrossing {
 			_popup.visible = true;
 		}
 
-		private function createNPCS() : void {
-			var rand : RandomPlus = new RandomPlus(0, characterNames.length);
-			for (var i : int = 0; i < numNPCS; i++) {
-				npcs.push(new Character(characterNames[i]));
-				sceneCharacters.push(characterNames[i]);
+		private function createNPCS() : void 
+		{
+			var rand : RandomPlus = new RandomPlus(0, characterNames.length - 1);
+			var randSpawn:RandomPlus = new RandomPlus(0, collisionMap.spawns.length - 1);
+			for (var i : int = 0; i < numNPCS; i++) 
+			{
+				npcs.push(new Character(characterNames[rand.getNum()]));
+				sceneCharacters.push(characterNames[rand.getNum()]);
 				addChild(npcs[i]);
+				trace(collisionMap.spawns)
+				var spawn:SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
+				trace(spawn);
+				var pos:Point = new Point(spawn.x, spawn.y);
+				
+				npcs[i].x = pos.x;
+				npcs[i].y = pos.y;
+				
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
 

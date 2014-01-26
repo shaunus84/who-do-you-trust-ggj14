@@ -8,7 +8,8 @@ package com.ggj14.paranoiacrossing.collision {
 	public class CollisionMap extends Sprite {
 		private var _centerFountain : CollisionLayer = new CollisionLayer();
 		private var collisions : Array = new Array();
-		private var doors:Array = new Array();
+		private var doors : Array = new Array();
+		private var _spawns : Array = new Array();
 
 		public function CollisionMap() : void 
 		{
@@ -29,6 +30,11 @@ package com.ggj14.paranoiacrossing.collision {
 			{
 				doors.push(_centerFountain.getChildByName("door"+j));
 			}
+			
+			for(var k:int = 1; k <= 6; k++)
+			{
+				spawns.push(_centerFountain.getChildByName("spawn"+k));
+			}
 
 		}
 
@@ -38,6 +44,10 @@ package com.ggj14.paranoiacrossing.collision {
 		
 		public function get doorsMap() : Array {
 			return doors;
+		}
+
+		public function get spawns() : Array {
+			return _spawns;
 		}
 	}
 }

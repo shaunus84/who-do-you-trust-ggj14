@@ -18,7 +18,7 @@ package com.ggj14.paranoiacrossing {
 		static public const STYLE_FRIENDLY : String = "friendly";
 		static public const STYLE_NEUTRAL : String = "neutral";
 		static public const STYLE_RUDE : String = "rude";
-		private var _currentConversation : Vector.<String>;
+		private var _currentConversation : Vector.<String> = new Vector.<String>();
 		private var _speechBubble : TextField;
 		private var _nameBubble : TextField;
 		private var _currentSpeechStep : uint = 0;
@@ -70,10 +70,14 @@ package com.ggj14.paranoiacrossing {
 
 		public function startConversation(character:Character) : void {
 			_currentSpeechStep = 0;
-
-			_currentConversation = character.conversation;
-
+			
+			_nameBubble.text = character.charname;
+			trace(character.greetingDemeanour)
 			getGreeting(character.greetingDemeanour);
+			
+
+			_currentConversation.push(character.conversation);
+
 			displayConversation();
 			trace(_currentConversation);
 
@@ -91,32 +95,10 @@ package com.ggj14.paranoiacrossing {
 			} else {
 				_currentConversation.push(_xmlConversations.welcome.greeting.(@style == style)
 				[
-				Math.floor(Math.random() * _xmlConversations.welcome.length())
+				0
 				]);
 			}
 		}
-
-//		private function getConversation(character : Character) : void {
-//			var conversation : XML;
-//
-//			var totalConversations : int = _xmlConversations.conversation.length();
-//
-//			if (style == null) {
-//				conversation = _xmlConversations.conversation
-//				[
-//				Math.floor(Math.random() * totalConversations)
-//				];
-//			} else {
-//				conversation = _xmlConversations.conversation.(@style == style)
-//				[
-//				Math.floor(Math.random() * totalConversations)
-//				]
-//			}
-//
-//			for each (var list : XML in conversation.step) {
-//				_currentConversation.push(list);
-//			}
-//		}
 
 		private function displayConversation() : void {
 			this.addEventListener(Event.ENTER_FRAME, animateSentence);
