@@ -16,7 +16,7 @@ package com.ggj14.paranoiacrossing {
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite {
-		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
+		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis"];//, "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
 		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		// map of the town
@@ -32,6 +32,7 @@ package com.ggj14.paranoiacrossing {
 		private const playerStartY : uint = 600;
 		private var _player : Player;
 		public static var _winningHouse : uint;
+		public static var sceneCharacters:Vector.<String> = new Vector.<String>();
 		private var _popup : PopUp = new PopUp();
 
 		public function ParanoiaCrossing() {
@@ -66,7 +67,7 @@ package com.ggj14.paranoiacrossing {
 
 		private function onStartGame(event : ParanoiaCrossingEvent) : void {
 			// create the NPC's
-			// createNPCS();
+			createNPCS();
 
 			_player = new Player(null);
 			_player.x = playerStartX;
@@ -94,15 +95,16 @@ package com.ggj14.paranoiacrossing {
 			for (var i : int = 0; i < numNPCS; i++) 
 			{
 				npcs.push(new Character(characterNames[i]));
+				sceneCharacters.push(characterNames[i]);
 				addChild(npcs[i]);
 				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
 
-			var chat : ConversationManager = new ConversationManager();
-			this.stage.addChild(chat);
-			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			chat.y = this.stage.stageHeight - chat.height - 10;
-			chat.startConversation();
+//			var chat : ConversationManager = new ConversationManager();
+//			this.stage.addChild(chat);
+//			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+//			chat.y = this.stage.stageHeight - chat.height - 10;
+//			chat.startConversation();
 		}
 
 		private function onCharacterLoaded(event : ParanoiaCrossingEvent) : void {
@@ -111,7 +113,12 @@ package com.ggj14.paranoiacrossing {
 
 			numNPCSLoaded++;
 
-			if (numNPCSLoaded == numNPCS) {
+			if (numNPCSLoaded == numNPCS) 
+			{
+				for(var i:int = 0; i < numNPCS; i++)
+				{
+					npcs[i].buildConversation();
+				}
 				assignWinningHouse();
 				// when the game starts create the player
 				_player = new Player(null);
