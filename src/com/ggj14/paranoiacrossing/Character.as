@@ -1,4 +1,5 @@
 package com.ggj14.paranoiacrossing {
+	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import flash.net.URLRequest;
 	import flash.events.Event;
 	import flash.net.URLLoader;
@@ -27,29 +28,44 @@ package com.ggj14.paranoiacrossing {
 		private function parseXML(e : Event) : void {
 			_xml = XML(_xmlLoader.data);
 
-			for (var i : int = 0; i < _xml[0].HOUSES.HOUSE.length(); i++) {
+			for (var i : int = 0; i < _xml.HOUSES.HOUSE.length(); i++) 
+			{
 				_truthsAndLies[i] = [_xml.HOUSES.HOUSE[i].@opening, _xml.HOUSES.HOUSE[i].@ending];
 			}
 
-			for (var j : int = 0; j < _xml.MEANANDNICE.COMMENT.length(); j++) {
-				_meanAndNice[_xml.MEANANDNICE.COMMENT[j].@character] = [_xml.MEANANDNICE.COMMENT[j].@mean, _xml.MEANANDNICE.COMMENT[j].@nice];
+			for (var j : int = 0; j < _xml.MEANANDNICE.COMMENT.length(); j++) 
+			{
+				_meanAndNice[j] = [_xml.MEANANDNICE.COMMENT[j].@character,_xml.MEANANDNICE.COMMENT[j].@mean, _xml.MEANANDNICE.COMMENT[j].@nice];
 			}
 
 			for (var k : int = 0; k < _xml.RANDOMS.RANDOM.length(); k++) {
 				_randomComments[k] = _xml.RANDOMS.RANDOM[k].@comment;
 			}
+			
+			dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CHARACTER_LOADED));
 		}
 
-		public function getTip() : Array {
-			return _truthsAndLies[Math.random() * _truthsAndLies.length];
+		public function getTip() : Array 
+		{
+			return _truthsAndLies[Math.floor(Math.random() * _truthsAndLies.length)];
 		}
 
-		public function getMeanOrNiceCommentAbout(about : String) : String {
-			return _meanAndNice[about][Math.round(Math.random())];
+		public function getMeanOrNiceCommentAbout(about : String) : String 
+		{
+			for(var i:int = 0; i < _meanAndNice.length; i++)
+			{
+				var mean:int = (Math.random() > .5) ? 1 : 2;
+				if(_meanAndNice[i][0] == about)
+				{
+					return _meanAndNice[i][mean];
+				}
+			}
+			
+			return "";
 		}
 
 		public function getRandomComment() : String {
-			return _randomComments[(Math.random() * _randomComments.length - 1)];
+			return _randomComments[Math.floor(Math.random() * _truthsAndLies.length)];
 		}
 	}
 }

@@ -17,12 +17,22 @@ package com.ggj14.paranoiacrossing {
 
 	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite {
+		private const characterNames : Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tiffa", "Tom"];
+		// the assets location
 		public static const assetsLocation : String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
+		// map of the town
 		private var townBackground : Bitmap;
 		private var townBackgroundLoader : Loader = new Loader();
+		// the map for collision
 		public static var collisionMap : CollisionMap = new CollisionMap();
-		private var spawns : Array = new Array();
+		// the characters
 		public static var npcs : Array = new Array();
+		private static const numNPCS : uint = 6;
+		private var numNPCSLoaded : uint = 0;
+		private const playerStartX : uint = 600;
+		private const playerStartY : uint = 600;
+		private var _player : Player;
+		public static var _winningHouse:uint;
 
 		public function ParanoiaCrossing() {
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -31,56 +41,90 @@ package com.ggj14.paranoiacrossing {
 			SoundMixer.soundTransform = new SoundTransform(0.7);
 			SoundManager.initSounds();
 
-			spawns.push(new Point(250, 420));
-			spawns.push(new Point(515, 520));
-			spawns.push(new Point(790, 235));
-
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
 		}
 
-		private function onStartGame(event : ParanoiaCrossingEvent) : void {
-			var player : Player = new Player(null);
-			player.x = 600;
-			player.y = 600;
-			addChild(player);
-
-			createNPCS();
-
-			// createNPCS();
-			
-			// var mainMenu : MainMenu = new MainMenu();
-			// addChild(mainMenu);
-			
-			// mainMenu.init();
-		}
-
-		private function createNPCS() : void {
-			var adam : Character = new Character("Adam");
-			addChild(adam);
-			
-			trace(adam.getMeanOrNiceCommentAbout("bob"));
-			trace(adam.getRandomComment());
-			trace(adam.getTip());
-
-			var chat : ConversationManager = new ConversationManager();
-			this.stage.addChild(chat);
-			chat.x = (this.stage.stageWidth - chat.width) * 0.5;
-			chat.y = this.stage.stageHeight - chat.height - 10;
-			chat.startConversation();
-		}
-
 		private function onBackgroundLoaded(event : Event) : void {
+			// add the collision map
 			addChild(collisionMap);
+
+			// load the town background
 			townBackground = Bitmap(townBackgroundLoader.content);
 			addChild(townBackground);
 
+			// load the main menu for the first time
 			var mainMenu : MainMenu = new MainMenu();
 			addChild(mainMenu);
 
+			// initialise the main menu
 			mainMenu.init();
 
+			// listen for the press to play the game
 			mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
+		}
+
+		private function onStartGame(event : ParanoiaCrossingEvent) : void {
+			// create the NPC's
+			createNPCS();
+		}
+
+		private function createNPCS() : void {
+			var rand : RandomPlus = new RandomPlus(0, characterNames.length);
+			for (var i : int = 0; i < numNPCS; i++) {
+				npcs.push(new Character(characterNames[i]));
+				addChild(npcs[i]);
+				npcs[i].addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
+			}
+
+			// var chat : ConversationManager = new ConversationManager();
+			// this.stage.addChild(chat);
+			// chat.x = (this.stage.stageWidth - chat.width) * 0.5;
+			// chat.y = this.stage.stageHeight - chat.height - 10;
+			// chat.startConversation();
+		}
+
+		private function onCharacterLoaded(event : ParanoiaCrossingEvent) : void {
+			event.stopImmediatePropagation();
+			Character(event.target).removeEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
+
+			numNPCSLoaded++;
+
+			if (numNPCSLoaded == numNPCS) 
+			{
+				assignWinningHouse();
+				// when the game starts create the player
+				_player = new Player(null);
+				_player.x = playerStartX;
+				_player.y = playerStartY;
+				addChild(_player);
+
+				numNPCSLoaded = 0;
+			}
+		}
+
+		private function assignWinningHouse() : void 
+		{
+			var r:RandomPlus = new RandomPlus(1, 6);
+			_winningHouse = r.getNum();
+		}
+
+		private function restartGame() : void 
+		{
+			for each (var char : Character in npcs) {
+				removeChild(char);
+				char.dispose();
+				char = null;
+			}
+			
+			removeChild(_player);
+			_player = null;
+
+			// when the game starts create the player
+			_player = new Player(null);
+			_player.x = playerStartX;
+			_player.y = playerStartY;
+			addChild(_player);
 		}
 	}
 }
