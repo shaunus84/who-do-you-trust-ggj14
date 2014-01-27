@@ -1,38 +1,41 @@
-package com.ggj14.paranoiacrossing {
+package com.ggj14.paranoiacrossing
+{
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
-
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
-	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
 
 	/**
 	 * @author michael.bunby
 	 */
-	public class ConversationManager extends Sprite {
+	public class ConversationManager extends Sprite
+	{
 		[Embed(source="../../../../assets/chat/chat.xml", mimeType="application/octet-stream")]
-		private var _data : Class;
-		private var _xmlConversations : XML;
-		static public const STYLE_FRIENDLY : String = "friendly";
-		static public const STYLE_NEUTRAL : String = "neutral";
-		static public const STYLE_RUDE : String = "rude";
-		private var _currentConversation : Vector.<String> = new Vector.<String>();
-		private var _speechBubble : TextField;
-		private var _nameBubble : TextField;
-		private var _currentSpeechStep : uint = 0;
-		private var _sentenceIndex : uint = 0;
+		private var _data:Class;
+		private var _xmlConversations:XML;
+		static public const STYLE_FRIENDLY:String = "friendly";
+		static public const STYLE_NEUTRAL:String = "neutral";
+		static public const STYLE_RUDE:String = "rude";
+		private var _currentConversation:Vector.<String> = new Vector.<String>();
+		private var _speechBubble:TextField;
+		private var _nameBubble:TextField;
+		private var _currentSpeechStep:uint = 0;
+		private var _sentenceIndex:uint = 0;
 
-		public function ConversationManager() {
+		public function ConversationManager()
+		{
 			_xmlConversations = new XML(new _data);
 
 			this.addEventListener(Event.ADDED_TO_STAGE, configure);
 			this.addEventListener(Event.REMOVED_FROM_STAGE, clean);
 		}
 
-		private function configure(event : Event) : void {
-			with(this.graphics) {
+		private function configure(event:Event):void
+		{
+			with(this.graphics)
+			{
 				lineStyle(2.0, 0xBBBBBB);
 				beginFill(0xFFFFFF, 0.8);
 				drawRoundRect(0, 0, this.stage.stageWidth - 20, 150, 5);
@@ -62,19 +65,22 @@ package com.ggj14.paranoiacrossing {
 			this.addChild(_nameBubble);
 		}
 
-		private function clean(event : Event) : void {
+		private function clean(event:Event):void
+		{
 			this.graphics.clear();
 			this.removeChild(_nameBubble);
 			this.removeChild(_speechBubble);
 		}
 
-		public function startConversation(character : Character) : void {
+		public function startConversation(character:Character):void
+		{
 			_currentSpeechStep = 0;
 
 			_nameBubble.text = character.charname + ":";
 			getGreeting(character.greetingDemeanour);
 
-			for (var i : int = 0; i < character.conversation.length; i++) {
+			for (var i:int = 0; i < character.conversation.length; i++)
+			{
 				_currentConversation.push(character.conversation[i]);
 			}
 
@@ -84,15 +90,19 @@ package com.ggj14.paranoiacrossing {
 			SoundManager.playTypewriter();
 		}
 
-		private function getGreeting(style : String) : void {
-			var totalGreetings : int = _xmlConversations.welcome.greeting.length();
+		private function getGreeting(style:String):void
+		{
+			var totalGreetings:int = _xmlConversations.welcome.greeting.length();
 
-			if (style == null) {
+			if (style == null)
+			{
 				_currentConversation.push(_xmlConversations.welcome.greeting
 				[
 				Math.floor(Math.random() * totalGreetings)
 				]);
-			} else {
+			}
+			else
+			{
 				_currentConversation.push(_xmlConversations.welcome.greeting.(@style == style)
 				[
 				0
@@ -100,14 +110,19 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		private function displayConversation() : void {
+		private function displayConversation():void
+		{
 			this.addEventListener(Event.ENTER_FRAME, animateSentence);
 		}
 
-		private function animateSentence(event : Event) : void {
-			if (_sentenceIndex <= _currentConversation[_currentSpeechStep].length) {
+		private function animateSentence(event:Event):void
+		{
+			if (_sentenceIndex <= _currentConversation[_currentSpeechStep].length)
+			{
 				_speechBubble.text = _currentConversation[_currentSpeechStep].slice(0, _sentenceIndex++);
-			} else {
+			}
+			else
+			{
 				this.removeEventListener(Event.ENTER_FRAME, animateSentence);
 
 				this.addEventListener(MouseEvent.CLICK, progressConversation);
@@ -116,7 +131,8 @@ package com.ggj14.paranoiacrossing {
 			}
 		}
 
-		private function progressConversation(event : MouseEvent) : void {
+		private function progressConversation(event:MouseEvent):void
+		{
 			_speechBubble.text = "";
 
 			++_currentSpeechStep;
@@ -125,10 +141,13 @@ package com.ggj14.paranoiacrossing {
 
 			this.removeEventListener(MouseEvent.CLICK, progressConversation);
 
-			if (_currentSpeechStep != _currentConversation.length) {
+			if (_currentSpeechStep != _currentConversation.length)
+			{
 				this.addEventListener(Event.ENTER_FRAME, animateSentence);
 				SoundManager.playTypewriter();
-			} else {
+			}
+			else
+			{
 				dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.CONVERSATION_COMPLETE));
 			}
 		}

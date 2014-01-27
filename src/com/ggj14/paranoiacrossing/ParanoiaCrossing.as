@@ -1,10 +1,10 @@
 package com.ggj14.paranoiacrossing
 {
-	import com.greensock.TweenLite;
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
+	import com.greensock.TweenLite;
 	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.Sprite;
@@ -20,18 +20,15 @@ package com.ggj14.paranoiacrossing
 	import flash.system.LoaderContext;
 	import flash.system.SecurityDomain;
 	import flash.system.System;
-	import flash.text.AntiAliasType;
-	import flash.text.TextField;
-	import flash.text.TextFormat;
-	import flash.text.TextFormatAlign;
 
-	[SWF(width="1440", height="960", frameRate="60", backgroundColor="#000000")]
+	[SWF(width="1440", height="960", frameRate="30", backgroundColor="#000000")]
 	public class ParanoiaCrossing extends Sprite
 	{
 		private const characterNames:Array = ["Adam", "Ashley", "Billy", "Brian", "Dave", "Dennis", "Diana", "Shmebulock", "Susan", "Tom", "Jennifer"];
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
-		public static const assetsLocation:String = "/Users/shaun.mitchell/repos/who-do-you-trust-ggj14/assets/";
+		public static const assetsLocation:String = "http://www.culpritgames.co.uk/paranoia-crossing/assets/";
+		//public static const assetsLocation:String = "/Users/shaun.mitchell/repos/who-do-you-trust-ggj14/assets/";
 		// map of the town
 		private var townBackground:Bitmap;
 		private var townBackgroundLoader:Loader = new Loader();
@@ -51,10 +48,6 @@ package com.ggj14.paranoiacrossing
 		public static var tableOfTruth:Array = new Array();
 		// private var _tipBoard : Sprite = new Sprite();
 		private var _tipBoard:TipBoardNewspaper = new TipBoardNewspaper();
-		private var _headingFont:Font043B0Regular = new Font043B0Regular();
-		private var _headingFormat:TextFormat = new TextFormat();
-		private var _bodyFont:FontRespectiveRegular = new FontRespectiveRegular();
-		private var _bodyFormat:TextFormat = new TextFormat();
 
 		public function ParanoiaCrossing()
 		{
@@ -70,13 +63,12 @@ package com.ggj14.paranoiacrossing
 			townBackgroundLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onBackgroundLoaded);
 			townBackgroundLoader.load(new URLRequest(assetsLocation + "paranoia.png"));
 
-			addChild(_tipBoard);
 			_tipBoard.visible = false;
 			_tipBoard.scaleX = 0;
 			_tipBoard.scaleY = 0;
 			_tipBoard.x = 550;
 			_tipBoard.y = 300;
-			// addChild(_tipBoard);
+			addChild(_tipBoard);
 		}
 
 		private function onBackgroundLoaded(event:Event):void
@@ -118,11 +110,11 @@ package com.ggj14.paranoiacrossing
 			_popup.yesButton.removeEventListener(MouseEvent.CLICK, onHouseChosen);
 			if (_player.currentHouse == _winningHouse)
 			{
-				addFinishedGamePopup(true, npcs);
+				addFinishedGamePopup(true);
 			}
 			else
 			{
-				addFinishedGamePopup(false, npcs);
+				addFinishedGamePopup(false);
 			}
 
 			_popup.visible = false;
@@ -175,7 +167,6 @@ package com.ggj14.paranoiacrossing
 			if (_tipBoard.visible)
 			{
 				TweenLite.to(_tipBoard, 0.5, {x:550, y:300, scaleX:0, scaleY:0, onComplete:function():void{_tipBoard.visible = false;}});
-				//_tipBoard.visible = false;
 			}
 		}
 
@@ -192,16 +183,16 @@ package com.ggj14.paranoiacrossing
 			{
 				npcs.push(new Character(characterNames[rand.getNum()]));
 
-				trace(npcs[i].charname);
-				sceneCharacters.push(npcs[i].charname);
+				trace(Character(npcs[i]).charname);
+				sceneCharacters.push(Character(npcs[i]).charname);
 				addChild(npcs[i]);
 
 				var spawn:SpawnPoint = collisionMap.spawns[randSpawn.getNum()];
 				trace(spawn);
 				var pos:Point = new Point(spawn.x, spawn.y);
 
-				npcs[i].x = pos.x;
-				npcs[i].y = pos.y;
+				Character(npcs[i]).x = pos.x;
+				Character(npcs[i]).y = pos.y;
 
 				Character(npcs[i]).addEventListener(ParanoiaCrossingEvent.CHARACTER_LOADED, onCharacterLoaded);
 			}
@@ -218,7 +209,7 @@ package com.ggj14.paranoiacrossing
 			{
 				for (var i:int = 0; i < numNPCS; i++)
 				{
-					npcs[i].buildConversation();
+					Character(npcs[i]).buildConversation();
 				}
 				// when the game starts create the player
 				_player = new Player(null);
@@ -273,7 +264,7 @@ package com.ggj14.paranoiacrossing
 			// mainMenu.addEventListener(ParanoiaCrossingEvent.START_GAME, onStartGame);
 		}
 
-		private function addFinishedGamePopup(success:Boolean, characterArray:Array):void
+		private function addFinishedGamePopup(success:Boolean):void
 		{
 			_finishedGamePopup.addGameData(success, npcs, []);
 			addChildAt(_finishedGamePopup, numChildren - 1);

@@ -95,7 +95,7 @@ package com.ggj14.paranoiacrossing {
 					}
 					break;
 				case Keyboard.SPACE:
-				event.stopImmediatePropagation();
+				//event.stopImmediatePropagation();
 					if (!_chatting) 
 					{
 						for (var k : int = 0; k < ParanoiaCrossing.npcs.length; k++) 
