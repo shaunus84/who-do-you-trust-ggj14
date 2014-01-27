@@ -123,10 +123,10 @@ package com.ggj14.paranoiacrossing {
 			_headingFormat.size = 30;
 
 			_bodyFormat = new TextFormat();
-			_bodyFormat.size = 60;
+			_bodyFormat.size = 40;
 			_bodyFormat.align = TextFormatAlign.CENTER;
 			_bodyFormat.color = 0x000000;
-			_bodyFormat.font = _bodyFont.fontName;
+			_bodyFormat.font = _headingFont.fontName;
 
 			var headingText : TextField = new TextField();
 			headingText.width = _tipBoard.width;
@@ -155,6 +155,9 @@ package com.ggj14.paranoiacrossing {
 
 			_tipBoard.addChild(headingText);
 			_tipBoard.addChild(bodyText);
+			
+			_tipBoard.scaleX = 0.5;
+			_tipBoard.scaleY = 0.5;
 		}
 
 		private function onShowTipBoard(event : ParanoiaCrossingEvent) : void {
