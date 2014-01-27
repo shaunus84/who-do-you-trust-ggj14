@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CHARACTER name="Mort">
 	<HOUSES>
-		<HOUSE opening="O.M.G you should totally check out the"
-			ending="it's sooooooooo much fun in there!" />
+		<HOUSE opening="O.M.G you should totally check out the "
+			ending=" it's sooooooooo much fun in there!" />
 		<HOUSE opening="Whipser it quietly but that "
-			ending="has pretty colours inside." />
+			ending=" has pretty colours inside." />
 		<HOUSE
 			opening="I like the house with "
 			ending=" it's such a good place to be!" />

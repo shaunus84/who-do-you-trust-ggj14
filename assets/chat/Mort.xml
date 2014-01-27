@@ -2,11 +2,11 @@
 <CHARACTER name="Mort">
 	<HOUSES>
 		<HOUSE opening="House with "
-			ending="has something" />
+			ending=" has something" />
 		<HOUSE opening="Over there "
 			ending="." />
 		<HOUSE
-			opening="Pointy, pointy"
+			opening="Pointy, pointy "
 			ending=" is housey, housey" />
 	</HOUSES>
 

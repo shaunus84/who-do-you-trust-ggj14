@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CHARACTER name="Tom">
 	<HOUSES>
-		<HOUSE opening="Yeah, I know where you could find that"
-			ending="that's where you'll find everything you've ever desired." />
+		<HOUSE opening="Yeah, I know where you could find that "
+			ending=" that's where you'll find everything you've ever desired." />
 		<HOUSE opening="Nip on over to "
 			ending=". They'll sort something out for you." />
 		<HOUSE
