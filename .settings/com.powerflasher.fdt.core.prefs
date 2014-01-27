@@ -13,5 +13,5 @@ com.powerflasher.fdt.core.PlatformType=WEB
 com.powerflasher.fdt.core.PlayerVersion=12.0
 com.powerflasher.fdt.core.ProjectTypeHint=Web
 com.powerflasher.fdt.core.Runtime=Flash_Player
-com.powerflasher.fdt.core.SdkName=Flex 4.6.0 AIR 4.0
+com.powerflasher.fdt.core.SdkName=Flex 4.6.0
 eclipse.preferences.version=1

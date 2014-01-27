@@ -38,13 +38,13 @@ package com.ggj14.paranoiacrossing
 			{
 				lineStyle(2.0, 0xBBBBBB);
 				beginFill(0xFFFFFF, 0.8);
-				drawRoundRect(0, 0, this.stage.stageWidth - 20, 150, 5);
+				drawRoundRect(0, 0, 300, 300, 5);
 				endFill();
 			}
 
 			_nameBubble = new TextField();
-			_nameBubble.setTextFormat(new TextFormat("Arial", 30, 0x0000ff));
-			_nameBubble.defaultTextFormat = new TextFormat("Arial", 30, 0x0000ff);
+			_nameBubble.setTextFormat(new TextFormat("Consolas", 29, 0x0000ff));
+			_nameBubble.defaultTextFormat = new TextFormat("Consolas", 30, 0x0000ff);
 			_nameBubble.multiline = true;
 			_nameBubble.wordWrap = true;
 			_nameBubble.selectable = false;
@@ -52,8 +52,8 @@ package com.ggj14.paranoiacrossing
 			_nameBubble.height = this.height / 2.6;
 
 			_speechBubble = new TextField();
-			_speechBubble.setTextFormat(new TextFormat("Arial", 30));
-			_speechBubble.defaultTextFormat = new TextFormat("Arial", 30);
+			_speechBubble.setTextFormat(new TextFormat("Consolas", 23));
+			_speechBubble.defaultTextFormat = new TextFormat("Consolas", 23);
 			_speechBubble.multiline = true;
 			_speechBubble.wordWrap = true;
 			_speechBubble.selectable = false;
@@ -83,6 +83,9 @@ package com.ggj14.paranoiacrossing
 			{
 				_currentConversation.push(character.conversation[i]);
 			}
+			
+			this.x = (character.x + character.width) + 10;
+			this.y = (character.y - 10);
 
 			displayConversation();
 			trace(_currentConversation);
@@ -125,21 +128,20 @@ package com.ggj14.paranoiacrossing
 			{
 				this.removeEventListener(Event.ENTER_FRAME, animateSentence);
 
-				this.addEventListener(MouseEvent.CLICK, progressConversation);
+				stage.addEventListener(ParanoiaCrossingEvent.ADVANCE_CONVERSATION, progressConversation);
 
 				SoundManager.stopTypewriter();
 			}
 		}
 
-		private function progressConversation(event:MouseEvent):void
+		private function progressConversation(event:ParanoiaCrossingEvent):void
 		{
+			stage.removeEventListener(ParanoiaCrossingEvent.ADVANCE_CONVERSATION, progressConversation);
 			_speechBubble.text = "";
 
 			++_currentSpeechStep;
 
 			_sentenceIndex = 0;
-
-			this.removeEventListener(MouseEvent.CLICK, progressConversation);
 
 			if (_currentSpeechStep != _currentConversation.length)
 			{

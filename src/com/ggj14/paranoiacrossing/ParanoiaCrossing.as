@@ -28,7 +28,7 @@ package com.ggj14.paranoiacrossing
 		// , "Diana", "Geoff", "Jennifer", "Jessica", "Katie", "Kerry", "Mort", "Pat", "Rich", "Scooter", "Shmebulock", "Susan", "Tifa", "Tom"];
 		// the assets location
 		public static const assetsLocation:String = "http://www.culpritgames.co.uk/paranoia-crossing/assets/";
-		//public static const assetsLocation:String = "/Users/shaun.mitchell/repos/who-do-you-trust-ggj14/assets/";
+		//public static const assetsLocation:String = "/Users/shaunmitchell/Documents/ggj/Paranoia Crossing/assets/";
 		// map of the town
 		private var townBackground:Bitmap;
 		private var townBackgroundLoader:Loader = new Loader();
@@ -131,9 +131,6 @@ package com.ggj14.paranoiacrossing
 			}
 
 			_tipBoard.newspaperContent.text = "This just in, " + numFalse + " in 6 people in paranoia crossing could be lying to you.\n\nThis report was confirmed in a test conducted by Professor Shmebulock";
-
-			_tipBoard.scaleX = 0.5;
-			_tipBoard.scaleY = 0.5;
 		}
 
 		private function onShowTipBoard(event:ParanoiaCrossingEvent):void
@@ -150,7 +147,7 @@ package com.ggj14.paranoiacrossing
 			}
 			
 			_tipBoard.visible = true;
-			TweenLite.to(_tipBoard, 0.5, {x:650, y:350, scaleX:0.4, scaleY:0.4});
+			TweenLite.to(_tipBoard, 0.5, {x:650, y:350, scaleX:0.55, scaleY:0.55});
 
 			// position the tipboard
 			//_tipBoard.x = 200;

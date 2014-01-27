@@ -12,7 +12,7 @@ package com.ggj14.paranoiacrossing {
 	public class Player extends AnimatedCharacter {
 		private var _chatting : Boolean = false;
 		private var _showingPopup : Boolean = false;
-		private var _currentHouse:int = 0;
+		private var _currentHouse : int = 0;
 
 		public function Player(xml : XML) {
 			_spriteFile = "player.png";
@@ -34,12 +34,12 @@ package com.ggj14.paranoiacrossing {
 					hitAnything = true;
 					dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_POP_UP));
 					_showingPopup = true;
-					_currentHouse = i;	
+					_currentHouse = i;
 				}
 			}
-			
-			if(!hitAnything && ParanoiaCrossing.collisionMap.boardsMap.length > 0) {
-				for(var j:int = 0; j < ParanoiaCrossing.collisionMap.boardsMap.length; ++j) {
+
+			if (!hitAnything && ParanoiaCrossing.collisionMap.boardsMap.length > 0) {
+				for (var j : int = 0; j < ParanoiaCrossing.collisionMap.boardsMap.length; ++j) {
 					if (this.hitTestObject(ParanoiaCrossing.collisionMap.boardsMap[j])) {
 						hitAnything = true;
 						dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.SHOW_TIP_BOARD));
@@ -95,13 +95,10 @@ package com.ggj14.paranoiacrossing {
 					}
 					break;
 				case Keyboard.SPACE:
-				//event.stopImmediatePropagation();
-					if (!_chatting) 
-					{
-						for (var k : int = 0; k < ParanoiaCrossing.npcs.length; k++) 
-						{
-							if (this.hitTestObject(ParanoiaCrossing.npcs[k])) 
-							{
+					event.stopImmediatePropagation();
+					if (!_chatting) {
+						for (var k : int = 0; k < ParanoiaCrossing.npcs.length; k++) {
+							if (this.hitTestObject(ParanoiaCrossing.npcs[k])) {
 								_chatting = true;
 								var chat : ConversationManager = new ConversationManager();
 								this.stage.addChild(chat);
@@ -109,14 +106,15 @@ package com.ggj14.paranoiacrossing {
 								chat.y = this.stage.stageHeight - chat.height - 10;
 								chat.startConversation(ParanoiaCrossing.npcs[k]);
 
-								chat.addEventListener(ParanoiaCrossingEvent.CONVERSATION_COMPLETE, function() : void
-								{
+								chat.addEventListener(ParanoiaCrossingEvent.CONVERSATION_COMPLETE, function() : void {
 									stage.removeChild(chat);
 									chat = null;
 									_chatting = false;
 								});
 							}
 						}
+					} else {
+						stage.dispatchEvent(new ParanoiaCrossingEvent(ParanoiaCrossingEvent.ADVANCE_CONVERSATION));
 					}
 					break;
 				default:

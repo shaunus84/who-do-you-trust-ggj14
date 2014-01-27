@@ -34,7 +34,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			var sound : Sound = new Sound(urlRequest);
 
 			SoundMixer.soundTransform = new SoundTransform(0.6);
-			sound.play();
+			sound.play(int.MAX_VALUE);
 		}
 
 		public function init() : void {
