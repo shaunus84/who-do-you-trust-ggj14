@@ -97,20 +97,20 @@ package com.ggj14.paranoiacrossing
 		{
 			var totalGreetings:int = _xmlConversations.welcome.greeting.length();
 
-			if (style == null)
-			{
+			//if (style == null)
+			//{
 				_currentConversation.push(_xmlConversations.welcome.greeting
 				[
 				Math.floor(Math.random() * totalGreetings)
 				]);
-			}
-			else
-			{
-				_currentConversation.push(_xmlConversations.welcome.greeting.(@style == style)
-				[
-				0
-				]);
-			}
+			//}
+			//else
+			//{
+			//	_currentConversation.push(_xmlConversations.welcome.greeting.(@style == style)
+			//	[
+			//	0
+			//	]);
+			//}
 		}
 
 		private function displayConversation():void

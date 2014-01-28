@@ -64,7 +64,7 @@ package com.ggj14.paranoiacrossing {
 		}
 
 		public function buildConversation() : void {
-			_greetingDemeanour = _greetingDemeanours[Math.floor(Math.random() * _truthsAndLies.length)];
+			_greetingDemeanour = _greetingDemeanours[Math.floor(Math.random() * _greetingDemeanours.length)];
 
 			var conversationType : int = (Math.random() > .5) ? CONVERSATION_TYPE_CHARACTER : CONVERSATION_TYPE_RANDOM;
 
