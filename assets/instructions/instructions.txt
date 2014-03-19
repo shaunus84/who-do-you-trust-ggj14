@@ -1,4 +1,5 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet enim quam. Quisque tincidunt tempor molestie. Sed aliquet viverra eros eu accumsan. Sed quis elit quis lectus sollicitudin dictum. Etiam venenatis gravida purus, viverra fringilla ipsum dictum sed. Mauris placerat pellentesque magna nec rutrum. Nam ut velit posuere, sagittis dui ut, pellentesque massa. Donec iaculis turpis a porttitor consequat. Nunc facilisis mi non arcu lacinia, id dapibus leo condimentum.
+Paranoia crossing is a strange place. You never know who you can trust.
 
-Donec vitae semper erat, eget blandit orci. Nam congue vel lorem quis aliquam. Nam lacinia magna sed dui posuere vulputate. Aliquam eleifend sit amet tellus eget auctor. Donec ultricies placerat nulla, eu porttitor orci varius fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consequat sem in facilisis. Phasellus sagittis aliquam enim commodo ullamcorper.
+One of the houses in the village contains something you want, you better talk to the villagers to find out which one.
 
+Use the arrow keys to move around and the space bar to talk to villagers and navigate through dialogue.

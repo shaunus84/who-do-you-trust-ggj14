@@ -1,10 +1,10 @@
-package com.ggj14.paranoiacrossing
-{
+package com.ggj14.paranoiacrossing {
 	import com.ggj14.paranoiacrossing.collision.CollisionMap;
 	import com.ggj14.paranoiacrossing.events.ParanoiaCrossingEvent;
 	import com.ggj14.paranoiacrossing.mainmenu.MainMenu;
 	import com.ggj14.paranoiacrossing.util.RandomPlus;
 	import com.greensock.TweenLite;
+
 	import flash.display.Bitmap;
 	import flash.display.Loader;
 	import flash.display.Sprite;
@@ -18,6 +18,7 @@ package com.ggj14.paranoiacrossing
 	import flash.media.SoundTransform;
 	import flash.net.URLRequest;
 	import flash.system.LoaderContext;
+	import flash.system.Security;
 	import flash.system.SecurityDomain;
 	import flash.system.System;
 
@@ -53,6 +54,8 @@ package com.ggj14.paranoiacrossing
 		{
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			stage.align = StageAlign.TOP_LEFT;
+			
+			Security.allowDomain("www.culpritgames.co.uk");
 
 			var context:LoaderContext = new LoaderContext();
 			context.securityDomain = SecurityDomain.currentDomain;

@@ -86,6 +86,16 @@ package com.ggj14.paranoiacrossing
 			
 			this.x = (character.x + character.width) + 10;
 			this.y = (character.y - 10);
+			
+			if(this.x + this.width > stage.width)
+			{
+				this.x = character.x - (this.width + 10);
+			}
+			
+			if(this.y + this.height > stage.height)
+			{
+				this.y = (character.y - 10) - this.height;
+			}
 
 			displayConversation();
 			trace(_currentConversation);

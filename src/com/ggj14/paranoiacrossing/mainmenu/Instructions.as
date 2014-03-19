@@ -61,7 +61,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 				}
 			}
 			
-			headerTextFormat.size = 20;
+			headerTextFormat.size = 35;
 			headerTextFormat.align = TextFormatAlign.CENTER;
 			headerTextFormat.color = 0x424242;
 			
@@ -73,7 +73,7 @@ package com.ggj14.paranoiacrossing.mainmenu {
 			header.selectable = false;
 			addChild(header);
 			
-			bodyTextFormat.size = 12;
+			bodyTextFormat.size = 25;
 			bodyTextFormat.align = TextFormatAlign.JUSTIFY;
 			bodyTextFormat.color = 0x000000;
 			
